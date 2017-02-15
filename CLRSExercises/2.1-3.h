@@ -9,8 +9,7 @@
 #ifndef __1_3_h
 #define __1_3_h
 
-#include <iostream>
-#include <vector>
+#include "Defines.h"
 
 const int nil = 0xDEADBEAF;
 
@@ -46,7 +45,7 @@ const int nil = 0xDEADBEAF;
 
 // TODO: Are conditions allowed in invariants? Anyway looking too vague to me..
 
-int linearSearch(std::vector<int> & arr, int val)
+int linearSearch(Array & arr, int val)
 {
 	int i = (int)arr.size() - 1;
 	
@@ -60,13 +59,13 @@ int linearSearch(std::vector<int> & arr, int val)
 
 void test_2_1_3()
 {
-	std::vector<int> arr = {7, 5, 8, 6, 2, 4, 3, 1, 9};
-	
+	Array arr = {7, 5, 8, 6, 2, 4, 3, 1, 9};
+
 	const int val = 12;
-	
-	std::cout << "Search result: " << linearSearch(arr, val) << std::endl;
-	
-	std::cout << std::endl;
+
+	cout << "Search result: " << linearSearch(arr, val) << endl;
+
+	cout << endl;
 }
 
 #endif /* __1_3_h */
