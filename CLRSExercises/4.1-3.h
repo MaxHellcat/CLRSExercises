@@ -19,30 +19,21 @@ struct Tuple
 
 Tuple findMaxSubarrayBruteForce(Array & arr)
 {
-	int maxSum = -INT_MIN;
+	int maxSum = INT_MIN;
 	int leftIndex = 0, rightIndex = 0;
-	
+
 	int sum = 0;
 
-	// Caveat 1: We must include last element, as it may be the max subarray, like 1 in {-5, -2, -4, 1}
-	for (int i = 0; i < arr.size()/* - 1*/; i++)
+	for (int i = 0; i < arr.size(); i++)
 	{
-		sum = arr[i];
+		sum = 0;
 
-		// Caveat 2: It's crucial we check here, as arr[i] itself may be max subarray, like 3 in {1, -1, 3, -4}
-		// Caveat 3: The non-strict comparisson "narrows" the max subarray range
-		if (sum >= maxSum)
-		{
-			maxSum = sum;
-
-			leftIndex = i;
-			rightIndex = i;
-		}
-
-		for (int j = i + 1; j < arr.size(); j++)
+		// Caveat 1: It's crucial we start with arr[i], as it itself may be max subarray, like 3 in {1, -1, 3, -4}
+		for (int j = i/* + 1*/; j < arr.size(); j++)
 		{
 			sum = sum + arr[j];
 
+			// Caveat 2: The non-strict comparisson "narrows" the max subarray range
 			if (sum >= maxSum)
 			{
 				maxSum = sum;
@@ -74,7 +65,7 @@ Tuple findMaxCrossingSubarray(Array & arr, int lowIndex, int midIndex, int hiInd
 		}
 	}
 
-	int rightSum = -INT_MIN;
+	int rightSum = INT_MIN;
 	int rightIndex = 0;
 
 	sum = 0;
@@ -90,7 +81,7 @@ Tuple findMaxCrossingSubarray(Array & arr, int lowIndex, int midIndex, int hiInd
 		}
 	}
 
-	return (Tuple){leftIndex, rightIndex, leftSum + rightSum};
+	return {leftIndex, rightIndex, leftSum + rightSum};
 }
 
 Tuple findMaxSubarray(Array & arr, int lowIndex, int hiIndex)
