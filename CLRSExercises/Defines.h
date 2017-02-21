@@ -13,6 +13,8 @@
 #include <vector>
 #include <cstdlib> // For rand, srand
 
+using namespace std::chrono;
+
 using std::cout;
 using std::endl;
 
@@ -41,7 +43,7 @@ void printArray(const Array & array)
 	printf(" (count: %li, %s)\n", array.size(), checkSorted(array)?"sorted":"unsorted");
 }
 
-Array randomArrayWithSize(size_t size)
+Array randomArrayWithSize(size_t size, bool includeNegative = false)
 {
 	Array v;
 
@@ -50,8 +52,8 @@ Array randomArrayWithSize(size_t size)
 //	int min = -100;
 //	int max = 100;
 
-	const int min = 1;
-	const int max = (int)size;
+	const int min = includeNegative ? -(int)size/2 : 1;
+	const int max = includeNegative ? (int)size/2 : (int)size;
 
 	srand( unsigned(time(nullptr)) );
 

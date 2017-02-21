@@ -249,6 +249,7 @@
 		AE7D2C7A1E2ECB6C002CC076 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_OPTIMIZATION_LEVEL = 2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

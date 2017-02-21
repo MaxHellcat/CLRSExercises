@@ -70,17 +70,15 @@ void test_problem_2_1()
 
 //	printArray(arr1);
 
-	using namespace std::chrono;
-
-	const high_resolution_clock::time_point t1 = high_resolution_clock::now();
+	const auto t1 = high_resolution_clock::now();
 
 //	mergeSortWithInsertionSort(arr1, 0, (int)arr1.size() - 1);
 	mergeSort(arr1, 0, (int)arr1.size() - 1);
-	
+
 	const auto t2 = high_resolution_clock::now();
-	
+
 	const auto duration = duration_cast<microseconds>(t2 - t1).count();
-	
+
 	cout << "Duration 1: " << duration << endl;
 	
 
