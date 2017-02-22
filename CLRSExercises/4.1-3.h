@@ -13,6 +13,8 @@
 
 // Implementations of the maximum-subarray problem
 
+// TODO: Note that all implementations below return a single max array, even if there're actually more than one.
+
 // Experimentally found problem size, when divide-and-conquer version starts to beat the brute-force one.
 const int kCrossoverSize = 40;
 
@@ -26,8 +28,7 @@ struct Tuple
 // Time: Ø(n^2)
 Tuple findMaxSubarrayBruteForce(Array & arr, int lowIndex, int hiIndex)
 {
-	int maxSum = INT_MIN;
-	int leftIndex = 0, rightIndex = 0;
+	int leftIndex = 0, rightIndex = 0, maxSum = INT_MIN;
 
 	int sum = 0;
 
@@ -93,7 +94,7 @@ Tuple findMaxCrossingSubarray(Array & arr, int lowIndex, int midIndex, int hiInd
 	return {leftIndex, rightIndex, leftSum + rightSum};
 }
 
-Tuple findMaxSubarray(Array & arr, int lowIndex, int hiIndex, bool useBruteForce)
+Tuple findMaxSubarray(Array & arr, int lowIndex, int hiIndex, bool useBruteForce = false)
 {
 //	cout << "In findMaxSubarray(arr, " << lowIndex << ", " << hiIndex << "\n";
 
