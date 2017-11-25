@@ -50,7 +50,9 @@ void test_4_1_5()
 //	Array arr = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
 //	Array arr = {1, -4, 3, -4};
 
-	Array arr = randomArrayWithSize(1000, true);
+//	Array arr = randomArrayWithSize(1000, true);
+	
+	Array arr = {-1, -4, -3};
 
 	printArray(arr);
 

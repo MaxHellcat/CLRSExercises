@@ -13,38 +13,6 @@
 
 const int nil = 0xDEADBEAF;
 
-// Invariant:
-//	Before each iteration, the subarray A[ i+1 .. A.count ] doesn't contain desired value.
-
-// Initialisation:
-//	The i == A.count, so A[ A.count+1 .. A.count ] doesn't contain anything
-
-// Maintenance:
-//	The loop header checks if A[i] equals val, if not then i is decremented in body, and so
-//	the invariant preserves
-
-// Termination:
-//	At the end the i == 0, so entire array A[ 0+1 .. A.count ] doesn't contain the value
-
-// TODO: Otherwise the value exists??
-
-
-// Another approach
-// Invariant:
-//	Before each loop iteration, if A[i] equals val, the subarray A[ i .. A.count ] contains desired value at i, otherwise it doesn't.
-
-// Initialisation:
-//	The i == A.count, so if A[A.count] == val, then subarray A[ A.count .. A.count ] contains desired value at A.count
-
-// Maintenance:
-//	The i is decremented in the loop body, preserving invariant before the next iteration
-
-// Termination:
-//	If i == 0, then A[0] has no value (out-of-range) and so A[ 0 .. A.count] has no desired value
-//	If i != 0 AND A[i] == val, the subarray A[i] has the desired value at index i
-
-// TODO: Are conditions allowed in invariants? Anyway looking too vague to me..
-
 int linearSearch(Array & arr, int val)
 {
 	int i = (int)arr.size() - 1;
