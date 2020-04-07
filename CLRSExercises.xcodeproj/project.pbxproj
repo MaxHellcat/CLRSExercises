@@ -26,6 +26,48 @@
 		AE05F8031E366726005B06B8 /* 2.3-2_Sentinel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.3-2_Sentinel.h"; sourceTree = "<group>"; };
 		AE05F8181E374CAB005B06B8 /* 2.3-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.3-2.h"; sourceTree = "<group>"; };
 		AE1896D721B5F0DA00CE8A54 /* CutRod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CutRod.h; sourceTree = "<group>"; };
+		AE212796243CB2C400DB03D9 /* 1 Problems.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1 Problems.txt"; sourceTree = "<group>"; };
+		AE212797243CB2C400DB03D9 /* 1.2 Algorithms as a technology.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1.2 Algorithms as a technology.txt"; sourceTree = "<group>"; };
+		AE212799243CB2FC00DB03D9 /* 2.1 Insertion sort.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "2.1 Insertion sort.txt"; sourceTree = "<group>"; };
+		AE21279A243CB2FC00DB03D9 /* 2.2 Analyzing algorithms.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "2.2 Analyzing algorithms.txt"; sourceTree = "<group>"; };
+		AE21279C243CB30F00DB03D9 /* 4.1 The maximum-subarray problem.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "4.1 The maximum-subarray problem.txt"; sourceTree = "<group>"; };
+		AE21279E243CB31700DB03D9 /* 5.1 The hiring problem.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "5.1 The hiring problem.txt"; sourceTree = "<group>"; };
+		AE21279F243CB31700DB03D9 /* 5.2 Indicator random variables.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "5.2 Indicator random variables.txt"; sourceTree = "<group>"; };
+		AE2127A0243CB31700DB03D9 /* 5.3 Randomized algorithms.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "5.3 Randomized algorithms.txt"; sourceTree = "<group>"; };
+		AE2127A2243CB33300DB03D9 /* 7 Problems.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "7 Problems.txt"; sourceTree = "<group>"; };
+		AE2127A3243CB33300DB03D9 /* 7.2 Perfomance of quicksort.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "7.2 Perfomance of quicksort.txt"; sourceTree = "<group>"; };
+		AE2127A4243CB33300DB03D9 /* 7.4 Analysis of quicksort.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "7.4 Analysis of quicksort.txt"; sourceTree = "<group>"; };
+		AE2127A5243CB33300DB03D9 /* 7.1 Description of quicksort.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "7.1 Description of quicksort.txt"; sourceTree = "<group>"; };
+		AE2127A6243CB33300DB03D9 /* 7.3 A randomized version of quicksort.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "7.3 A randomized version of quicksort.txt"; sourceTree = "<group>"; };
+		AE2127A8243CB33C00DB03D9 /* 8.3 Radix sort.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "8.3 Radix sort.txt"; sourceTree = "<group>"; };
+		AE2127A9243CB33C00DB03D9 /* 8.2 Counting sort.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "8.2 Counting sort.txt"; sourceTree = "<group>"; };
+		AE2127AA243CB33C00DB03D9 /* 8.1 Lower bounds for sorting.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "8.1 Lower bounds for sorting.txt"; sourceTree = "<group>"; };
+		AE2127AB243CB33C00DB03D9 /* 8.4 Bucket sort.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "8.4 Bucket sort.txt"; sourceTree = "<group>"; };
+		AE2127AD243CB34300DB03D9 /* 9.1 Minimum and maximum.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "9.1 Minimum and maximum.txt"; sourceTree = "<group>"; };
+		AE2127AF243CB34E00DB03D9 /* 10.1 Stacks and queues.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "10.1 Stacks and queues.txt"; sourceTree = "<group>"; };
+		AE2127B0243CB34E00DB03D9 /* 10.2 Linked lists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "10.2 Linked lists.txt"; sourceTree = "<group>"; };
+		AE2127B1243CB34E00DB03D9 /* 10 Problems.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "10 Problems.txt"; sourceTree = "<group>"; };
+		AE2127B3243CB35500DB03D9 /* 11.3 Hash functions.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "11.3 Hash functions.txt"; sourceTree = "<group>"; };
+		AE2127B4243CB35500DB03D9 /* 11.1 Direct-address tables.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "11.1 Direct-address tables.txt"; sourceTree = "<group>"; };
+		AE2127B5243CB35500DB03D9 /* 11.4 Open addressing.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "11.4 Open addressing.txt"; sourceTree = "<group>"; };
+		AE2127B6243CB35500DB03D9 /* 11.2 Hash tables.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "11.2 Hash tables.txt"; sourceTree = "<group>"; };
+		AE2127B8243CB35A00DB03D9 /* 12 Problems.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "12 Problems.txt"; sourceTree = "<group>"; };
+		AE2127B9243CB35A00DB03D9 /* 12.2 Querying a binary search tree.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "12.2 Querying a binary search tree.txt"; sourceTree = "<group>"; };
+		AE2127BA243CB35A00DB03D9 /* 12.3 Insertion and deletion.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "12.3 Insertion and deletion.txt"; sourceTree = "<group>"; };
+		AE2127BB243CB35A00DB03D9 /* 12.1 What is a binary search tree.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "12.1 What is a binary search tree.txt"; sourceTree = "<group>"; };
+		AE2127BD243CB36500DB03D9 /* 13.1 Properties of red-black trees.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "13.1 Properties of red-black trees.txt"; sourceTree = "<group>"; };
+		AE2127BF243CB37100DB03D9 /* 22.2 Breadth-first search.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "22.2 Breadth-first search.txt"; sourceTree = "<group>"; };
+		AE2127C0243CB37100DB03D9 /* 22.1 Representations of graphs.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "22.1 Representations of graphs.txt"; sourceTree = "<group>"; };
+		AE2127C2243CB53500DB03D9 /* B.5 Trees.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "B.5 Trees.txt"; sourceTree = "<group>"; };
+		AE2127C3243CB53500DB03D9 /* B.2 Relations.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "B.2 Relations.txt"; sourceTree = "<group>"; };
+		AE2127C4243CB53500DB03D9 /* B.1 Sets.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "B.1 Sets.txt"; sourceTree = "<group>"; };
+		AE2127C5243CB53500DB03D9 /* B.4 Graphs.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "B.4 Graphs.txt"; sourceTree = "<group>"; };
+		AE2127C6243CB53500DB03D9 /* B.3 Functions.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "B.3 Functions.txt"; sourceTree = "<group>"; };
+		AE2127C8243CB55500DB03D9 /* C.1 Counting.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "C.1 Counting.txt"; sourceTree = "<group>"; };
+		AE2127C9243CB55500DB03D9 /* C.3 Discrete random variables.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "C.3 Discrete random variables.txt"; sourceTree = "<group>"; };
+		AE2127CA243CB55500DB03D9 /* C Problems.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "C Problems.txt"; sourceTree = "<group>"; };
+		AE2127CB243CB55500DB03D9 /* C.2 Probability.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "C.2 Probability.txt"; sourceTree = "<group>"; };
+		AE2127CC243CB55500DB03D9 /* C.4 The geometric and binomial distribution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "C.4 The geometric and binomial distribution.txt"; sourceTree = "<group>"; };
 		AE22CA5824378521007E3A20 /* 10.2-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "10.2-4.h"; sourceTree = "<group>"; };
 		AE6CE5451E413700008FE82E /* 2.3-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.3-4.h"; sourceTree = "<group>"; };
 		AE7D2C711E2ECB6C002CC076 /* CLRSExercises */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CLRSExercises; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +104,160 @@
 			path = "15 Dynamic Programming";
 			sourceTree = "<group>";
 		};
+		AE212795243CB2C400DB03D9 /* 1 The Role of Algorithms in Computing */ = {
+			isa = PBXGroup;
+			children = (
+				AE212797243CB2C400DB03D9 /* 1.2 Algorithms as a technology.txt */,
+				AE212796243CB2C400DB03D9 /* 1 Problems.txt */,
+			);
+			path = "1 The Role of Algorithms in Computing";
+			sourceTree = "<group>";
+		};
+		AE212798243CB2FC00DB03D9 /* 2 Getting Started */ = {
+			isa = PBXGroup;
+			children = (
+				AE212799243CB2FC00DB03D9 /* 2.1 Insertion sort.txt */,
+				AE7D2C7B1E2ECD9C002CC076 /* 2.1-3.h */,
+				AE7D2C7C1E2ECFA0002CC076 /* 2.1-4.h */,
+				AE21279A243CB2FC00DB03D9 /* 2.2 Analyzing algorithms.txt */,
+				AE7D2C7D1E2ED1A2002CC076 /* 2.2-2.h */,
+				AE05F8181E374CAB005B06B8 /* 2.3-2.h */,
+				AE05F8031E366726005B06B8 /* 2.3-2_Sentinel.h */,
+				AE6CE5451E413700008FE82E /* 2.3-4.h */,
+				AE9C18531E419D330098301B /* 2.3-5.h */,
+				AE9C18541E42809C0098301B /* Problem_2-1.h */,
+				AEFA9CA41E43BBAA00B9FD7B /* Problem_2-2.h */,
+				AEFA9CA51E445F9F00B9FD7B /* Problem_2-3.h */,
+				AEE97B721E45DA2C005FD161 /* Problem_2-4.h */,
+			);
+			path = "2 Getting Started";
+			sourceTree = "<group>";
+		};
+		AE21279B243CB30F00DB03D9 /* 4 Divide-and-Conquer */ = {
+			isa = PBXGroup;
+			children = (
+				AE21279C243CB30F00DB03D9 /* 4.1 The maximum-subarray problem.txt */,
+				AE9F995B1E571F13002F0E85 /* 4.1-3.h */,
+				AE99603E1E5CD37700D7BA28 /* 4.1-5.h */,
+			);
+			path = "4 Divide-and-Conquer";
+			sourceTree = "<group>";
+		};
+		AE21279D243CB31700DB03D9 /* 5 Probabilistic Analysis and Randomized Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				AE21279E243CB31700DB03D9 /* 5.1 The hiring problem.txt */,
+				AE21279F243CB31700DB03D9 /* 5.2 Indicator random variables.txt */,
+				AE2127A0243CB31700DB03D9 /* 5.3 Randomized algorithms.txt */,
+			);
+			path = "5 Probabilistic Analysis and Randomized Algorithms";
+			sourceTree = "<group>";
+		};
+		AE2127A1243CB33300DB03D9 /* 7 Quicksort */ = {
+			isa = PBXGroup;
+			children = (
+				AE2127A5243CB33300DB03D9 /* 7.1 Description of quicksort.txt */,
+				AE2127A3243CB33300DB03D9 /* 7.2 Perfomance of quicksort.txt */,
+				AE2127A6243CB33300DB03D9 /* 7.3 A randomized version of quicksort.txt */,
+				AE2127A4243CB33300DB03D9 /* 7.4 Analysis of quicksort.txt */,
+				AE2127A2243CB33300DB03D9 /* 7 Problems.txt */,
+			);
+			path = "7 Quicksort";
+			sourceTree = "<group>";
+		};
+		AE2127A7243CB33C00DB03D9 /* 8 Sorting in Linear Time */ = {
+			isa = PBXGroup;
+			children = (
+				AE2127AA243CB33C00DB03D9 /* 8.1 Lower bounds for sorting.txt */,
+				AE2127A9243CB33C00DB03D9 /* 8.2 Counting sort.txt */,
+				AE2127A8243CB33C00DB03D9 /* 8.3 Radix sort.txt */,
+				AE2127AB243CB33C00DB03D9 /* 8.4 Bucket sort.txt */,
+			);
+			path = "8 Sorting in Linear Time";
+			sourceTree = "<group>";
+		};
+		AE2127AC243CB34300DB03D9 /* 9 Medians and Order Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				AE2127AD243CB34300DB03D9 /* 9.1 Minimum and maximum.txt */,
+			);
+			path = "9 Medians and Order Statistics";
+			sourceTree = "<group>";
+		};
+		AE2127AE243CB34E00DB03D9 /* 10 Elementary Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				AE2127AF243CB34E00DB03D9 /* 10.1 Stacks and queues.txt */,
+				AE2127B0243CB34E00DB03D9 /* 10.2 Linked lists.txt */,
+				AE22CA5824378521007E3A20 /* 10.2-4.h */,
+				AE2127B1243CB34E00DB03D9 /* 10 Problems.txt */,
+			);
+			path = "10 Elementary Data Structures";
+			sourceTree = "<group>";
+		};
+		AE2127B2243CB35500DB03D9 /* 11 Hash Tables */ = {
+			isa = PBXGroup;
+			children = (
+				AE2127B4243CB35500DB03D9 /* 11.1 Direct-address tables.txt */,
+				AE2127B6243CB35500DB03D9 /* 11.2 Hash tables.txt */,
+				AE2127B3243CB35500DB03D9 /* 11.3 Hash functions.txt */,
+				AE2127B5243CB35500DB03D9 /* 11.4 Open addressing.txt */,
+			);
+			path = "11 Hash Tables";
+			sourceTree = "<group>";
+		};
+		AE2127B7243CB35A00DB03D9 /* 12 Binary Search Trees */ = {
+			isa = PBXGroup;
+			children = (
+				AE2127BB243CB35A00DB03D9 /* 12.1 What is a binary search tree.txt */,
+				AE2127B9243CB35A00DB03D9 /* 12.2 Querying a binary search tree.txt */,
+				AE2127BA243CB35A00DB03D9 /* 12.3 Insertion and deletion.txt */,
+				AE2127B8243CB35A00DB03D9 /* 12 Problems.txt */,
+			);
+			path = "12 Binary Search Trees";
+			sourceTree = "<group>";
+		};
+		AE2127BC243CB36500DB03D9 /* 13 Red-Black Trees */ = {
+			isa = PBXGroup;
+			children = (
+				AE2127BD243CB36500DB03D9 /* 13.1 Properties of red-black trees.txt */,
+			);
+			path = "13 Red-Black Trees";
+			sourceTree = "<group>";
+		};
+		AE2127BE243CB37100DB03D9 /* 22 Elementary Graph Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				AE2127C0243CB37100DB03D9 /* 22.1 Representations of graphs.txt */,
+				AE2127BF243CB37100DB03D9 /* 22.2 Breadth-first search.txt */,
+			);
+			path = "22 Elementary Graph Algorithms";
+			sourceTree = "<group>";
+		};
+		AE2127C1243CB53500DB03D9 /* B Sets, Etc. */ = {
+			isa = PBXGroup;
+			children = (
+				AE2127C4243CB53500DB03D9 /* B.1 Sets.txt */,
+				AE2127C3243CB53500DB03D9 /* B.2 Relations.txt */,
+				AE2127C6243CB53500DB03D9 /* B.3 Functions.txt */,
+				AE2127C5243CB53500DB03D9 /* B.4 Graphs.txt */,
+				AE2127C2243CB53500DB03D9 /* B.5 Trees.txt */,
+			);
+			path = "B Sets, Etc.";
+			sourceTree = "<group>";
+		};
+		AE2127C7243CB55500DB03D9 /* C Counting and Probability */ = {
+			isa = PBXGroup;
+			children = (
+				AE2127C8243CB55500DB03D9 /* C.1 Counting.txt */,
+				AE2127CB243CB55500DB03D9 /* C.2 Probability.txt */,
+				AE2127C9243CB55500DB03D9 /* C.3 Discrete random variables.txt */,
+				AE2127CC243CB55500DB03D9 /* C.4 The geometric and binomial distribution.txt */,
+				AE2127CA243CB55500DB03D9 /* C Problems.txt */,
+			);
+			path = "C Counting and Probability";
+			sourceTree = "<group>";
+		};
 		AE7D2C681E2ECB6C002CC076 = {
 			isa = PBXGroup;
 			children = (
@@ -81,22 +277,22 @@
 		AE7D2C731E2ECB6C002CC076 /* CLRSExercises */ = {
 			isa = PBXGroup;
 			children = (
-				AE7D2C7E1E2ED32F002CC076 /* Defines.h */,
-				AE7D2C7B1E2ECD9C002CC076 /* 2.1-3.h */,
-				AE7D2C7C1E2ECFA0002CC076 /* 2.1-4.h */,
-				AE7D2C7D1E2ED1A2002CC076 /* 2.2-2.h */,
+				AE212795243CB2C400DB03D9 /* 1 The Role of Algorithms in Computing */,
+				AE212798243CB2FC00DB03D9 /* 2 Getting Started */,
+				AE21279B243CB30F00DB03D9 /* 4 Divide-and-Conquer */,
+				AE21279D243CB31700DB03D9 /* 5 Probabilistic Analysis and Randomized Algorithms */,
+				AE2127A1243CB33300DB03D9 /* 7 Quicksort */,
+				AE2127A7243CB33C00DB03D9 /* 8 Sorting in Linear Time */,
+				AE2127AC243CB34300DB03D9 /* 9 Medians and Order Statistics */,
+				AE2127AE243CB34E00DB03D9 /* 10 Elementary Data Structures */,
+				AE2127B2243CB35500DB03D9 /* 11 Hash Tables */,
+				AE2127B7243CB35A00DB03D9 /* 12 Binary Search Trees */,
+				AE2127BC243CB36500DB03D9 /* 13 Red-Black Trees */,
 				AE1896D821B5F18300CE8A54 /* 15 Dynamic Programming */,
-				AE05F8181E374CAB005B06B8 /* 2.3-2.h */,
-				AE05F8031E366726005B06B8 /* 2.3-2_Sentinel.h */,
-				AE6CE5451E413700008FE82E /* 2.3-4.h */,
-				AE9C18531E419D330098301B /* 2.3-5.h */,
-				AE9F995B1E571F13002F0E85 /* 4.1-3.h */,
-				AE99603E1E5CD37700D7BA28 /* 4.1-5.h */,
-				AE22CA5824378521007E3A20 /* 10.2-4.h */,
-				AE9C18541E42809C0098301B /* Problem_2-1.h */,
-				AEFA9CA41E43BBAA00B9FD7B /* Problem_2-2.h */,
-				AEFA9CA51E445F9F00B9FD7B /* Problem_2-3.h */,
-				AEE97B721E45DA2C005FD161 /* Problem_2-4.h */,
+				AE2127BE243CB37100DB03D9 /* 22 Elementary Graph Algorithms */,
+				AE2127C1243CB53500DB03D9 /* B Sets, Etc. */,
+				AE2127C7243CB55500DB03D9 /* C Counting and Probability */,
+				AE7D2C7E1E2ED32F002CC076 /* Defines.h */,
 				AE7D2C741E2ECB6C002CC076 /* main.cpp */,
 			);
 			path = CLRSExercises;

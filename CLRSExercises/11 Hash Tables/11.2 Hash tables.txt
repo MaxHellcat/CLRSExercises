@@ -1,0 +1,135 @@
+11.2-1
+
+Suppose we use a hash function h to hash n distinct keys into an array T oflength m. Assuming simple uniform hashing, what is the expected number ofcollisions? More precisely, what is the expected cardinality of
+{{k, l} : k != l and h(k) == h(l)}?
+
+Solution:
+
+Assuming k, l are two distinct keys, let Xkl be an indicator random variable
+such that Xkl = I{h(k) == h(l)}. 
+Since we’re given simple uniform hashing, Pr{h(k) == h(l)} = 1/m, and E[Xkl] = 1/m.
+
+Now let X be a random variable denoting total number of collisions, then:
+X = (k != l)SUM(Xkl)
+
+And the expected number of collisions is:
+E[X] = E[(k != l)SUM(Xkl)] = (k != l)SUM(E[Xkl]) = (k != l)SUM(1/m) =
+C(n, 2)*1/m = n!/(2!*(n-2)!)*1/m = n(n-1)/(2m)
+
+
+Old proof - Turned out to be INCORRECT
+
+Simple proof:
+With simple uniform hashing, length of list T[j] is expected
+to be n/m, and therefore expected number of collisions for a slot j is n/m - 1.
+Since there’s m slots, we have:
+N = (j=1..m)SUM(n/m - 1) = m(n/m-1) = n - m.
+
+Or more rigorously:
+Let Xij be an indicator random variable indicating that element i goes into slot j, 
+and let Xj be a random variable denoting number of collisions in slot j, then:
+
+Xj = (i=1..n)SUM(Xij) - 1
+
+E[Xj] = E[(i=1..n)SUM(Xij) - 1] = (i=1..n)SUM(E[Xij]) - 1 =
+(i=1..n)SUM(1/m) - 1 = n/m - 1
+
+Since the expected number of collisions for a slot is n/m - 1, for m slots we have
+m(n/m - 1) = n - m — expected number of collisions.
+
+Main question - What if m > n ?
+
+
+11.2-2
+
+Demonstrate what happens when we insert the keys 5; 28; 19; 15; 20; 33; 12; 17; 10into a hash table with collisions resolved by chaining. Let the table have 9 slots,and let the hash function be h(k) = k mod 9.
+
+Solution:
+
+n = 9, m = 9
+
+5, 28, 19, 15, 20, 33, 12, 17, 10
+
+T
+0: /
+1: 28, 19, 10
+2: 20
+3: 12
+4: /
+5: 5
+6: 15, 33
+7: /
+8: 17
+
+Just curious:
+
+X - number of collisions
+E[X] = n(n-1)/2/m = 72/18 = 4
+E[X] = n - m = 0
+
+
+11.2-3
+
+Professor Marley hypothesizes that he can obtain substantial performance gains bymodifying the chaining scheme to keep each list in sorted order. How does the pro-
+fessor’s modification affect the running time for successful searches, unsuccessfulsearches, insertions, and deletions?
+
+Solution:
+
+a) Unsuccessful search
+Despite each slot’s list is sorted, we can’t use the binary search, since it uses the
+direct indexing. Therefore, we still need to traverse entire list for unsuccessful
+search, resulting in the Ø(1 + n/m) worst-case running time.
+
+b) Successful search
+As stated in Theorem 11.2, and applies here, the running time for successful search
+is also Ø(1 + n/m).
+
+c) Insertion
+To keep the sorted order we need to traverse entire list in the worst case, therefore
+T(n) = Ø(1 + n/m).
+
+d) Deletion
+Removal of the element in the sorted list doesn’t required to rearrange the order, and
+so the running time remains the same Ø(1).
+
+Thus, keeping each list in sorted order slows down the work with a hash table.
+
+
+11.2-4
+
+Suggest how to allocate and deallocate storage for elements within the hash tableitself by linking all unused slots into a free list. Assume that one slot can storea flag and either one element plus a pointer or two pointers. All dictionary andfree-list operations should run in O(1) expected time. Does the free list need to bedoubly linked, or does a singly linked free list suffice?
+
+Solution:
+
+Started on paper.
+Stuck when inserting into non-empty T[j] (which happened to be L.head), as L.head.p was pointing to the T[j]’s head, not the next free T[k].
+
+
+11.2-5
+
+Suppose that we are storing a set of n keys into a hash table of size m. Show that ifthe keys are drawn from a universe U with |U| > nm, then U has a subset of size nconsisting of keys that all hash to the same slot, so that the worst-case searchingtime for hashing with chaining is Ø(n).
+
+Solution:
+
+Intuitively, assuming ideal situation when each of m keys hashes into a distinct slot,
+for any of the first m keys we can pick a key from the second m keys, for which the given key has the same hash value. 
+Therefore for n groups of m keys we can pick n keys that collide.
+
+My concern here is that the solution works for a softer condition |U| >= nm.
+
+
+11.2-6
+
+Suppose we have stored n keys in a hash table of size m, with collisions resolved bychaining, and that we know the length of each chain, including the length L of thelongest chain. Describe a procedure that selects a key uniformly at random fromamong the keys in the hash table and returns it in expected time O(L*(1+1/a)).
+
+Solution:
+
+a = n/m - average length of a chain
+L = MAX(a)
+
+0 <= a <= L
+
+(i=1..L)SUM()
+
+Stuck for now.
+

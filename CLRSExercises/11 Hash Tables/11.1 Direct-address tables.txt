@@ -1,0 +1,64 @@
+11.1-1
+
+Suppose that a dynamic set S is represented by a direct-address table T of length m.Describe a procedure that finds the maximum element of S. What is the worst-caseperformance of your procedure?
+
+Solution:
+
+Since some slots my be empty, and we don’t know which ones, we can’t just index
+the last element T[m-1] and say it’s the max element. Instead, we have to traverse
+entire table T in the worst-case to find the max element.
+Hence the worst-case running time of the procedure is Ø(m).
+
+
+11.1-2
+
+A bit vector is simply an array of bits (0s and 1s). A bit vector of length m takesmuch less space than an array of m pointers. Describe how to use a bit vectorto represent a dynamic set of distinct elements with no satellite data. Dictionaryoperations should run in O(1) time.
+
+Solution:
+
+Let V be a bit vector of length m.
+
+Insert(V, k)
+ V[k] = 1
+
+Delete(V, k)
+ V[k] = 0
+
+Search(V, k)
+ return V[k]
+
+
+11.1-3
+
+Suggest how to implement a direct-address table in which the keys of stored elementsdo not need to be distinct and the elements can have satellite data. Allthree dictionary operations (INSERT, DELETE, and SEARCH) should run in O(1)time. (Don’t forget that DELETE takes as an argument a pointer to an object to bedeleted, not a key.)
+
+Solution:
+
+We use an array for a relatively small range of keys, where each slot contains 
+a pointer to a doubly linked list of elements. All elements of a separate list have
+the same key.
+
+Let T be a direct address table, T[k] be a doubly linked list of objects x for
+a slot k.
+For simplicity, we assume that all the slots initially point to empty lists.
+
+// Here we simply return the 1st of the elements with identical keys.
+// Time is O(1), which is obvious.
+Search(T, k)
+ return T[k].head
+
+// Time is O(1), as we simply update a head of the appropriate list.
+Insert(T, x)
+ Insert(T[x.key], x)
+
+// Time is O(1), as here we simply remove an element from a doubly linked list.
+Delete(T, x)
+ Delete(T[x.key], x)
+
+
+11.1-4 *
+
+We wish to implement a dictionary by using direct addressing on a huge array. Atthe start, the array entries may contain garbage, and initializing the entire arrayis impractical because of its size. Describe a scheme for implementing a direct-
+address dictionary on a huge array. Each stored object should use O(1) space;the operations SEARCH, INSERT, and DELETE should take O(1) time each; andinitializing the data structure should take O(1) time. (Hint: Use an additional array,treated somewhat like a stack whose size is the number of keys actually stored inthe dictionary, to help determine whether a given entry in the huge array is valid ornot.)
+
+Skipped.

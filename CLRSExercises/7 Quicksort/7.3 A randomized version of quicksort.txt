@@ -1,0 +1,24 @@
+7.3-1
+
+Why do we analyze the expected running time of a randomized algorithm and not
+its worst-case running time?
+
+Solution:
+
+Because the worst-case is highly unlikely to happen in each call of partition when we randomly chose a pivot,
+
+
+7.3-2
+
+When RANDOMIZED-QUICKSORT runs, how many calls are made to the random number
+generator RANDOM in the worst case? How about in the best case? Give
+your answer in terms of Ø-notation.
+
+Solution:
+
+I assume the worst-case for RandomizedQuicksort takes place when Random happens to always return either the largest or smallest element in the array A[p, r], resulting in 0 and n-1 split. 
+In which case it will be called n-1 or Ø(n) times.
+
+The best-case happens when partitions are balanced and thus Random will be called in each node of the
+recursion tree - also Ø(n) times
+

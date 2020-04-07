@@ -1,0 +1,71 @@
+B.5-1
+
+Draw all the free trees composed of the three vertices x, y, and z. Draw all therooted trees with nodes x, y, and z with x as the root. Draw all the ordered treeswith nodes x, y, and z with x as the root. Draw all the binary trees with nodes x,y, and z with x as the root.
+
+Solution:
+
+Drawn in my blue workbook.
+
+
+B.5-2
+
+Let G = (V, E) be a directed acyclic graph in which there is a vertex v0 = Vsuch that there exists a unique path from v0 to every vertex v = V . Prove that theundirected version of G forms a tree.
+
+Solution:
+
+The graph is a (free) tree if it's undirected, acyclic, and connected.
+
+Graph G is acyclic by definition.
+Let vi != v0, vj != v0 be any two vertices of G, let pi be a unique path (v0, ..., vi) and pj be a unique path (v0, ..., vj). We can always reach vj from vi by concatenating pi + pj and reversing pi, effectively making the graph connected. Since reversing is assumed by the undirected version of the graph G, we've proved that the undirected G is a free tree.
+
+
+B.5-3
+
+Show by induction that the number of degree-2 nodes in any nonempty binary treeis 1 fewer than the number of leaves. Conclude that the number of internal nodesin a full binary tree is 1 fewer than the number of leaves.
+
+Solution:
+
+We can view each node as a counter that adds +1 to the current number of leafs, for each of its existing child. If the node's parent exists (i.e. it's not root), we in addition decrement 1 as it subsumes one 1's added by the parent node. 
+That is, each 2-degree node adds -1+1+1 = 1 to the number of leafs, and each 1-degree adds -1+1 = 0 towards that number.
+
+Base case:
+A binary tree consisting of just one root node adds +1 to the number of leafs, and
+N2d = Nl - 1 => 0 = 1 - 1 = 0 - true.
+
+Inductive step:
+Assuming that N2d = Nl - 1, let's consider 2 cases: a) We add a 1-degree node i to the tree, and b) We add a 2-degree node i.
+
+a) Adding a 1-degree node decrements one and adds one to the current number of leafs Nl, thus not affecting current number of leafs, or:
+N2d + 0 = (Nl + 1 - 1) - 1 = Nl - 1 - holds
+
+b) Adding a 2-degree node subtracts 1 and adds 2, resulting in incrementing by one the current number of leafs, or:
+N2d + 1 = (Nl + 2 - 1) - 1 => N2d + 1 = Nl => N2d = Nl - 1 - holds.
+
+Thus proving the hypothesis.
+
+Now, in a full binary tree any internal (non-leaf) node is a 2-degree node, and leaf is a 0-degree node. There's no 1-degree nodes.
+Consequently, according to the proof above, number of all nodes (except leafs) is the number of leafs - 1.
+
+
+B.5-4
+
+Use induction to show that a nonempty binary tree with n nodes has height atleast floor(lgn).
+
+Solution:
+
+Let's consider a complete binary tree, as it has the lowest possible height of any binary tree, which is Ø(lgn).
+
+Base case:
+For n = 1, h = floor(lg1) = 0 - true
+
+Inductive step:
+
+Number of leaves in a complete binary tree of height h is Nl = 2^h, and the number of internal nodes is Ni = 2^h - 1, totalling in n = 2^h + 2^h - 1.
+In other words height of a complete binary tree with Nl leaves is lgNl, or floor(lgn), since Ni = 2^h - 1 doesn't change the value of Nl = 2^h by the power of two.
+
+Assuming h = lgNl, we must show that a tree of height h + 1 = lg(2Nl), as the next level will contain twice as more leaves.
+Indeed, h + 1 = lg(Nl) + lg2 = lgNl + 1, and the equality holds.
+
+That is we prove that height of a complete binary tree is lgNl or floor(lgn). 
+
+Now, since we're given *any* nonempty binary tree, we can conclude that its height h = Ω(floor(lgn)), as the tree may be fairly unbalanced reaching O(n).

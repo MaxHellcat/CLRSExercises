@@ -1,0 +1,60 @@
+13.1-1
+
+In the style of Figure 13.1(a), draw the complete binary search tree of height 3 onthe keys {1, 2, ..., 15}. Add the NIL leaves and color the nodes in three differentways such that the black-heights of the resulting red-black trees are 2, 3, and 4.
+
+Solution:
+
+Drawn in the Blue Workbook.
+
+
+13.1-2
+
+Draw the red-black tree that results after TREE-INSERT is called on the tree inFigure 13.1 with key 36. If the inserted node is colored red, is the resulting tree ared-black tree? What if it is colored black?
+
+Solution:
+
+Drawn in the Blue Workbook.
+
+
+13.1-3
+
+Let us define a relaxed red-black tree as a binary search tree that satisfies red-blackproperties 1, 3, 4, and 5. In other words, the root may be either red or black.Consider a relaxed red-black tree T whose root is red. If we color the root of Tblack but make no other changes to T, is the resulting tree a red-black tree?
+
+Solution:
+
+Number of black nodes on any simple path from the root to leafs will remain unchanged as we don't count the root, therefore the resulting tree is a red-black tree.
+
+
+13.1-4
+
+Suppose that we “absorb” every red node in a red-black tree into its black parent,so that the children of the red node become children of the black parent. (Ignorewhat happens to the keys.) What are the possible degrees of a black node after all
+its red children are absorbed? What can you say about the depths of the leaves ofthe resulting tree?
+
+Solution:
+
+a) The degrees of a black node can be 0, 1, 2, 3, 4. For example 0 when the black node has no any children (or only one or only two red children), 1 when it e.g. has only one red and a black child, etc.
+
+b) By the property 4, there may be Ω(h/2) of black nodes on any simple path from the root to a leaf, or O(h/2) of red nodes. Therefore, if we absorb all the red nodes the depths of the leaves may be halved.
+
+
+13.1-5
+
+Show that the longest simple path from a node x in a red-black tree to a descendantleaf has length at most twice that of the shortest simple path from node x to adescendant leaf.
+
+
+Solution:
+
+By property 4, in a red-black tree at least half the nodes on any simple path from a node x to a leaf, not including the node, must be black. 
+Therefore number of nodes on any simple path from the node x to a leaf is at least h(nodex)/2 and at most h(nodex).
+
+
+13.1-6
+
+What is the largest possible number of internal nodes in a red-black tree with black-height k? What is the smallest possible number?
+
+Solution:
+
+Number of black nodes on any simple path is at least h/2 and at most h (h/2 <= k <= h), thus:
+
+(2^k - 1 = 2^(h/2) - 1) <= Ni <= (2^k - 1 = 2^h - 1)
+

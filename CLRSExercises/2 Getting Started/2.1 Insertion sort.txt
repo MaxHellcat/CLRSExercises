@@ -1,0 +1,67 @@
+2.1-1
+
+Using Figure 2.2 as a model, illustrate the operation of INSERTION-SORT on thearray A = <h31, 41, 59, 26, 41, 58>.
+
+Solution:
+
+Drawn in my blue workbook.
+
+
+2.1-2
+
+Solution:
+
+Rewrite the INSERTION-SORT procedure to sort into nonincreasing instead of nondecreasingorder.
+
+Solution:
+
+In line 5 (while header) check that the key is greater than A[i].In other words, keep finding new key position by shifting elements to the right, until there're no elements in A[1..j-1] that are less than the key.
+
+
+2.1-3
+
+Consider the searching problem:Input: A sequence of n numbers A = <a1, a2, ...,  an> and a value v.Output: An index i such that v = A[i] or the special value NIL if # does notappear in A.
+
+Write pseudocode for linear search, which scans through the sequence, lookingfor v. Using a loop invariant, prove that your algorithm is correct. Make sure thatyour loop invariant fulfills the three necessary properties.
+
+Solution:
+
+LinearSearch(A, v)
+	let i = A.count
+
+	while (i >=1 && A[i] != v)
+		i = i - 1
+
+	if i == 0
+		return NIL
+	else
+		return i
+
+Invariant:
+Before each iteration, the subarray A[i+1 .. A.count] doesn't contain desired value.
+
+Initialisation:
+The i == A.count, so A[ A.count+1 .. A.count ] doesn't contain anything.
+
+Maintenance:
+The loop header checks whether i is in the range and A[i] doesn't equal v. If we're in the range and A[i] != v then i is decremented in body, thus reestablishing the invariant.
+
+Termination:
+Prior to termination, either i is out of range, or A[i] == v. If i == 0, then entire array A[0+1 .. A.count] doesn't contain the value, otherwise we have found value v.
+
+
+2.1-4
+
+Consider the problem of adding two n-bit binary integers, stored in two n-elementarrays A and B. The sum of the two integers should be stored in binary form in an (n + 1)-element array C. State the problem formally and write pseudocode foradding the two integers.
+
+Solution:
+
+Formal problem statement:
+
+Input: Two bit arrays A[n] and B[n] representing two n-bit integers.
+Output: A bit array C[n+1], containing sum of A and B, stored in binary form.
+
+Invariant:
+Before each iteration, array C[i+1..C.count] contains sum of A[i .. A.count] and B[i .. B.count].
+
+There's an implementation in CLRSExercise, instead of pseudocode here. Though I think it's not as efficient.

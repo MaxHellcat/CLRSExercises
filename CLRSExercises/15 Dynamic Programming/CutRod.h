@@ -15,6 +15,7 @@
 
 using namespace std;
 
+namespace CutRod {
 
 int cutRodAux(const vector<int> &prices, int rodLength, map<int, int> &mem);
 
@@ -76,19 +77,17 @@ int cutRodIter(const vector<int> &prices, int rodLength) {
 	return mem[rodLength];
 }
 
-namespace CutRod {
+void test() {
 
-	void test() {
+    const int length = 4;
+    vector<int> prices = {1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
 
-		const int length = 4;
-		vector<int> prices = {1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
+    const auto val1 = cutRodMemoize(prices, length);
+    cout << "See max revenue memoize: " << val1 << endl;
 
-		const auto val1 = cutRodMemoize(prices, length);
-		cout << "See max revenue memoize: " << val1 << endl;
-
-		const auto val2 = cutRodIter(prices, length);
-		cout << "See max revenue iter: " << val2 << endl;
-	}
+    const auto val2 = cutRodIter(prices, length);
+    cout << "See max revenue iter: " << val2 << endl;
+}
 }
 
 #endif /* CutRod_h */

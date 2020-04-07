@@ -6,10 +6,12 @@
 //  Copyright © 2017 Max Reshetey. All rights reserved.
 //
 
-#ifndef __3_4_h
-#define __3_4_h
+#ifndef _2_3_4_h
+#define _2_3_4_h
 
 #include "Defines.h"
+
+namespace Ex_2_3_4 {
 
 void insertionSortRecursive(Array & arr, int endIndex)
 {
@@ -36,7 +38,7 @@ void insertionSortRecursive(Array & arr, int endIndex)
 	arr[i + 1] = key;
 }
 
-void test_2_3_4()
+void test()
 {
 	Array A = {5, 2, 4, 7, 1, 3, 2, 6};
 //	Array A = randomArrayWithSize(100);
@@ -47,5 +49,6 @@ void test_2_3_4()
 
 	printArray(A);
 }
+}
 
-#endif /* __3_4_h */
+#endif /* _2_3_4_h */

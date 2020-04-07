@@ -1,0 +1,66 @@
+7-1 Hoare partition correctness
+
+The version of Partition given in this chapter is not the original partitioning algorithm. Here’s the original partition algorithm by C.A.R. Hoare:
+…
+
+a. Demonstrate the operation of Hoare-Partition on the array A = {13, 19, 9, 5, 12, 8, 7, 4, 11, 2, 6, 21}, showing the values of the array and
+auxiliary values after each iteration of the while loop in lines 4 - 13.
+
+Solution:
+
+x = 13
+
+A = {13, 19, 9, 5, 12, 8, 7, 4, 11, 2, 6, 21}
+i = nan, j = nan
+
+1.
+j = r - 1
+i = p
+A = {6, 19, 9, 5, 12, 8, 7, 4, 11, 2, 13, 21}
+
+2.
+j = r - 2
+i = p + 1
+A = {6, 2, 9, 5, 12, 8, 7, 4, 11, 19, 13, 21}
+
+3.
+j = r - 3
+i = r - 2
+A = {6, 2, 9, 5, 12, 8, 7, 4, 11, 19, 13, 21}
+return j = r - 3 ???
+
+The next three questions ask you to give a careful argument that the procedure  Hoare-Partition is correct. Assuming  that
+the subarray A[p..r] contains at least two elements, prove the following:
+
+b. The indices i and j are such that we never access an element of A outside the subarray A[p..r].
+
+Index j:
+On the first run of related repeat loop, index j can be decremented down to at least p, as the loop has
+stop condition A[j] ≤ x, where x = A[p]. Further runs of the loop are never gonna happen, as incremented in its loop i
+becomes at least p, and, since now i ≥ j, procedure quits.
+
+Index i:
+On the first run, i is only incremented once, since stop condition of its repeat loop A[p] ≥ (x = A[p]) is satisfied. If, by that time j has
+decremented to p, then procedure terminates. Otherwise, j indexes some value A[j] ≤ x and A[i] and A[j] swapped. Once they swapped,
+we know for sure that A[j] now contains value that is ≥ x. On the next iteration of outer while loop, index i will be incremented at most up to 
+that value that is ≥ x, and since j has just decremented at least once, we have that i > j and so procedure quits.
+
+c. When Hoare-Partition terminates, it returns a value j such that p ≤ j < r.
+
+Condition p ≤ j ≤ r proved by the previous exercise b. Now, let’s show that j < r upon termination.
+The repeat loop is a post condition loop, hence two iterations of outer while loop would cause at least two iterations of repeat loop.
+On the first iteration of while loop, index j is always decremented being at least r, and index i is only incremented being p.
+Now, if i < j (which is true if b is at least r), the 2nd iterations of while loop takes place, and j is decremented once more, being at least r - 1.
+Otherwise if i ≥ j, then procedure quits, but by this time j would be decremented at least two times, making j < r condition to hold.
+
+d. Every element of A[p .. j] is less than or equal to every element of A[j+1 .. r] when Hoare-Partition terminates.
+
+Body of the outer loop works by placing elements ≤ x to the left half p..j and elements ≥ x to the right half j+1..r. 
+Upon termination, i.e. i ≥ j, index j will stop on the first element that ≤ x, index i in turn will reach or overstep j, stopping on the first
+element ≥ x, which means no more elements > x in p..j and no more elements < x in j+1..r, or A[p..j] ≤ x ≤ A[j+1..r], which implies 
+A[p..j] ≤ A[j+1..r].
+
+e. The hoarePartition is added into Algorithms project.
+
+7-2 Quicksort with equal element values
+Skipped

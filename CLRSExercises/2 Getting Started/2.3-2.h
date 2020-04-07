@@ -6,10 +6,12 @@
 //  Copyright © 2017 Max Reshetey. All rights reserved.
 //
 
-#ifndef __3_2_h
-#define __3_2_h
+#ifndef _2_3_2_h
+#define _2_3_2_h
 
 #include "Defines.h"
+
+namespace Ex_2_3_2 {
 
 void merge(Array & A, int p, int q, int r)
 {
@@ -92,7 +94,7 @@ void mergeSort(Array & A, int p, int r)
 	}
 }
 
-void test_2_3_2()
+void test()
 {
 	Array arr = {5, 2, 4, 7, 1, 3, 2, 6};
 //	Array arr = randomArrayWithSize(100);
@@ -103,5 +105,6 @@ void test_2_3_2()
 
 	printArray(arr);
 }
+}
 
-#endif /* __3_2_h */
+#endif /* _2_3_2_h */

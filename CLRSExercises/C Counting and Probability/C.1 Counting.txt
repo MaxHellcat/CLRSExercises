@@ -1,0 +1,157 @@
+C.1-1
+
+Explanations on paper.
+
+There are n - k + 1 k-substrings, and (k=1..n)∑(n - k + 1) = n(n+1)/2 total substrings.
+
+
+C.1-2
+
+Note: The answer is based on this pretty clear explanation:
+https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Comb/bool.html
+
+A boolean function is just a function that transforms an n-bit input string into an m-bit string, by performing some operations on input.
+
+Let's draw a truth table for any of 2-input, 
+3-output boolean functions (n = 2, m = 3):
+x1, x2 | y1, y2, y3
+------------------
+0, 0 | ? ? ?
+0, 1 | ? ? ?
+1, 0 | ? ? ?
+1, 1 | ? ? ?
+
+There are 2^n rows and m columns for the output values, resulting in m•2^n of them.
+Each ? might get any value from the set {0, 1}, thus there are 2^(m•2^n) of total outputs, which constitutes the number of all n-input, m-output boolean functions.
+For m = 1, we have 2^2^n of n-input, 1-output boolean functions.
+
+
+C.1-3
+
+Note, the 2nd sentence says that we should be interested in seatings, where only relative order of professors differs.
+
+Therefore we want all possible ordered sequences of elements of a set, where each element occurs exactly once, in other words - all n-permutations of n-set.
+
+Thus there are n! variants of seatings.
+
+TODO: Wikipedia says: The number of circular permutations of a set S with n elements is (n - 1)!.
+Yes, because each of n! permutations has n rotations that preserve the relative order, so there are n(n-1)! / n = (n-1)!
+
+
+C.1-4
+
+Let n be size of the set, then
+floor(n/2) - number of even numbers
+ceil(n/2) - number of odd numbers
+
+Since the desired sum is the same for different orders, we need to find the total number N of 3-combinations, such that x1 + x2 + x3 is even.
+
+Combinations satisfying the even sum:
+a) x1, x2 odd, x3 even
+b) x1, x3 odd, x2 even
+c) x2, x3 odd, x1 even
+(any 2 numbers are odd and 1 is even)
+d) x1, x2, x3 even
+(all 3 are even)
+
+Our goal therefore is to find 2-combinations of odd numbers combined with 1-combinations of even numbers (a, b, c), plus the number of 3-combinations of even numbers (d), or:
+
+N = C(ceil(n/2), 2) • C(floor(n/2), 1) + C(floor(n/2), 3)
+
+Substituting n for 99, we get:
+N = C(50, 2) • C(49, 1) + C(49, 3) = 
+50! / (2!•48!) • 49! / 48! + 49! / (3!•46!) =
+25•49•49 + 49•8•47 = 49(25•49 + 47•8) = 78449
+
+The test app gave me the same answer!
+
+
+C.1-5
+
+The proof is based on the property of factorial that n! = n • (n-1)!
+
+C(n, k) = n! / (k! • (n-k)!) (C.2) =
+n(n-1)! / (k(k-1)! • (n-k)!) =
+n/k • (n-1)! / ((k-1)! • (n-k)!) = n/k • C(n-1 k-1),
+since
+C(n-1 k-1) = (n-1)! / ((k-1)! • (n-1 - k+1)!) =
+(n-1)! / ((k-1)! • (n-k)!)
+
+
+C.1-6
+
+Like the above, this proof is based on the property of factorial that n! = n • (n-1)!
+
+C(n, k) = n! / (k! • (n-k)!) (C.2) = 
+n(n-1)! / (k! • (n-k)•(n-k-1)!) =
+n/(n-k) • ((n-1)! / k!•(n-k-1)!) = 
+n/(n-k) • C(n-1, k)
+
+
+C.1-7
+
+Note: I don't understand this completely.
+https://en.wikipedia.org/wiki/Pascal%27s_rule
+
+Just for visualisation:
+S = {a, b, c, d}
+ab, ac, ad, bc, bd, cd
+
+Let i be the distinguished element, then total number of combinations of k elements out of n is the sum of combinations that include i and those that don't.
+
+Let's consider the case we choose i:
+Then we need to choose k - 1 elements out of remaining n - 1
+
+If we don't choose i:
+We still need to choose k elements out of remaining n - 1.
+
+Or, mathematically:
+C(n, k) = C(n-1, k-1) + C(n-1, k)
+
+
+C.1-8
+
+C(n, k), where n = 0..6, k = 0..n
+
+Calculations done using
+C(n, k) = C(n-1, k-1) + C(n-1, k)
+
+C(0, 0) = 1
+C(1, 0) = 1, C(1, 1) = 1
+C(2, 0) = 1, C(2, 1) = C(1, 0) + C(1, 1) = 2, C(2, 2) = 1
+C(3, 0) = 1, C(3, 1) = 1 + 2 = 3, C(3, 2) = 2 + 1 = 3, C(3, 3) = 1
+C(4, 0) = 1, C(4, 1) = 1 + 3 = 4, C(4, 2) = 3 + 3 = 6, C(4, 3) = 3 + 1 = 4, C(4, 4) = 1
+C(5, 0) = 1, C(5, 1) = 5, C(5, 2) = 10, C(5, 3) = 10, C(5, 4) = 5, C(5, 5) = 1
+C(6, 0) = 1, C(6, 1) = 6, C(6, 2) = 15, C(6, 3) = 20, C(6, 4) = 15, C(6, 5) = 6, C(6, 6) = 1
+
+
+C.1-9
+
+C(n+1, 2) = (n+1)! / (2•(n-1)!) =
+(n+1)n(n-1)! / (2•(n-1)!)
+= n(n+1)/2 = (i=1..n)∑i
+
+
+C.1-10
+
+Easily seen on Pascal's triangle.
+
+Intuitively, the max number of combinations of k elements out of n is when k is in the middle between 1 (n combinations) and n (1 combination)
+
+Also,
+as seen from C(n, k) = n! / k!(n-k)!, the denominator approaches n! whenever k approaches 1 or n, resulting in the expression taking its min values.
+
+C.1-11*
+Skipped
+
+C.1-12*
+Skipped
+
+C.1-13*
+Skipped
+
+C.1-14*
+Skipped
+
+C.1-15*
+Skipped

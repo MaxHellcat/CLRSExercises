@@ -1,0 +1,106 @@
+11.3-1
+
+Suppose we wish to search a linked list of length n, where each element containsa key k along with a hash value h(k). Each key is a long character string. Howmight we take advantage of the hash values when searching the list for an elementwith a given key?
+
+Solution:
+
+Since a hash function guarantees that identical keys have the same hash value, we 
+should check hashes first, which is fast. Only if the hashes are equal, should we 
+compare the keys, as there may be same hashes for distinct keys.
+Also, by storing hashes we don’t need to calculate one for each element of the list, 
+thus reducing constant factor of Ø(n^2) searching time.
+
+
+11.3-2
+
+Suppose that we hash a string of r characters into m slots by treating it as aradix-128 number and then using the division method. We can easily representthe number m as a 32-bit computer word, but the string of r characters, treated asa radix-128 number, takes many words. How can we apply the division method tocompute the hash value of the character string without using more than a constantnumber of words of storage outside the string itself?
+
+Solution:
+
+h(k) = k mod m
+
+pencil, r = 6
+
+k = (p)*128^5 + (e)*128^4 + (n)*128^3 + (c)*128^2 + (i)*128 + (l)*1
+
+5*lg((p)*128) + 4*lg((e)*128)
+
+Stuck for now.
+
+
+11.3-3
+
+Consider a version of the division method in which h(k) = k mod m, wherem = 2^p - 1 and k is a character string interpreted in radix 2^p. Show that if wecan derive string x from string y by permuting its characters, then x and y hash tothe same value. Give an example of an application in which this property would beundesirable in a hash function.
+
+Solution:
+
+Let p = 3, m = 2^3 - 1 = 7
+
+a) fish
+k = (f)*8^3 + (i)*8^2 + (s)*8 + (h)*1 = 
+(5)*8^3 + (8)*8^2 + (12)*8 + (7)*1 = 2560 + 512 + 96 + 7 = 3175
+
+h(k) = 3175 mod 7 = 4
+
+b) fihs
+
+k = (f)*8^3 + (i)*8^2 + (s)*8 + (h)*1 = 
+(5)*8^3 + (8)*8^2 + (7)*8 + (12)*1 = 2560 + 512 + 56 + 12 = 3140
+
+h(k’) = 3140 mod 7 = 4
+
+So h(k) = h(k’) as we’ve been asked to show.
+
+TODO: My concern here is that I don’t get intuitively why this is so.
+
+Examples: App that works with palindromes. Compiler, which maintains a table of
+identifiers, as there’re often var yellowColor, colorYellow, etc.
+
+
+11.3-4
+
+Consider a hash table of size m = 1000 and a corresponding hash function h(k) =floor(m(kA mod 1)) for A = (sqrt(5) - 1)/2. Compute the locations to which the keys61, 62, 63, 64, and 65 are mapped.
+
+Solution:
+
+A = (sqrt(5) - 1)/2 = 0.6180339887
+
+As m = 1000 isn’t a power of two, we use the following formula:
+h(k) = floor(m(kA mod 1))
+
+k = 61
+h(k) = floor(1000(61*0,6180339887 mod 1)) = 700
+
+k = 62
+h(k) = floor(1000(62*0,6180339887 mod 1)) = 318
+
+k = 63
+h(k) = floor(1000(63*0,6180339887 mod 1)) = 936
+
+k = 64
+h(k) = floor(1000(64*0,6180339887 mod 1)) = 554
+
+k = 65
+h(k) = floor(1000(65*0,6180339887 mod 1)) = 172
+
+
+Just curious here:
+
+k = 1
+h(k) = floor(1000(1*0,6180339887 mod 1)) = 618
+
+k = 2
+h(k) = floor(1000(2*0,6180339887 mod 1)) = 236
+
+k = 100
+h(k) = floor(1000(100*0,6180339887 mod 1)) = 803
+
+k = 1000
+h(k) = floor(1000(1K*0,6180339887 mod 1)) = 33
+
+k = 999
+h(k) = floor(1000(999*0,6180339887 mod 1)) = 415
+
+k = 1000000
+h(k) = floor(1000(1M*0,6180339887 mod 1)) = 988
+

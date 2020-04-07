@@ -1,0 +1,57 @@
+5.1-1
+
+Show that the assumption that we are always able to determine which candidate is
+best, in line 4 of procedure HIRE-ASSISTANT, implies that we know a total order
+on the ranks of the candidates.
+
+Solution:
+
+HIRE-ASSISTANT(n)
+1 best = 0 // candidate 0 is a least-qualified dummy candidate
+2 for i = 1 to n
+	3 interview candidate i
+	4 if candidate i is better than candidate best
+		5 best = i
+		6 hire candidate i
+
+We know that total order = Partial order + total relation
+
+Let’s start with the total relation:
+Since the order is random, and so the best candidate can be any of n possible, then any pair of candidates can be compared in line 4, which implies that we have a total relation on the ranks of candidates.
+
+Next, we show the following properties of a partial order: Reflexive, antisymmetric, and transitive.
+
+Let R be the relation “is better than or equal”, and a, b, c - some distinct candidates, then R is:
+
+Reflexive, as a ≥ a
+Antisymmetric, as a ≥ b and b ≥ a => a = b
+Transitive, as a ≥ b and b ≥ c => a ≥ c
+
+
+5.1-2
+
+Describe an implementation of the procedure RANDOM(a, b) that only makes calls
+to RANDOM(0, 1). What is the expected running time of your procedure, as a
+function of a and b?
+
+Solution:
+
+My idea is the “divide&conquer” algorithm, which is similar to binary search. We randomly choose left or right halves of the range a..b until we get to the problem of size 1. The running time is therefore Ø(lgn).
+
+Note: Since the task dictates that the procedure should only make calls to random(0, 1), we can replace recursive calls with a loop. The T(n) remains the same.
+
+Random(a, b)
+	if (a == b)
+		return a
+
+	let mid = (a + b) / 2
+
+	if (random(0, 1) == 0)
+		random(a, mid)
+	else
+		random(mid + 1, b)
+
+
+5.1-3
+
+My hint: Use geometric distribution here, i.e. Pr = q^(k-1) * p

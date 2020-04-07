@@ -6,11 +6,15 @@
 //  Copyright © 2017 Max Reshetey. All rights reserved.
 //
 
-#ifndef __1_5_h
-#define __1_5_h
+#ifndef _4_1_5_h
+#define _4_1_5_h
 
 #include "Defines.h"
 #include "4.1-3.h" // For Tuple data structure and other implementations
+
+namespace Ex_4_1_5 {
+
+using Ex_4_1_3::Tuple;
 
 // The linear implementation of the maximum-subarray problem (the fastest of all implemented so far)
 // Time: Ø(n)
@@ -45,7 +49,7 @@ Tuple findMaxSubarrayLinear(Array & arr)
 	return {lowIndex, hiIndex, maxSum};
 }
 
-void test_4_1_5()
+void test()
 {
 //	Array arr = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
 //	Array arr = {1, -4, 3, -4};
@@ -58,14 +62,15 @@ void test_4_1_5()
 
 	// Checking here all 4 implementations halt with the correct answer.
 	Tuple linear = findMaxSubarrayLinear(arr);
-	Tuple recursive = findMaxSubarray(arr, 0, (int)arr.size()-1, false);
-	Tuple recursiveBrute = findMaxSubarray(arr, 0, (int)arr.size()-1, true);
-	Tuple brute = findMaxSubarrayBruteForce(arr, 0, (int)arr.size()-1);
+	Tuple recursive = Ex_4_1_3::findMaxSubarray(arr, 0, (int)arr.size()-1, false);
+	Tuple recursiveBrute = Ex_4_1_3::findMaxSubarray(arr, 0, (int)arr.size()-1, true);
+	Tuple brute = Ex_4_1_3::findMaxSubarrayBruteForce(arr, 0, (int)arr.size()-1);
 
 	cout << "Linear: " << linear.sum << " {" << linear.lowIndex << ", " << linear.hiIndex << "}\n";
 	cout << "Recurs: " << recursive.sum << " {" << recursive.lowIndex << ", " << recursive.hiIndex << "}\n";
 	cout << "ReBrut: " << recursiveBrute.sum << " {" << recursiveBrute.lowIndex << ", " << recursiveBrute.hiIndex << "}\n";
 	cout << "Brutef: " << brute.sum << " {" << brute.lowIndex << ", " << brute.hiIndex << "}\n";
 }
+}
 
-#endif /* __1_5_h */
+#endif /* _4_1_5_h */

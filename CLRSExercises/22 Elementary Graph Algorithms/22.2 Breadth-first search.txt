@@ -1,0 +1,200 @@
+22.2-1
+
+Show the d and p* values that result from running breadth-first search on the directedgraph of Figure 22.2(a), using vertex 3 as the source.
+
+p is a distance property
+
+Solution:
+
+for each v in V : v.d = INF, v.p = NIL, v.color = white
+3.d = 0, 3.p = nil, 3.color = gray
+
+a) Q = 3 <- before while iteration
+dequeue 3
+enqueue 5.d = 1, 5.p = 3, 5.color = gray <- end of iteration
+enqueue 6.d = 1, 6.p = 3, 6.color = gray <- ditto
+3.color = black <- ditto
+
+b) Q = 5, 6
+dequeue 5
+enqueue 4.d = 2, 4.p = 5, 4.color = gray
+5.color = black
+
+c) Q = 6, 4
+dequeue 6
+not enqueued self-looped 6 as it's gray
+6.color = black
+
+d) Q = 4
+dequeue 4
+enqueue 2.d = 3, 2.p = 4, 2.color = gray
+4.color = black
+
+e) Q = 2
+dequeue 2
+nothing to enqueue, as 2's in-degree == 0
+2.color = black
+
+
+22.2-2
+
+Show the d and p values that result from running breadth-first search on the undirectedgraph of Figure 22.3, using vertex u as the source.Solution:
+
+u.d = 0, u.p = nil, u.color = gray
+
+a) Q = (u)
+dequeue u
+enqueue t.d = 1, t.p = u, t.color = gray
+enqueue x.d = 1, x.p = u, x.color = gray
+enqueue y.d = 1, y.p = u, y.color = gray
+u.color = black
+
+b) Q = (t, x, y)
+dequeue t
+enqueue w.d = 2, w.p = t, w.color = gray
+t.color = black
+
+c) Q = (x, y, w)
+dequeue x
+nothing to enqueue, all adjacent vertices {w, t, u, y} aren't white
+x.color = black
+
+d) Q = (y, w)
+dequeue y
+nothing to enqueue, {x, u} are black
+y.color = black
+
+e) Q = (w)
+dequeue w
+enqueue s.d = 3, s.p = w, s.color = gray
+w.color = black
+
+f) Q = (s)
+dequeue s
+enqueue r.d = 4, r.p = s, r.color = gray
+s.color = black
+
+g) Q = (r)
+dequeue r
+enqueue v.d = 5, v.p = r, v.color = gray
+r.color = black
+
+h) Q = (v)
+dequeue v
+nothing to enqueue, v's in-order == 0
+v.color = black
+
+Extra: The breadth-first tree, or predecessor subgraph Gp of the graph G.
+	     u
+	  t  x  y
+	w
+     s
+  r
+v
+
+
+22.2-3
+
+Show that using a single bit to store each vertex color suffices by arguing that theBFS procedure would produce the same result if lines 5 and 14 were removed.
+
+Solution:
+
+The BFS pseudocode here for reference:
+
+BFS(G, s)1 for each vertex u in G.V - {s}
+2 	u.color = WHITE3 	u.d = INF 
+4 	u.p = NIL5 s.color = GRAY // REMOVE
+  s.color = BLACK // ADD6 s.d = 07 s.p = NIL8 Q = Ø
+9 ENQUEUE(Q, s)10 while Q != Ø
+11 	u = DEQUEUE(Q)12 	for each v in G.Adj(u)13 		if v.color == WHITE14 			v.color = GRAY // REMOVE
+			v.color = BLACK // ADD15 			v.d = u.d + 116 			v.p = u17 			ENQUEUE(Q, v)18 	u.color = BLACK // CAN BE REMOVED
+
+Below is the step-by-step execution with lines 5, 14 removed
+
+u.d = 0, u.p = nil, u.color = gray
+
+a) Q = (u)
+dequeue u
+enqueue t.d = 1, t.p = u
+enqueue x.d = 1, x.p = u
+enqueue y.d = 1, y.p = u
+u.color = black
+
+b) Q = (t, x, y)
+dequeue t
+enqueue w.d = 2, w.p = t
+enqueue x.d = 2, x.p = t
+t.color = black
+
+c) Q = (x, y, w, x)
+dequeue x
+enqueue w.d = 3, w.p = x
+enqueue y.d = 3, y.p = x
+x.color = black
+
+d) Q = (y, w, x, w, y)
+dequeue y
+y.color = black
+
+As we can see in step b, if we enqueue already discovered vertex, we will set its shortest-distance value wrong (it will not be the shortest).
+Thus we still need to mark the vertex somehow.(*)
+We notice that we never check that vertex's color is actually black, line 13 only checks that it's white. Therefore we can merge gray and black coloring. Line 5 now blackens the starting vertex. Upon enqueuing, line 14 also blackens, and we can safely remove line 18, since dequeued vertex is indeed already black, since it was first enqueued.
+Since we now have only two colors, we need only single bit per vertex to store them.
+
+
+22.2-4
+
+What is the running time of BFS if we represent its input graph by an adjacencymatrix and modify the algorithm to handle this form of input?
+
+Solution:
+
+Like the run on adjacency list, all graph's vertices are eventually examined, but unlike it, for each vertex we now need to iterate its entire row in the matrix, to find the adjacent vertices. This will result in the running time O(V^2).
+
+
+22.2-5
+
+Argue that in a breadth-first search, the value u.d assigned to a vertex u is independentof the order in which the vertices appear in each adjacency list. UsingFigure 22.3 as an example, show that the breadth-first tree computed by BFS candepend on the ordering within adjacency lists.
+
+Solution:
+
+a) The u.d is the same for any order, because u.d = v.d + 1, and v is the same for all its adjacent vertices, no matter in which order thy come.
+
+b) 
+
+One of possible breadth-first trees of G from figure 22.3, which corresponds to the order (t, x, y) for the adjacent list of vertex u.
+	     u
+	  t  x  y
+	w
+     s
+  r
+v
+
+For the order (x, t, y) we have:
+	     u
+	  x  t  y
+	w
+     s
+  r
+v
+
+As we can see the tree is different.
+
+
+22.2-6
+
+Skipped.
+
+
+22.2-7
+
+Skipped.
+
+
+22.2-8 *
+
+Skipped.
+
+
+22.2-9
+
+Skipped.

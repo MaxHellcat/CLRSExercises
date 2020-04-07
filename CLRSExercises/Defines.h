@@ -14,7 +14,6 @@
 #include <cstdlib> // For rand, srand
 
 using namespace std::chrono;
-
 using std::cout;
 using std::endl;
 

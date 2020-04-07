@@ -1,0 +1,80 @@
+5.2-1
+
+In HIRE-ASSISTANT, assuming that the candidates are presented in a random order, what is the probability that you hire exactly one time? What is the probability that you hire exactly n times?
+
+Solution:
+
+We hire exactly one time when the 1st candidate is the best, with the probability of 1/n (any of n may be the best). Or (n-1)! ways to put the best candidate into the 1st position over n! possible candidate permutations.
+
+We hire exactly n times when the nth candidate is the best, i.e. they’re sorted in increasing order. There’s only one way to choose such an order from n! possible, so the probability is 1/n!
+
+Alternative solution, based on the binomial distribution.
+
+We assume that Hire-Assistant is actually a series of Bernoulli trials, i.e. each hire is independent of others and all hires have the same probability (do they really?)
+
+Let X be the random variable representing number of times we hire a new candidate, let p = 1/n be a probability that we hire any of n candidates, then:
+
+Pr{X=k} = C(n, k) * p^k * q^(n-k) - binomial distribution
+
+Pr{X=1} = n * 1/n * (1-1/n)^(n-1) = (1-1/n)^(n-1) ≈ 1/e for large n (see C.4-5*) - Wrong! Why?
+
+Pr{X=n} = 1 * 1/n^n * (1-1/n)^0 = 1/n^n - Wrong! Why?
+
+
+5.2-2
+
+In HIRE-ASSISTANT, assuming that the candidates are presented in a random order, what is the probability that you hire exactly twice?
+
+Solution:
+
+(n-2)! / n! = (n-2)! / (n(n-1)(n-2)!) = 1/(n(n-1))
+
+FTFO
+
+29.10.18
+Maybe use combinations of pairs? So,
+p = 1/n * (C(n-1, 1) )
+
+
+5.2-3
+
+Use indicator random variables to compute the expected value of the sum of n dice.
+
+Solution:
+
+Let Xi be the indicator random variable of a sum of a single dice, then:
+E[Xi] = (k=1..6)SUM(kPr{Xi=k}) = 1/6 + 2/6 + 3/6 + 4/6 + 5/6 + 6/6 = 21/6 = 3.5
+
+Then for n dice we have (linearity of expectation C.21):
+E[X] = E[(k=1..n)SUM(Xi)] = (k=1..n)SUM(E[Xi]) = (k=1..n)SUM(3.5) = 3.5n
+
+
+5.2-4
+
+Use indicator random variables to solve the following problem, which is known asthe hat-check problem. Each of n customers gives a hat to a hat-check person at arestaurant. The hat-check person gives the hats back to the customers in a randomorder. What is the expected number of customers who get back their own hat?
+
+Solution:
+
+Let A be the event that a single customer gets own hat back, and let Xp be the indicator random variable associated with that event.
+The probability of A is Pr{A} = 1/n (yes, the hats are decreasing, but nobody tells us whether one’s hat has already been chosen or not), and thus E[Xp] = 1/n.
+
+Now, let X be the random variable that equals the number of people getting their own hat, then X = X1,X2,…,Xn.
+
+Taking expectation of both sides we have:
+E[X] = E[(p=1..n)SUM(Xp)] = (p=1..n)SUM(E[Xp]) = (p=1..n)SUM(1/n) = n * 1/n = 1
+
+Wow, only 1 person is expected to get own hat back (no matter how many persons there are out there!)
+
+
+5.2-5
+
+Let A[1..n] be an array of n distinct numbers. If i < j and A[i] > A[j], thenthe pair (i, j) is called an inversion of A. (See Problem 2-4 for more on inversions.)Suppose that the elements of A form a uniform random permutation of<1, 2, …, n>. Use indicator random variables to compute the expected number ofinversions.
+
+Solution:
+
+Let Xi be the indicator random variable that equals the number of inversions in array A[1..2], i.e 0 or 1. Then E[Xi] = 1*1/2 + 0*1/2 = 1/2.
+
+Let X be the random variable denoting the number of inversions in A[1..n], since there’re C(n, 2) variants to choose 2-arrays from A[1..n], we have the following expectation for X:
+
+E[X] = E[(i=1..C(n, 2))SUM(Xi)] = (i=1..C(n, 2))SUM(E[Xi]) = C(n, 2)*1/2 = (n! / (2(n-2)!)) * 1/2 = n(n-1)(n-2)! / (4(n-2)!) = n(n-1) / 4
+

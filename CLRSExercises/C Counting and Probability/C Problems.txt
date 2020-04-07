@@ -1,0 +1,89 @@
+C-1.a
+
+We can think of all b bins to be all possible values that each distinct ball can take. Since there’re n different balls, we have b^n ways to put n balls into b bins (read assign b values to n balls). This corresponds to the number of n-strings over a set of size b, or size of the Cartesian product of n sets of size b.
+
+Simply saying, there are b ways to place each of n balls, thus there are b^n ways to do that for n balls.
+
+a, b, c - bins
+
+n = 1:
+{a, b, c}
+3^1 = 3
+
+n = 2:
+{a, b, c} x {a, b, c} = {aa, ab, ac, ba, bb, bc, ca, cb, cc} // Position of a bin defines a ball number, e.g. aa - balls 1, 2 in bin ‘a’
+3^2 = 9
+
+n = 3:
+{a, b, c} x {a, b, c} x {a, b, c} = {
+aaa, aab, aac, aba, abb, abc, aca, acb, acc,
+baa, bab, bac, bba, bbb, bbc, bca, bcb, bcc,
+caa, cab, cac, cba, cbb, cbc, cca, ccb, ccc
+}
+3^3 = 27
+
+a, b - bins
+
+n = 3
+
+{a, b} x {a, b} x {a, b} = {aaa, aab, aba, abb, baa, bab, bba, bbb}
+
+
+Self curiosity here:
+
+Why not C(b, n)?
+
+n = 1:
+C(3, 1) = 3
+a, b, c
+
+n = 2:
+C(3, 2) = 3
+ab, ac, bc
+
+Because combinations are sequences of distinct(!) elements, i.e. no two balls can occupy the same bin.
+
+Why not permutations?
+
+n = 1:
+P = 3! / 2! = 3
+a, b, c
+
+n = 2:
+P = 3! / 1! = 6
+ab, ac, ba, bc, ca, cb
+
+Same reason, elements in permutations are distinct, also order does matter.
+
+
+C-1.b
+
+As the hint suggests, we have (n + b - 1)! ways to arrange n balls connected by b - 1 sticks. Since the sticks are indistinguishable (which implies that their order doesn’t matter) and there are (b - 1)! different sticks, we have (n + b - 1)! / (b - 1)! ways to do that.
+Drawing the analogy to our balls and bins, say we have one ball X and 3 bins {a, b, c}, then we have (1 + (3 - 1))! / (3 - 1)! = 3! / 2 = 3 ways to place the ball into the bins because:
+a) For permutations {…, Xabc, abcX, abXc, aXbc, …} we need only last 3, since they give us all the variants to place the ball into 3 bins, thus b - 1 bins.
+b) Order of bins doesn’t matter, so we divide by those (b - 1)!.
+
+Below used to be tons of my calculations I did to understand the answer, which I removed to save space.
+
+
+C-1.c
+
+Since the balls are identical, and hence their order within a bin doesn’t matter, we divide the result from part (b) by n!, or:
+(n + b - 1)! / (b - 1)! / n! = (n + b - 1)! / (n + b - 1 - n)! / n! = C(n + b - 1, n) - ways of placing n identical balls into b distinct bins.
+
+
+C-1.d
+
+Phrase “No bin can contain more than one ball” can be paraphrased as “each ball has a distinct bin”, thus we have b ways to place the first ball, b - 1 ways to place the 2nd and so on, or b*(b-1)*(b-2)*…*(b-n+1) = b! / (b-n)! ways (yes n-permutations).
+
+Since the balls are identical and hence their order doesn’t matter, we divide the result above by n!:
+b! / (b-n)! /n! = C(b, n) - ways of placing the balls.
+
+
+C-1.E
+
+We first place b balls into b bins (in how many ways? do we bother?) and then we have n-b balls to place into b bins. Observing that now preconditions are the same with the exercise in part (c), we replace n in there with n - b balls:
+C((n - b) + b - 1, n - b) = C(n - 1, n - b)
+
+Recalling that C(n, k) = C(n, n - k) we have:
+C(n - 1, n - b) = C(n - 1, n - 1 - n + b) = C(n - 1, b - 1) - ways of placing the balls.

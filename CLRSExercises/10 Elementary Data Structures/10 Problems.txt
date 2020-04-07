@@ -1,0 +1,25 @@
+10-1 Comparisons among lists
+
+For each of the four types of lists in the following table, what is the asymptoticworst-case running time for each dynamic-set operation listed?
+
+Solution:
+
+			unsorted SL	sorted SL	unsorted DL	sorted DL
+Search(L, k)		Ø(n)		Ø(n)		Ø(n)		Ø(n)
+Insert(L, x) *1		O(1)		Ø(n)		O(1)		Ø(n)
+Delete(L, x)		Ø(n)		Ø(n)		O(1)		O(1)
+Successor(L, x)		Ø(n)		O(1)		Ø(n)		O(1)
+Predecessor(L, x)	Ø(n)		Ø(n)		Ø(n)		O(1)
+Minimum(L)		Ø(n)		O(1)		Ø(n)		O(1)
+Maximum(L)		Ø(n)		Ø(n) *2		Ø(n)		Ø(n) *2
+
+*1 - We consider Insert(L, x) to be PushFront(L, x), as in the book
+*2 - Provided we don’t maintain L.tail (or use sentinel)
+
+
+10-2 Mergeable heaps using linked lists
+Skipped
+
+
+10-3 Searching a sorted compact list
+Skipped

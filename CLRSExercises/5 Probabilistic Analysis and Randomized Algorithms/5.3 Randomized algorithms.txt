@@ -1,0 +1,102 @@
+5.3-1
+
+Professor Marceau objects to the loop invariant used in the proof of Lemma 5.5. Hequestions whether it is true prior to the first iteration. He reasons that we could justas easily declare that an empty subarray contains no 0-permutations. Therefore,the probability that an empty subarray contains a 0-permutation should be 0, thusinvalidating the loop invariant prior to the first iteration. Rewrite the procedureRANDOMIZE-IN-PLACE so that its associated loop invariant applies to a nonemptysubarray prior to the first iteration, and modify the proof of Lemma 5.5 for yourprocedure.
+
+Solution:
+
+FTFO
+
+
+5.3-2
+
+Professor Kelp decides to write a procedure that produces at random any permutationbesides the identity permutation. He proposes the following procedure:
+
+PERMUTE-WITHOUT-IDENTITY(A)1 n = A.length2 for i = 1 to n - 13 	swap A[i] with A[RANDOM(i+1, n)]
+
+Does this code do what Professor Kelp intends?
+
+Solution:
+
+There’re n! permutations of n elements. Ignoring the identity permutation, the PERMUTE-WITHOUT-IDENTITY(A) procedure must produce any permutation from n!-1 possible, with probability 1/(n!-1).
+
+Let’s state the loop invariant and show that it supports 3 properties.
+
+Prior to the ith iteration of the loop, for each possible (i-1)-permutation of the n-1 elements, the subarray A[1..i-1] contains this (i-1)-permutation with probability (n-i)!/(n-1)!
+
+Initialization:
+For i=1, the subarray A[1..0] contains 0-permutation with probability (n - 1)! / (n-1)! = 1, so the invariant holds here.
+
+Maintenance:
+Assuming that invariant holds prior to the i-th iteration, show that after the i-th iteration the probability should be (n-i-1)!/(n-1)!.
+Let E1 be the event that the first i-1 iterations created the particular i-1 permutation, and let E2 be the event that the i-th iteration chooses randomly a place for A[i], then the i-permutation is when E1 and E2, and so:
+Pr{E1} = (n - i)! / (n - 1)!
+Pr{E2|E1} = 1 / (n - i)
+Pr{E1 and E2} = Pr{E2|E1}*Pr{E1} = 1 / (n-i) * (n - i)! / (n - 1)! = (n - i - 1)! / (n - 1)!
+
+Termination:
+When i = n, we have (n - n)! / (n - 1)! = 1/(n - 1)!
+
+The loop invariant shows us that upon termination, the procedure produces at random any permutation from (n-1)! possible, which is much less than n!-1 intended. Therefore, the answer is no.
+
+
+5.3-3
+
+Suppose that instead of swapping element A[i] with a random element from thesubarray A[i..n], we swapped it with a random element from anywhere in thearray:
+
+PERMUTE-WITH-ALL(A)1 n = A.length2 for i = 1 to n3 	swap A[i] with A[RANDOM(1, n)]
+
+Does this code produce a uniform random permutation? Why or why not?
+
+Solution:
+
+Each iteration chooses 1 element of n possible, doing that n times, resulting in n*n*n*…*n = n^n possible permutations.
+Since there’re exactly n! distinct permutations, there will be duplicated ones (as n! = o(n^n)), hence the procedure is not equally likely to produce every permutation of the numbers 1 through n, and so the procedure doesn’t generate a uniform random permutation
+
+Read this to understand deeper: https://blog.codinghorror.com/the-danger-of-naivete/
+
+
+5.3-4
+
+Professor Armstrong suggests the following procedure for generating a uniformrandom permutation:
+
+PERMUTE-BY-CYCLIC(A)1 n = A.length2 let B[1..n] be a new array3 offset = RANDOM(1, n)4 for i = 1 to n5 	dest = i + offset6 	if dest > n7 		dest = dest - n8 	B[dest] = A[i]9 return B
+
+Show that each element A[i] has a 1/n probability of winding up in any particularposition in B. Then show that Professor Armstrong is mistaken by showing thatthe resulting permutation is not uniformly random.
+
+Solution:
+
+TODO: How comes the probability of a specific permutation in B is 1/n^n? Each permutation in B is simply a wrapped-around identity permutation in A, constituting n-1 distinct variants?
+
+Simply looking, final position of A[i] directly depends on the “offset”, which is randomly picked from 1..n. Therefore, the probability of a specific permutation in B is 1/n^n, which isn’t a uniform random permutation for the reasons explained in the exercise 5.3-3 above.
+
+For the stricter proof let’s state the loop invariant:
+
+Prior to the ith iteration, the subarray B[1..i-1] contains i-1 elements (possibly wrapped-around) from A with probability 1/n^(i-1).
+
+Initialization:
+Before the 1st iteration, the subarray B[1..0] contains 0 elements from A[1..n] with probability 1/1 = 1.
+
+Maintenance:
+Position for the A[i] is unique and directly depends on the “offset”, which is randomly chosen from the range 1..n. Note, it wraps around if exceeds the array size, but the position is still unique and probability is still the same. For the specific permutation 1..i, its probability is Pr{Ei | E(1..i-1)} * E(1..i-1) = 1/(n^(i-1)) * 1/n^i = 1/n^i. Incrementing the loop counter reestablishes the loop invariant.
+
+Termination:
+When i = n + 1, we have B[1..n] containing n elements from A[1..n] with probability 1/n^n.
+
+Therefore the resulting permutation of elements in B isn’t a uniform random permutation for the reasons explained above.
+
+
+5.3-5 *
+
+Prove that in the array P in procedure PERMUTE-BY-SORTING, the probabilitythat all elements are unique is at least 1 - 1/n.
+
+Skipped.
+
+
+5.3-6
+
+Explain how to implement the algorithm PERMUTE-BY-SORTING to handle thecase in which two or more priorities are identical. That is, your algorithm shouldproduce a uniform random permutation, even if two or more priorities are identical.
+
+Skipped - WHY?
+5.3-7
+
+Skipped - WHY?

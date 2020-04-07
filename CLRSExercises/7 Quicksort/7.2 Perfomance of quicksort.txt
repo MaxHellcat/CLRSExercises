@@ -1,0 +1,90 @@
+7.2-1
+
+Use the substitution method to prove that the recurrence T(n) = T(n-1) + Ø(n)
+has the solution T(n) = Ø(n^2), as claimed at the beginning of Section 7.2.
+
+Solution:
+
+Done on paper.
+TODO: Transfer solution here.
+
+The provable guess is dn^2 + kn.
+
+
+7.2-2
+
+What is the running time of QUICKSORT when all elements of array A have the
+same value?
+
+Solution:
+
+When all elements are equal, we have the recurrence T(n) = T(n-1) + T(0) + Ø(n) = Ø(n^2), since as Exercise 7.1-2 explains
+for subarray A[p..r] we have q = r returned by Partition routine, and so the next recursive calls are
+Quicksort(p, r - 1) and Quicksort(r + 1, r) that take T(n-1) and T(0) = Ø(1) respectively.
+
+
+7.2-3
+
+Show that the running time of QUICKSORT is Ø(n^2) when the array A contains
+distinct elements and is sorted in decreasing order.
+
+Solution:
+
+Similar to the exercise above, the running time here is T(n) = T(n-1) + Ø(n) = Ø(n^2).
+Since elements are distinct and sorted desc, all the elements of subarray A[p..r-1] are larger than the pivot A[r] and so upon loop termination q = i + 1 = p.
+Which results in two recursive calls Quicksort(p, p-1) and Quicksort(p+1, r) that take Ø(1) and T(n-1) respectively.
+
+
+7.2-4
+
+Banks often record transactions on an account in order of the times of the transactions,
+but many people like to receive their bank statements with checks listed in
+order by check number. People usually write checks in order by check number, and
+merchants usually cash them with reasonable dispatch. The problem of converting
+time-of-transaction ordering to check-number ordering is therefore the problem of
+sorting almost-sorted input. Argue that the procedure INSERTION-SORT would
+tend to beat the procedure QUICKSORT on this problem.
+
+Solution:
+
+Let's consider the following almost sorted input:
+A = [2, 1, 3, 4, 5, 6, 7, 8]
+
+Insertion sort would take almost Ø(n) here, as it has to swap only first two elements.
+
+Quicksort will produce n-1 and 0 partitions on each recursive call, resulting in the worst case running time T(n) = Ø(n^2)
+
+Other almost sorted inputs would impact running times differently, but the trend will remain the same.
+
+
+7.2-5
+
+Suppose that the splits at every level of quicksort are in the proportion 1-a to a,
+where 0 < a ≤ 1/2 is a constant. Show that the minimum depth of a leaf in the recursion tree
+is approximately -lgn / lga and the maximum depth is approximately -lgn / lg(1-a). (Don’t worry about integer round-off.)
+
+Solution:
+
+For the quicksort recurrence we have:
+T(n) = T(n/b1) + T(n/b2) + Ø(n), where 1/b1 = 1 - α, 1/b2 = α
+
+The subproblem of size n/b1 produces a tree of height:
+n / b^h = 1 => b^h = n => 1/(1-α)^h = n => (1-α)^h = 1/n =>
+h = log(1-α, 1/n)
+Reducing further we get:
+h = log(1-α, 1) - log(1-α, n) =
+- lg n / lg(1-α)
+
+Similarly for b2 = 1/α
+h = log(α, 1/n) = - lg n / lg α
+
+Since 1 - α ≥ α, we have that
+h = - lg n / lg(1-α) is a subtree of maximum height, and
+h = - lg n / lg α is a min-height subtree of the recursion tree defined by the recurrence above.
+
+
+7.2-6 *
+
+Skipped
+
+

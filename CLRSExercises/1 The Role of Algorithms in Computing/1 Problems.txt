@@ -1,0 +1,40 @@
+1-1
+
+Comparison of running times
+
+For each function f(n) and time t in the following table, determine the largestsize n of a problem that can be solved in time t, assuming that the algorithm tosolve the problem takes f(n) microseconds.Solution:
+
+	1 sec
+-------------
+lgn	lg(n) = 10^6, n = 2^10^6
+sqrt(n)	sqrt(n) = 10^6, n = 10^6^2 = 10^12
+n	n = 10^6
+nlgn	n*lg(n) = 10^6, lg(n) = 10^6/n, n = 2^(10^6/n), n == 65000
+n^2	n^2 = 10^6, n = 10^3, n = 1000
+n^3	n^3 = 10^6, n = 100
+2^n	2^n = 10^6, n = lg(10^6), n == 19.93157n!	n! = 10^6, n == 9.4456
+
+	1 min
+-------------
+lgn	n = 2^10^6 * 60
+sqrt(n) n = 10^12 * 60
+n	n = 10^6 * 60
+nlgn	n == 65000 * 60
+n^2	n = 10^3 * 60
+n^3	n = 10^2 * 60
+2^n	n = lg(10^6) * 60n!	n == 9.4456 * 60
+
+1 hour
+TBD
+
+1 day
+TBD
+
+1 month
+TBD
+
+1 year
+TBD
+
+1 century
+TBD

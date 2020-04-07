@@ -1,0 +1,168 @@
+12.3-1
+
+Give a recursive version of the TREE-INSERT procedure.
+
+Solution:
+
+Here’s for reference an incremental implementation (took from head).
+
+TreeInsert(T, z)
+ x = T.root
+ y = nil
+ while x != nil
+ 	y = x
+	if z.key < x.key
+		x = x.left
+	else
+		x = x.right
+ if y == nil
+	T.root = z
+ else if z.key < y.key
+	y.left = z
+ else
+	y.right = z
+ z.parent = y
+
+
+Now recursive version.
+
+TODO: Check this in code!
+
+TreeInsertRecursive(x, z)
+
+ if z.key < x.key
+ 	if x.left == nil
+		x.left = z
+		z.parent = x
+	else
+		TreeInsertRecursive(x.left, z)
+ else
+	if x.right == nil
+		x.right = z
+		z.parent = x
+	else
+		TreeInsertRecursive(x.right, z)
+
+The initial call would be TreeInsertRecursive(T.root, z).
+
+
+12.3-2
+
+Suppose that we construct a binary search tree by repeatedly inserting distinct valuesinto the tree. Argue that the number of nodes examined in searching for avalue in the tree is one plus the number of nodes examined when the value wasfirst inserted into the tree.
+
+Solution:
+
+Both insertion and searching routines check the same number of nodes in their while loop
+headers (insertion stops at nil, searching stops at found value that was nil).
+But insertion procedure does one more check to figure out into which of y’s child we
+should place z.
+
+Note that TreeInsertRecursive(x, z) implemented in 12.3-1 doesn’t perform that check, also
+the original TreeInsert(T, z) can be easily modified to avoid it as well.
+
+
+12.3-3
+
+We can sort a given set of n numbers by first building a binary search tree containingthese numbers (using TREE-INSERT repeatedly to insert the numbers one byone) and then printing the numbers by an inorder tree walk. What are the worst-caseand best-case running times for this sorting algorithm?
+
+Solution:
+
+The best case happens when values of a given set are uniformly distributed. In this case
+the symmetric binary search tree is built with the running time of TREE-INSERT be O(h), where h = lgn. As we insert n elements the total time is O(n*h).
+The treeWalkInorder takes O(n) time and so the total best-case running time of a
+proposed procedure is T(n) = O(n*h + n) = O(n*h) = O(n*lgn).
+
+The worst case happens when the set of n numbers is already sorted, in either ordering.
+In this case our BST obtains height n - 1 as it becomes essentially a linked list, and
+so T(n) = O(n*h + n) = O(n*(n-1) + n) = O(n^2) in the worst case.
+
+
+12.3-4
+
+Is the operation of deletion “commutative” in the sense that deleting x and then yfrom a binary search tree leaves the same tree as deleting y and then x? Argue whyit is or give a counterexample.
+
+Solution:
+
+Checked 5 variants on paper - all resulted in the same tree. Stopped then.
+
+TODO: Once implemented in code - check this on different trees to find the final answer.
+
+
+12.3-5
+
+Suppose that instead of each node x keeping the attribute x.p, pointing to x’sparent, it keeps x.succ, pointing to x’s successor. Give pseudocode for SEARCH,INSERT, and DELETE on a binary search tree T using this representation. Theseprocedures should operate in time O(h), where h is the height of the tree T.
+(Hint: You may wish to implement a subroutine that returns the parent of a node.)
+
+Solution:
+
+TreeSearch(x, key)
+ while (x != nil && x.key != key)
+ 	if key < x.key
+		x = x.left
+	else
+		x = x.right
+ return x
+
+We don’t seem to have to change here anything as no parent is used in TreeSearch.
+
+Other modifications seem messy and confusing to me =)
+
+
+12.3-6
+
+When node z in TREE-DELETE has two children, we could choose node y asits predecessor rather than its successor. What other changes to TREE-DELETEwould be necessary if we did so? Some have argued that a fair strategy, givingequal priority to predecessor and successor, yields better empirical performance.How might TREE-DELETE be changed to implement such a fair strategy?
+
+Solution:
+
+TODO: Check in code the modified TreeDelete procedure!
+
+Here’s the original procedure just for reference (taken from head).
+
+TreeDelete(T, z)
+ if z.right == nil
+ 	Transplant(T, z, z.left)
+ else if z.left == nil
+ 	Transplant(T, z, z.right)
+ else
+ 	y = TreeMinimum(z.right)
+	if y.parent != z
+		Transplant(T, y, y.right)
+		y.right = z.right
+		y.right.parent = y
+	Transplant(z, y)
+	y.left = z.left
+	y.left.parent = y
+
+My thinking is that choosing y as a predecessor of x is just symmetrically identical to
+choosing y as a successor.
+
+Thus the changes are trivial and are as follows:
+
+TreeDelete(T, z)
+ if z.right == nil
+ 	Transplant(T, z, z.left)
+ else if z.left == nil
+ 	Transplant(T, z, z.right)
+ else
+ 	y = TreeMaximum(z.left) // CHANGE
+	if y.parent != z
+		Transplant(T, y, y.right)
+		y.left = z.left // CHANGE
+		y.left.parent = y // CHANGE
+	Transplant(z, y)
+	y.right = z.right // CHANGE
+	y.right.parent = y // CHANGE
+
+To implement a fair strategy we’d need to randomly choose whether to call TreeMaximum
+or TreeMinimum, thus making the procedure randomized.
+
+That would be done as follows:
+
+TreeDelete(T, z)
+…
+ useSuccessor = random(0, 1)
+ if useSuccessor
+ 	y = TreeMinimum(z.right)
+ else
+ 	y = TreeMaximum(z.left)
+…

@@ -6,10 +6,12 @@
 //  Copyright © 2017 Max Reshetey. All rights reserved.
 //
 
-#ifndef __3_2_Sentinel_h
-#define __3_2_Sentinel_h
+#ifndef _2_3_2_Sentinel_h
+#define _2_3_2_Sentinel_h
 
 #include "Defines.h"
+
+namespace Ex_2_3_2_Sentinel {
 
 const int kSentinel = 1234567890;
 
@@ -84,6 +86,6 @@ void test_2_3_2()
 
 	printArray(A);
 }
+}
 
-
-#endif /* __3_2_Sentinel_h */
+#endif /* _2_3_2_Sentinel_h */

@@ -1,0 +1,78 @@
+12.1-1
+
+For the set of {1, 4, 5, 10, 16, 17, 21} of keys, draw binary search trees of heights 2,3, 4, 5, and 6.
+
+Solution:
+
+Drawn on paper. The tree of height 6 is essentially a sorted linked list.
+
+
+12.1-2
+
+What is the difference between the binary-search-tree property and the min-heapproperty (see page 153)? Can the min-heap property be used to print out the keysof an n-node tree in sorted order in O(n) time? Show how, or explain why not.
+
+Solution:
+
+I think the main difference is that the BST property in explicit way sets the
+relative order of a node and each of its two children, while the min-heap property
+just ensures that the node is less than or equal to its two children, without
+specifying any ordering between them. As we go deeper into each child’s subtree,
+we can observe how both subtrees may become completely unrelated.
+Consequently, the min-heap property cannot be used to traverse the nodes of a tree
+in sorted order.
+
+TODO: Hmm, does the BST property set the total order on the nodes then? (reflexive,
+antisymmetric, transitive, and is valid for any two nodes - seems true).
+
+
+12.1-3
+
+Give a nonrecursive algorithm that performs an inorder tree walk. (Hint: An easysolution uses a stack as an auxiliary data structure. A more complicated, but elegant,solution uses no stack but assumes that we can test two pointers for equality.)
+
+Solution:
+
+WalkTreeInOrderIterative(x)
+ var lastVisited = nil
+ while x != nil
+ 	if lastVisited == x.right
+ 		lastVisited = x
+ 		x = x.parent
+ 		continue
+
+ 	if lastVisited != x.left && x.left != nil
+ 		lastVisited = x
+ 		x = x.left
+ 		continue
+
+ 	print x.key
+
+ 	if x.right != nil
+ 		lastVisited = x
+ 		x = x.right
+ 		continue
+
+ 	// Case when we printed a leaf
+ 	lastVisited = x
+ 	x = x.parent
+
+
+12.1-4
+
+Give recursive algorithms that perform preorder and postorder tree walks in Ø(n)time on a tree of n nodes.
+
+Solution:
+
+PREORDER-TREE-WALK(x)1 if x != NIL
+2	print x.key3 	PREORDER-TREE-WALK(x.left)4 	PREORDER-TREE-WALK(x.right)
+
+POSTORDER-TREE-WALK(x)1 if x != NIL2 	POSTORDER-TREE-WALK(x.left)3 	POSTORDER-TREE-WALK(x.right)
+4	print x.key
+
+
+12.1.-5
+
+Argue that since sorting n elements takes Ω(nlgn) time in the worst case inthe comparison model, any comparison-based algorithm for constructing a binarysearch tree from an arbitrary list of n elements takes Ω(nlgn) time in the worstcase.
+
+Solution:
+
+We can represent a comparison algorithm as a decision-tree, which is a binary tree.

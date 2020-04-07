@@ -6,14 +6,16 @@
 //  Copyright © 2017 Max Reshetey. All rights reserved.
 //
 
-#ifndef __1_3_h
-#define __1_3_h
+#ifndef _4_1_3_h
+#define _4_1_3_h
 
 #include "Defines.h"
 
 // Implementations of the maximum-subarray problem
 
 // TODO: Note that all implementations below return a single max array, even if there're actually more than one.
+
+namespace Ex_4_1_3 {
 
 // Experimentally found problem size, when divide-and-conquer version starts to beat the brute-force one.
 const int kCrossoverSize = 40;
@@ -135,7 +137,7 @@ Tuple findMaxSubarray(Array & arr, int lowIndex, int hiIndex, bool useBruteForce
 	return crossTuple;
 }
 
-void test_4_1_3()
+void test()
 {
 //	Array arr = {100, 113, 110, 85, 105, 102, 86, 63, 81, 101, 94, 106, 101, 79, 94, 90, 97};
 //	Array arr = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
@@ -170,5 +172,6 @@ void test_4_1_3()
 	cout << "Sum (recursive): " << tuple1.sum << " {" << tuple1.lowIndex << ", " << tuple1.hiIndex << "}\n";
 	cout << "Sum (recursive-brut): " << tuple2.sum << " {" << tuple2.lowIndex << ", " << tuple2.hiIndex << "}\n";
 }
+}
 
-#endif /* __1_3_h */
+#endif /* _4_1_3_h */

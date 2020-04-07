@@ -1,0 +1,91 @@
+C.4-1
+
+Pr{S} = 1 - axiom 2 of the probability axioms
+
+Pr{X=k} = q^(k-1) • p - geometric distribution
+
+(k=1..INF)SUM(q^(k-1) • p) = p • (k=0..INF)SUM(q^k) (applying A.6, since |q| < 1) = p * 1/(1-q) = p * 1/p = 1
+
+
+C.4-2
+
+|S| = {H, T}^6 = 2^6 = 64
+
+Pr{3H3T} = C(6, 3) / 64 = 6!/3!/3! / 64 = 6*5*4 / 6 / 64 = 20 / 64 = 5/16
+
+E[3H3T] = 1 / p = 16/5 = 3.2 flips on average
+
+
+C.4-3
+
+b(k; n, p) = C(n, k) * p^k * (1-p)^(n-k)
+
+b(n-k; n, q) = C(n, n-k) * q^(n-k) * (1-q)^(n-(n-k)) =
+C(n, n-k) * q^(n-k) * (1-q)^k =
+C(n, n-k) * (1-p)^(n-k) * p^k =
+C(n, k) * p^k * (1-p)^(n-k) = b(k; n, p) (since C(n, k) = C(n, n-k) C.3)
+
+
+C.4-4
+
+Failed to figure out, see https://en.wikipedia.org/wiki/De_Moivre–Laplace_theorem
+
+b(k; n, p) = C(n, k) * p^k * (1-p)^(n-k)
+
+Apparently need to use Stirling’s approximation here n! =approx sqrt(2*pi*n) * (n/e)^n
+
+
+C.4-5*
+
+b(k; n, p) = C(n, k) * p^k * (1-p)^(n-k)
+
+p = 1/n, q = 1 - 1/n = (n-1)n
+
+Let X be the number of successes
+
+Pr{X = 0} = C(n, 0) * p^0 * (1-p)^(n-0) = (1-1/n)^n
+
+Pr{X = 1} = C(n, 1) * p^1 * (1-p)^(n-1) = n * 1/n * (1-1/n)^(n-1) = (1-1/n)^(n-1)
+
+We know that (n->INF)lim(1 + x/n)^n = e^x (3.14), which is used to show that (n->INF)lim(1-1/n)^n = 1/e
+
+(See https://www.quora.com/What-is-the-limit-of-1-1-n-n-as-n-tends-to-infinity/answer/Kevin-Mu)
+
+So, for sufficiently large n:
+Pr{X = 0} = (1-1/n)^n = 1/e
+Pr{X = 1} = (1-1/n)^(n-1) = (1-1/n)^n / (1-1/n) = (1-1/n)^n = 1/e
+
+
+C.4-6*
+
+b(k; n, p) = C(n, k) * p^k * (1-p)^(n-k)
+
+Rosencrantz
+Pr{H} = p = 1/2 - head is a success
+
+Probability that Rosen gets k heads in n trials:
+bR(k; n, p) = C(n, k) * (1/2)^k * (1/2)^(n-k) = C(n, k)  / 2^n
+
+Guildenstern
+Pr{T} = p = 1/2 - tail is a success
+
+Probability that Guilden gets k tails (n - k heads) in n trials:
+bG(n-k; n, p) = C(n, n - k) * (1/2)^(n - k) * (1/2)^(n - (n-k)) = C(n, n - k) / 2^n
+
+Finally, the probability that both profs get the same number of heads:
+
+Pr{kTkT} = (k=0..n)SUM(bR(k; n, p) • bG(k; n, p)) = 
+(k=0..n)SUM(C(n, k)  / 2^n • C(n, n - k) / 2^n) = (k=0..n)SUM(C(n, k)^2) / 4^n
+
+Using the identity given in the exercise, we have:
+(k=0..n)SUM(C(n, k)^2) / 4^n = C(2n, n) / 4n
+
+
+C.4-7
+Skipped
+
+C.4-8
+Skipped
+
+C.4-9
+Skipped

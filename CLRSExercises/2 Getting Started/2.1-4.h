@@ -6,8 +6,8 @@
 //  Copyright © 2017 Max Reshetey. All rights reserved.
 //
 
-#ifndef __1_4_h
-#define __1_4_h
+#ifndef _2_1_4_h
+#define _2_1_4_h
 
 #include <iostream>
 #include <vector>
@@ -27,6 +27,8 @@
 //	Before each iteration, array C[i+1..C.count] contains sum of A[i .. A.count] and B[i .. B.count]
 
 // Init: Prior to the 1st iteration we don't have any sum yet?!
+
+namespace Ex_2_1_4 {
 
 std::vector<bool> sum(std::vector<bool> & A, std::vector<bool> & B)
 {
@@ -107,7 +109,7 @@ void print(std::vector<bool> & V)
 	std::cout << std::endl;
 }
 
-void test_2_1_4()
+void test()
 {
 //	std::vector<bool> A = {1, 1, 1, 1, 1, 1, 1, 1};
 //	std::vector<bool> B = {1, 1, 1, 1, 1, 1, 1, 1};
@@ -133,5 +135,6 @@ void test_2_1_4()
 	
 	std::cout << std::endl;
 }
+}
 
-#endif /* __1_4_h */
+#endif /* _2_1_4_h */

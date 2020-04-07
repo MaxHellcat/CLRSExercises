@@ -8,8 +8,8 @@
 
 #include "Defines.h"
 
-#ifndef __2_2_h
-#define __2_2_h
+#ifndef _2_2_2_h
+#define _2_2_2_h
 
 // Sorting problem
 
@@ -39,6 +39,8 @@
 
 // The best-case running time here is the same as worst-case, since inner loop always traverses A[i+1 .. n] to find the next smallest key, and is Ø(n^2)
 
+namespace Ex_2_2_2 {
+
 void selectionSort(Array & array)
 {
 	for (int i = 0; i < array.size()-1; i++)
@@ -59,7 +61,7 @@ void selectionSort(Array & array)
 	}
 }
 
-void test_2_2_2()
+void test()
 {
 	Array array = randomArrayWithSize(10);
 
@@ -74,5 +76,6 @@ void test_2_2_2()
 	cout << endl;
 
 }
+}
 
-#endif /* __2_2_h */
+#endif /* _2_2_2_h */

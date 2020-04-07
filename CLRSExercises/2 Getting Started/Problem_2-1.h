@@ -11,7 +11,8 @@
 
 #include "Defines.h"
 #include "2.3-2_Sentinel.h" // For merge(...)
-#include "2.3-4.h" // For insertion sort
+
+namespace Pr_2_1 {
 
 const int kMinProblemSize = 20;
 
@@ -36,7 +37,7 @@ void mergeSortWithInsertionSort(Array & arr, int p, int r)
 			mergeSortWithInsertionSort(arr, q+1, r);
 		}
 
-		merge(arr, p, q, r);
+		Ex_2_3_2_Sentinel::merge(arr, p, q, r);
 	}
 }
 
@@ -60,7 +61,7 @@ void insertionSort(Array & arr, int p, int r)
 	}
 }
 
-void test_problem_2_1()
+void test()
 {
 //	Array arr = {5, 2, 4, 7, 1, 3, 2, 6};
 	Array arr1 = randomArrayWithSize(524288);
@@ -73,7 +74,7 @@ void test_problem_2_1()
 	const auto t1 = high_resolution_clock::now();
 
 //	mergeSortWithInsertionSort(arr1, 0, (int)arr1.size() - 1);
-	mergeSort(arr1, 0, (int)arr1.size() - 1);
+	Ex_2_3_2_Sentinel::mergeSort(arr1, 0, (int)arr1.size() - 1);
 
 	const auto t2 = high_resolution_clock::now();
 
@@ -96,8 +97,7 @@ void test_problem_2_1()
 	const auto dduration = duration_cast<microseconds>(tt2 - tt1).count();
 	
 	cout << "Duration 2: " << dduration << endl;
-
-	
+}
 }
 
 #endif /* Problem_2_1_h */

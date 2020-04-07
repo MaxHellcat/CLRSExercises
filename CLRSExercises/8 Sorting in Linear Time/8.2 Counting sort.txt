@@ -1,0 +1,114 @@
+8.2-1
+
+Using Figure 8.2 as a model, illustrate the operation of Counting-Sort on the array A = {6, 0, 2, 0, 1, 3, 4, 6, 1, 3, 2}
+
+Solution:
+
+A = {6, 0, 2, 0, 1, 3, 4, 6, 1, 3, 2}, n = 11, k = A.max = 6
+
+After line 3:
+C = {0, 0, 0, 0, 0, 0, 0}
+
+After line 5: 
+C = {2, 2, 2, 2, 1, 0, 2}
+
+After line 8
+C = {2, 4, 6, 8, 9, 9, 11}
+
+Final loop, after iteration:
+j = A.size = 11:
+B = {_, _, _, _, _, 2, _, _, _, _, _}
+C = {2, 4, 5, 8, 9, 9, 11}
+
+j = A.size - 1 = 10:
+B = {_, _, _, _, _, 2, _, 3, _, _, _}
+C = {2, 4, 5, 7, 9, 9, 11}
+
+j = A.size - 2 = 9:
+B = {_, _, _, 1, _, 2, _, 3, _, _, _}
+C = {2, 3, 5, 7, 9, 9, 11}
+
+j = A.size - 3 = 8:
+B = {_, _, _, 1, _, 2, _, 3, _, _, 6}
+C = {2, 3, 5, 7, 9, 9, 10}
+
+j = A.size - 4 = 7:
+B = {_, _, _, 1, _, 2, _, 3, 4, _, 6}
+C = {2, 3, 5, 7, 8, 9, 10}
+
+j = A.size - 5 = 6:
+B = {_, _, _, 1, _, 2, 3, 3, 4, _, 6}
+C = {2, 3, 5, 6, 8, 9, 10}
+
+j = A.size - 6 = 5:
+B = {_, _, 1, 1, _, 2, 3, 3, 4, _, 6}
+C = {2, 2, 5, 6, 8, 9, 10}
+
+j = A.size - 7 = 4:
+B = {_, 0, 1, 1, _, 2, 3, 3, 4, _, 6}
+C = {1, 2, 5, 6, 8, 9, 10}
+
+j = A.size - 8 = 3:
+B = {_, 0, 1, 1, 2, 2, 3, 3, 4, _, 6}
+C = {1, 2, 4, 6, 8, 9, 10}
+
+j = A.size - 9 = 2:
+B = {0, 0, 1, 1, 2, 2, 3, 3, 4, _, 6}
+C = {0, 2, 4, 6, 8, 9, 10}
+
+j = A.size - 10 = 1:
+B = {0, 0, 1, 1, 2, 2, 3, 3, 4, 6, 6}
+C = {0, 2, 4, 6, 8, 9, 9}
+
+
+8.2-2
+
+Prove that Counting-Sort is stable.
+
+Solution:
+
+Let’s consider a specific array where all elements are equal, for example:
+A = {5, 5, 5}
+C = {0, 0, 0, 0, 0, 3}
+
+According to the counting sort algorithm, the C[i] indicates number of element = i.
+
+To keep the same order, i.e. to maintain stability, we need to place the last element A[3] such that other
+identical elements are to the left of it, i.e. exactly in the accumulated position C[5] = 3. Since we got rid of
+one of the elements, the C[5] should be adjusted to indicate the actual number of remaining elements, or C[5] = 3-1 = 2
+
+To keep the order further, the next element A[2] must be placed immediately before A[3] into C[5] = 2, which is exactly the position
+pointed by C[5]. Doing so incrementally until we’ve placed the last element will therefore preserve the initial order of identical elements.
+
+Observing the final positioning loop of the Counting-Sort in lines 10-12 we can conclude that it performs exactly
+as explained above, and hence the algorithm is stable.
+
+
+8.2-3
+
+Suppose that we were to rewrite the for loop header in line 10 of the Counting-Sort as
+
+10 for j = 1 to A.size
+
+Show that the algorithm still works properly. Is the modified algorithm stable?
+
+Solution:
+
+It will work the same because decremented element C[A[j]] has no impact on further iterations, in either directions.
+It will lose stability however, as the order of identical elements will be reversed.
+
+
+8.2-4
+
+TODO: Write the exercise title.
+
+Solution:
+
+To answer such a query we must return K, where a ≤ K ≤ b.
+
+The part K ≤ b equals C[b] - number of elements ≤ b. To satisfy a ≤ K we must know the exact number of elements = a, which is
+exactly what the original C array contains after line 5.
+
+Therefore the solution is K = C[b] - C[a] + C’[a], where C’ is the array C obtained after line 5.
+
+Building C, C’ takes Ø(k + n + k) = Ø(k + n) time, finding the answer takes O(1) time, since it’s an arithmetic expression.

@@ -1,0 +1,98 @@
+B.2-1
+
+Prove that the subset relation “≤” on all subsets of Z is a partial order but not atotal order.
+
+Solution:
+
+Note: Here “≤” will mean “a subset of” (haven't found that symbol).
+
+Z - set of integers, infinite, countable.
+
+Let R be a relation on Z, then from the basic properties of sets, it is:
+
+Reflexive, as a ≤ a, for a = {0, …, 10}
+Antisymmetric, as a ≤ b and b ≤ a imply a = b, for a = {0, …, 10}, b = {0, …, 10}
+Transitive, as a ≤ b and b ≤ c imply a ≤ c, for a = {0, …, 10}, b = {0, …, 30}, c = {0, …, 50},
+
+thus R is a partial order.
+
+It’s not a total order, however, since not any two subsets are related by the R, e.g.
+{0, …, 10} and {20, …, 30}, or {10, …, 30} and {20, …, 50}
+
+
+B.2-2
+
+Show that for any positive integer n, the relation “equivalent modulo n” is an equivalencerelation on the integers. (We say that a = b (mod n) if there exists aninteger q such that a - b = qn.) Into what equivalence classes does this relationpartition the integers?
+
+Solution:
+
+P = {1, 2, 3, …}
+
+{1, 2, 3, …} x {1, 2, 3, …} = {11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26, 27, …}
+
+Let R be a relation on P, such that for (a, b) belonging to P a is “equivalent module n” to b.
+
+Note: When a is “equivalent module n” to b, then both have the same remainder, when divided by n.
+
+Reflexive, as 5 R 5 (obvious)
+Symmetric, as 11 R 31 (mod 10) implies 31 R 11 (mod 10) (obvious)
+Transitive, as 3 R 9 (mod 3) and 9 R 27 (mod 3) imply 3 R 27 (mod 3),
+
+thus R is an equivalence relation.
+
+But, these are NOT equivalence classes, since sets are not disjoint:
+[1] = {1, 2, 3, 4, 5, 6, …} (mod 1)
+[2] = {2, 4, 6, 8, 10, 12, 14, 16, 18 …} (mod 2)
+[3] = {3, 6, 9, 12, …} (mod 3)
+[4] = {4, 8, 12}
+
+So think more here!
+
+
+B.2-3
+
+Give examples of relations that area. reflexive and symmetric but not transitive,b. reflexive and transitive but not symmetric,c. symmetric and transitive but not reflexive.
+
+Solution:
+
+a. Reflexive and symmetric but not transitive:
+Friends (mutual) (provided a person is a friend to himself)
+
+b. Reflexive and transitive but not symmetric:
+≤, ≥
+
+c. Symmetric and transitive but not reflexive:
+Ability of a person to carry other person =)
+
+
+B.2-4
+
+Let S be a finite set, and let R be an equivalence relation on S x S. Show that ifin addition R is antisymmetric, then the equivalence classes of S with respect to Rare singletons.
+
+Solution:
+
+R:
+a R a
+a R b => b R a
+a R b and b R c => a R c
+In addition:
+a R b and b R a => a = b
+
+By definition, the equivalence class of a is the set of all elements equivalent to a, or formally:
+[a] = {b: a R b}
+
+Since R is antisymmetric, then b = a, therefore [a] = {a} and thus is a singleton.
+
+
+B.2-5
+
+Professor Narcissus claims that if a relation R is symmetric and transitive, then it isalso reflexive. He offers the following proof. By symmetry, a R b implies b R a.Transitivity, therefore, implies a R a. Is the professor correct?
+
+Solution:
+
+The professor seems to be correct, as a R b and b R a => a R a is a special case of transitivity a R b and b R c => a R c, when a = c.
+
+TODO: How then did you come up with the answer on B.2-3 item c?
+
+Old:
+Transitivity states that a R b and b R c imply a R c, that is it holds for a, b, c that in general are all different. Therefore professor Narcissus is wrong, since his proof covers only a specific case of transitivity, when c = a.

@@ -1,0 +1,71 @@
+7.4-1
+
+Skipped
+
+
+7.4-2
+
+Show that quicksort’s best-case running time is Ω(nlgn).
+
+Solution:
+
+The recurrence for the quicksort’s best-case running time is:
+T(n) = 2T(n/2) + Ø(n)
+
+According to case 2 of the master theorem, it has the solution Ø(nlgn), which implies Ω(nlgn).
+
+Alternatively, we can use substitution method to prove the lower bound. Let T(n) ≥ dnlgn, then
+T(n) ≥ 2(dn/2*lg(n/2)) + cn = dn*(lgn - lg2) + cn = dn*lgn - dn + cn ≥ dnlgn, for any c > 0, d ≤ c
+
+
+7.4-3
+
+To verify this claim, note that the second derivative of the expression with respect to q is positive (see Exercise 7.4-3).
+
+
+7.4-4
+
+Show that Randomized-Quicksort’s expected running time is Ω(nlgn).
+
+Solution:
+
+Since the best-case running time for “ideal” partitioning is T(n) = Ω(nlgn), the possibly existing bad splits produced
+by Randomized-Partition() will never allow Randomized-Quicksort to run any faster, thus its expected running time is also Ω(nlgn).
+
+Off-top: And we can conclude here that the expected running time of quicksort is Ø(nlgn).
+
+
+7.4-5
+…
+Argue that this sorting algorithm runs in O(nk + n*lg(n/k)) expected time. How should we pick k, both in theory and in practice?
+
+Solution:
+
+The height of a recursion tree of the modified quicksort is h = lg(n/k) (follows from n / 2^h = k, because
+we stop when problem size equals k). Since cost of each level is at most n, we have T1(n) = O(n*lg(n/k))
+Now, when we reach problem size k, we have n / k possibly unsorted sub-problems (follows from n / 2^h = k => n / k = 2^h), 
+each having cost Ø(k^2) to sort using insertion sort, thus T2(n) = Ø(k^2 * n/k) = Ø(nk).
+Also, intuitively, since there’re at most k unsorted elements, the inner loop of insertion sort will iterate at most k times, for each 
+iteration of its outer loop, which is run n-1 times.
+
+And the resulting running time of the modified quicksort:
+T(n) = O(n*lg(n/k)) + Ø(nk) = O(n*lg(n/k) + nk)
+
+Now, how should we pick k in theory?
+
+c1*n*lg(n/k) + c2nk < c1*nlgn => c1lgk > c2k => lgk > (c2/c1)*k
+
+So we have 3 unknowns here and can only solve for the first several values of k:
+1 > 2x => x < 1/2
+2 > 4x => x < 1/2
+3 > 8x => x < 3/8
+4 > 16x => x < 1/4
+As we see, whichever k we chose, there’s always some c1/c2 that make the inequality to hold, moreover c2 < c1. 
+Since c1, c2 depend on the specific machine(s), k also varies for different machines and should be found experimentally.
+
+In practice, we must run both versions on the same machine and trace when modified starts to beat the identity version.
+
+
+7.4-6 *
+
+Skipped

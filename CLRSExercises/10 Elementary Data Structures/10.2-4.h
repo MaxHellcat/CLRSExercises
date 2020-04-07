@@ -6,10 +6,12 @@
 //  Copyright © 2020 Max Reshetey. All rights reserved.
 //
 
-#ifndef _0_2_4_h
-#define _0_2_4_h
+#ifndef _10_2_4_h
+#define _10_2_4_h
 
 #include <iostream>
+
+namespace Ex_10_2_4 {
 
 // Singly linked list with sentinel. Interface is limited by exercise scope.
 // May and should be used as a base for full-weight class
@@ -67,7 +69,7 @@ private:
     Node * head = nil;
 };
 
-void test_10_2_4() {
+void test() {
 
     SingleListSentinel list;
 
@@ -88,5 +90,6 @@ void test_10_2_4() {
     node = list.search(15);
     printf("See node %p, key %i\n\n", node, node?node->key:-1);
 }
+}
 
-#endif /* _0_2_4_h */
+#endif /* _10_2_4_h */

@@ -44,6 +44,8 @@
 // Worst (and average) case is Ø(n^2). The standard implementation here doesn't allow to enhance it to Ø(n) for the best-case running time in case of sorted input, as inner loop always traverses A.size.
 // However, trivial modification allows Ø(n), which is shown in code.
 
+namespace Pr_2_2 {
+
 void bubbleSort(Array & arr)
 {
 	for (int i = 0; i < arr.size() - 1; i++)
@@ -71,7 +73,7 @@ void bubbleSort(Array & arr)
 	}
 }
 
-void test_problem_2_2()
+void test()
 {
 	Array arr = {5, 2, 4, 7, 1, 3, 2, 6};
 //	Array arr = randomArrayWithSize(1000);
@@ -81,6 +83,7 @@ void test_problem_2_2()
 	bubbleSort(arr);
 	
 	printArray(arr);
+}
 }
 
 #endif /* Problem_2_2_h */

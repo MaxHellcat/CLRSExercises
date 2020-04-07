@@ -1,0 +1,95 @@
+8.4-1
+
+Using Figure 8.4 as a model, illustrate the operation of BUCKET-SORT on the arrayA = {0.79, 0.13, 0.16, 0.64, 0.39, 0.20, 0.89, 0.53, 0.71, 0.42}
+
+Solution:
+
+0.79	0 /
+0.13	1 -> 0.13 -> 0.16
+0.16	2 -> 0.20
+0.64	3 -> 0.39
+0.39	4 -> 0.42
+0.20	5 -> 0.53
+0.89	6 -> 0.64
+0.53	7 -> 0.71 -> 0.79
+0.71	8 -> 0.89
+0.42	9 /
+
+My extra work to see how it goes for n > 10:
+
+n = 20
+
+ 0.79	0
+ 0.13	1
+ 0.16	2 -> 0.13, 0.14
+ 0.64	3 -> 0.16, 0.17
+ 0.39	4 -> 0.20, 0.21
+ 0.20	5
+ 0.89	6
+ 0.53	7 -> 0.38, 0.39
+ 0.71	8 -> 0.42, 0.43
+ 0.42	9
+ 0.78	10 -> 0.53, 0.54
+ 0.14	11
+ 0.17	12 -> 0.64
+ 0.66	13 -> 0.66
+ 0.38	14 -> 0.71, 0.72
+ 0.21	15 -> 0.78, 0.79
+ 0.88	16
+ 0.54	17 -> 0.88, 0.89
+ 0.72	18
+ 0.43	19
+
+
+8.4-2
+
+Explain why the worst-case running time for bucket sort is Ø(n^2). What simplechange to the algorithm preserves its linear average-case running time and makesits worst-case running time O(nlgn)?
+
+Solution:
+
+If the input isn’t uniformly distributed, i.e. O(n) elements get into few buckets,
+then underlying insertion sort will sort them in Ø(n^2) time, dominating the overall
+running time.
+To attain the worst-case O(nlgn), we need to switch to other stable sorting algorithm
+with the worst-case running time O(nlgn), such as merge sort.
+Note, that to strictly prove that this will preserve the linear average-case
+running time, we need to solve 8.1 with E[nilgni].
+
+
+8.4-3
+
+Let X be a random variable that is equal to the number of heads in two flips of afair coin. What is E[X^2]? What is E^2[X]?
+
+Solution:
+
+Let Xi be the indicator random variable indicating whether the ith flip is a head, then:
+X = (i=1..n)SUM(Xi), where n = 2
+
+E[Xi] = 1*1/2 + 0*1/2 = 1/2
+
+Taking expectations of both sides we have:
+E[X] = E[(i=1..n=2)SUM(Xi)] = (i=1..n=2)SUM(E[Xi]) = (i=1..n=2)SUM(1/2) = 1
+
+// Extra check E[X] is correct w/o using indicator random variable:
+E[X] = 0*1/4 + 1*1/2 + 2*1/4 = 1/2 + 1/2 = 1 - OK
+
+So (E[X])^2 = 1
+
+Now,
+E[X^2] = E[((i=1..n=2)SUM(Xi))^2] = E[(i=1..2)SUM(j=1..2)SUM(XiXj)] = 
+E[(i=1..2)SUM((Xi)^2) + (i=1..2)SUM(j=1..2, j!=i)SUM(XiXj)] =
+(i=1..2)SUM(E[(Xi)^2)] + (i=1..2)SUM(j=1..2, j!=i)SUM(E[XiXj]) 
+
+Having E[(Xi)^2)] = 1^2 * 1/2 = 1/2, and
+E[XiXj] = E[Xi]E[Xj] = 1/4 (since Xi and Xj are independent), 
+we have:
+
+(i=1..2)SUM(E[(Xi)^2)] = 2*1/2 = 1
+(i=1..2)SUM(j=1..2, j!=i)SUM(E[XiXj]) = 2*(2-1)*1/4 = 1/2
+
+Thus:
+E[X^2] = 1 + 1/2 = 3/2
+
+My extra work just curious:
+Var[X] = E[X^2] - (E[X])^2 = 3/2 - 1 = 1/2
+

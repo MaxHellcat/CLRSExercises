@@ -1,0 +1,186 @@
+10.1-1
+
+Using Figure 10.1 as a model, illustrate the result of each operation in the sequencePUSH(S, 4), PUSH(S, 1), PUSH(S, 3), POP(S), PUSH(S, 8), and POP(S) on aninitially empty stack S stored in array S[1..6].
+
+Solution:
+
+[0, 0, 0, 0, 0, 0] - initially empty stack (* is top)
+[4*, 0, 0, 0, 0, 0] - PUSH(S, 4)
+[4, 1*, 0, 0, 0, 0] - PUSH(S, 1)
+[4, 1, 3*, 0, 0, 0] - PUSH(S, 3)
+[4, 1*, 3, 0, 0, 0] - POP(S)
+[4, 1, 8*, 0, 0, 0] - PUSH(S, 8)
+[4, 1*, 8, 0, 0, 0] - POP(S)
+
+
+10.1-2
+
+Explain how to implement two stacks in one array A[1..n] in such a way thatneither stack overflows unless the total number of elements in both stacks togetheris n. The PUSH and POP operations should run in O(1) time.
+
+Solution:
+
+The solution is based on the idea that S1 grows right, but S2 grows left. Thus, a stack
+overflow happens when its top reaches other stack’s top, in which case total number of
+elements in both stacks is n.
+
+Let S1, S2 be the stacks, where S1.top = 0, and S2.top = n + 1
+
+Push(S1, x)
+1 if S1.top + 1 == S2.top
+2 	error(“S1 overflow”)
+3 else
+4 	S1.top = S1.top + 1
+5 	S1[top] = x
+
+Push(S2, x)
+1 if S2.top - 1 == S1.top
+2 	error(“S2 overflow”)
+3 else
+4 	S2.top = S2.top - 1
+5 	S2[top] = x
+
+
+10.1-3
+
+Using Figure 10.2 as a model, illustrate the result of each operation in thesequence ENQUEUE(Q, 4), ENQUEUE(Q, 1), ENQUEUE(Q, 3), DEQUEUE(Q),ENQUEUE(Q, 8), and DEQUEUE(Q) on an initially empty queue Q stored inarray Q[1..6].
+
+Solution:
+
+[0ht, 0, 0, 0, 0, 0] - initially empty queue (h, t mark head, tail)
+[4h, 0t, 0, 0, 0, 0] - ENQUEUE(Q, 4)
+[4h, 1, 0t, 0, 0, 0] - ENQUEUE(Q, 1)
+[4h, 1, 3, 0t, 0, 0] - ENQUEUE(Q, 3)
+[4, 1h, 3, 0t, 0, 0] - DEQUEUE(Q)
+[4, 1h, 3, 8, 0t, 0] - ENQUEUE(Q, 8)
+[4, 1, 3h, 8, 0t, 0] - DEQUEUE(Q)
+
+
+10.1-4
+
+Rewrite Enqueue and Dequeue to detect underflow and overflow of a queue.
+
+Solution:
+
+Enqueue(Q, x)
+1 let nextTail
+2 if Q.tail == Q.size
+3	nextTail = 1
+4 else
+5 	nextTail = Q.tail + 1
+6 if nextTail == Q.head
+7 	error(“queue overflow”)
+8 else
+9 	Q[Q.tail] = x
+10 	Q.tail = nextTail
+
+Dequeue(Q)
+1 if Q.head == Q.tail
+2 	error(“queue underflow”)
+3 else
+4	let x = Q[Q.head]
+5 	if Q.head == Q.size
+6		Q.head = 1
+7 	else
+8 		Q.head = Q.head + 1
+9 	return x
+
+
+10.1-5
+
+Whereas a stack allows insertion and deletion of elements at only one end, and aqueue allows insertion at one end and deletion at the other end, a deque (double-endedqueue) allows insertion and deletion at both ends. Write four O(1)-timeprocedures to insert elements into and delete elements from both ends of a dequeimplemented by an array.
+
+Solution:
+
+Enque-Right(Q, x) // Identical to queue’s Enqueue
+ return Enqueue(Q, x)
+
+Enque-Left(Q, x)
+1 let nextHead
+2 if Q.head == 1
+3	nextHead = Q.size
+4 else
+5 	nextHead = Q.head - 1
+6 if nextHead == Q.tail
+7 	error(“deque overflow”)
+8 else
+9 	Q.head = nextHead
+10 	Q[Q.head] = x
+
+Deque-Left(Q) // Identical to queue’s Dequeue
+ return Dequeue(Q)
+
+Deque-Right(Q)
+1 if Q.tail == Q.head
+2 	error(“queue underflow”)
+3 else
+4 	if Q.tail == 1
+5		Q.tail = Q.size
+6 	else
+7 		Q.tail = Q.tail - 1
+8 	return Q[Q.tail]
+
+
+10.1-6
+
+Show how to implement a queue using two stacks. Analyze the running time of thequeue operations.
+
+Solution:
+
+The idea is to use another stack to reverse the order of elements.
+
+For example let S1, S2 be the two stacks representing our queue. Suppose we
+enqueue 5 elements, so S1 = [1, 2, 3, 4, 5]. Now we want to dequeue element 1, so
+we pop 5 and push it into S2, then pop 4 and push into S2 and so on, resulting in
+S2 = [5, 4, 3, 2, 1]. Now we simply pop 1 from the stack S2. To enqueue an element, we
+revers the elements back into S1 add push the element.
+The stack S1 thus is used to enqueue elements, and S2 is used for dequeue.
+
+Enqueue(Q, x)
+1 while !S2.empty		// n+1 times, cost c
+2 	Push(S1, Pop(S2))	// n times, cost c
+3 Push(S1, x)			// 1 time, cost c
+
+Dequeue(Q)
+1 while !S1.empty
+2 	Push(S2, Pop(S1))
+3 return Pop(S2)
+
+We now calculate the running time of the operations, we have:
+T(n) = c*(n+1) + c*n + c = 2c(n + 1) = Ø(n)
+
+So both operations take linear time, if preceding operation wasn’t the same.
+Otherwise the time is O(1), as we don’t have to reverse.
+
+
+10.1-7
+
+Show how to implement a stack using two queues. Analyze the running time of thestack operations.
+
+Solution:
+
+The idea is to dequeue all, but the last element into another queue for the pop
+operation. Since the order is preserved, the push operation is just enqueue
+on whichever queue isn’t empty.
+
+Push(S, x)
+1 if Q1.empty
+2 	Enqueue(Q2, x)
+3 else
+4 	Enqueue(Q1, x)
+
+Running time of Push is O(1), irrespective of the preceding operation.
+
+Pop(S)
+1 let Q, emptyQ // Vars to hold empty and non-empty queues
+2 if Q1.empty
+3	emptyQ = Q1
+4 	Q = Q2
+5 else
+6 	emptyQ = Q2
+7 	Q = Q1
+8 while Q.size > 1
+9 	let x = Dequeue(Q)
+9 	Enqueue(emptyQ, x)
+10 return Dequeue(Q)
+
+Running time of Pop is Ø(n), irrespective of the preceding operation.

@@ -1,0 +1,54 @@
+B.3-1
+
+Let A and B be finite sets, and let f : A -> B be a function. Show that
+
+a. if f is injective, then |A| <= |B|;
+b. if f is surjective, then |A| >= |B|.
+
+
+Solution:
+
+A = {1, 2, 3, 4}
+B = {1, 2, 3, 4, 5}
+
+If f is injective, then each distinct element of domain A is mapped to a distinct element of codomain B. Thus B should be at least of size of domain A, or |A| <= |B|.
+
+TODO: What are the elements in B that aren't images of elements in A?
+
+When f in surjective, distinct elements of A can map to the same element of B. Thus A is at least the size of B, or |A| >= |B|.
+
+
+B.3-2
+
+Is the function f(x) = x + 1 bijective when the domain and the codomain are N?Is it bijective when the domain and the codomain are Z?
+
+Solution:
+
+For N:
+0 + 1 = 1
+1 + 1 = 2
+2 + 1 = 3
+
+Whereas f(x) is injective (distinct x maps to distinct f(x)), it isn't surjective, since its value > 0, whereas 0 belongs to N. Alternatively, its codomain N = {0, 1, 2, 3, ...} isn't its range {1, 2, 3, ...}.
+Thus f(x) isn't bijective for N.
+
+For Z:
+-4 + 1 = -3
+-3 + 1 = -2
+-2 + 1 = -1
+-1 + 1 = 0
+0 + 1 = 1
+1 + 1 = 2
+2 + 1 = 3
+3 + 1 = 4
+
+Here f(x) is also injective. But now it's also surjective, since its codomain is equal to its range, as seen from the example above. Thus for Z the f(x) is bijective.
+
+
+B.3-3
+
+Give a natural definition for the inverse of a binary relation such that if a relationis in fact a bijective function, its relational inverse is its functional inverse.
+
+Solution:
+
+Hmm =)

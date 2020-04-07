@@ -1,0 +1,52 @@
+8.1-1
+
+What is the smallest possible depth of a leaf in a decision tree for a comparison sort.
+
+Solution:
+
+The smallest height of a leaf happens when for any 2 consecutive elements A[i], A[i+1]
+the following holds: A[i] ≤ A[i+1] or A[i] ≥ A[i+1], where due to transitivity of ≤, ≥ the shortest possible 
+path is established from the root to a leaf and equals n-1 comparisons or Ø(n) depth.
+
+
+8.1-2
+
+Obtain asymptotically tight bounds on lg(n!) without using Stirling’s approximation. Instead, evaluate
+the summation (k=1..n)SUM(lg(k)) using techniques from Section A.2.
+
+Solution:
+
+Note: You did this using integrals, but it can be done simpler by bounding the terms: (k=1..n)∑(lg(k)) ≤ (k=1..n)∑(lg(n))
+
+We have lg(n!) = lg(n*(n-1)*(n-2)*…*(n-(n-2))*1) = 
+lgn + lg(n-1) + lg(n-2) + … + lg(1) =
+(k=1..n)∑(lg(k))
+
+Now we have a summation of the form (k=m..n)SUM(f(k)), where m = 1, f(k) = lg(k) - monotonically increasing function.
+As described in Section A.2 Bounding summations, we can approximate it by integrals:
+
+(0..n)S(lg(x)dx) ≤ (k=1..n)∑(lg(k)) ≤ (1..n+1)S(lg(x)dx)
+
+As S(lg(x)dx) = (xlnx - x)/ln2 - https://en.wikipedia.org/wiki/List_of_integrals_of_logarithmic_functions,
+we have for lower bound:
+
+(k=1..n)∑(lg(k)) ≥ (0..n)S(lg(x)dx) = (n*ln(n) - n)/ln2 - (0*ln(0) - 0)/ln2 = (n*ln(n) - n)/ln2 = Ω(n*ln(n)) = Ω(n*lg(n))
+
+Similarly, for upper bound:
+(k=1..n)∑(lg(k)) ≤ (1..n+1)S(lg(x)dx) = ((n+1)*ln(n+1) - (n+1))/ln2 - (1ln1 - 1)/ln2 = ((n+1)*ln(n+1) - (n+1))/ln2 + 1/ln2 =
+((n+1)*ln(n+1) - n)/ln2 = (nln(n+1) + ln(n+1) - n)/ln2 = O(nln(n+1)) = O(nlg(n))
+
+From which we can conclude that lg(n!) = (k=1..n)SUM(lg(k)) = Ø(nlg(n))
+
+
+8.1-3
+
+Note: It’s solved in CLRS selected solutions, check it!
+
+Show that there’s no comparison sort whose running time is linear for at least half of the n! inputs of length n. What about 
+a fraction of 1/n of the inputs of length n? What about a fraction 1/2^n.
+
+Solution:
+
+FTFO
+

@@ -17,6 +17,8 @@
 
 // If we don't sort, I can't see how we can be better than Ø(n^2), as we must compare each with each anyway.
 
+namespace Pr_2_4 {
+
 int merge(Array & A, int p, int q, int r)
 {
 	const int leftArraySize = q - p + 1;
@@ -99,7 +101,7 @@ int mergeSort(Array & A, int p, int r)
 	return numOfInversions;
 }
 
-void test_problem_2_4()
+void test()
 {
 //	Array arr = {5, 2, 4, 7, 1, 3, 2, 6};
 //	Array arr = randomArrayWithSize(100);
@@ -113,6 +115,7 @@ void test_problem_2_4()
 	printArray(arr);
 	
 	cout << "Inversions: " << numOfInversions << endl;
+}
 }
 
 #endif /* Problem_2_4_h */

@@ -6,11 +6,12 @@
 //  Copyright © 2017 Max Reshetey. All rights reserved.
 //
 
-#ifndef __3_5_h
-#define __3_5_h
+#ifndef _2_3_5_h
+#define _2_3_5_h
 
 #include "Defines.h"
-#include "2.3-4.h" // For insertion sort
+
+namespace Ex_2_3_5 {
 
 int binarySearchRecursive(Array & arr, int startIndex, int endIndex, int val)
 {
@@ -41,7 +42,7 @@ int binarySearchRecursive(Array & arr, int startIndex, int endIndex, int val)
 	return finalIndex;
 }
 
-void test_2_3_5()
+void test()
 {
 	Array arr = {1, 7, 19, 27, 39, 53, 54, 98};
 //	Array arr = randomArrayWithSize(100);
@@ -58,5 +59,6 @@ void test_2_3_5()
 
 	cout << "See index of " << val << ": " << index << endl;
 }
+}
 
-#endif /* __3_5_h */
+#endif /* _2_3_5_h */

@@ -1,0 +1,123 @@
+10.2-1
+
+Can you implement the dynamic-set operation INSERT on a singly linked listin O(1) time? How about DELETE?
+
+Solution:
+
+The Insert can be done in O(1), since we only do x.next = head; head = x.
+The Delete operation takes Ø(n). It accepts an arbitrary object x, whose deletion
+requires updating the “next” pointer of the previous object, which we can only find
+in Ø(n) time.
+
+
+10.2-2
+
+Implement a stack using a singly linked list L. The operations PUSH and POPshould still take O(1) time.
+
+Solution:
+
+We view the list as a stack where push/pop are left-centric.
+
+Let L be a singly linked list, where L.head - pointer to the head.
+
+Push(L, x) // Time O(1), same as PushFront
+ x.next = L.head
+ L.head = x
+
+Pop(L) // Time O(1), same as PopFront
+ if L.head == nil
+ 	error “list underflow”
+ else
+ 	let x = L.head
+ 	L.head = L.head.next
+	return x
+
+
+10.2-3
+
+Implement a queue by a singly linked list L. The operations ENQUEUE and DEQUEUEshould still take O(1) time.
+
+Solution:
+
+The queue’s operations Enqueue adds an element from one side, whereas Dequeue removes
+one from the other. To ensure they take O(1) time, we need an O(1) access time
+to head and tail of the list, which we seem to only achieve by maintaining a pointer
+to the list’s tail.
+
+Alternatively, we can link L.tail.next = L.head, though e.g. Search operation will
+need to cater for the case when it starts over.
+Or we can use a sentinel approach.
+
+Let L be a singly linked list, where L.head, L.tail - pointer to the head/tail.
+
+Enqueue(L, x) // Time O(1), same as PushBack
+ if L.tail != nil
+ 	L.tail.next = x
+ 	x.next = nil
+ L.tail = x
+
+Dequeue(L) // Time O(1), same as Pop(L) above in the exercise 10.2-2
+
+
+10.2-4
+
+As written, each loop iteration in the LIST-SEARCH’ procedure requires two tests:one for x != L.nil and one for x.key != k. Show how to eliminate the test forx != L.nil in each iteration.
+
+Solution:
+
+LIST-SEARCH’(L, k)1 x = L.nil.next2 while x != L.nil and x.key != k3 	x = x.next4 return x
+
+We need to set L.nil.key to k before the loop. By that we make sure the loop will
+terminate when it reaches L.nil, causing the procedure to return L.nil as before.
+
+
+10.2-5
+
+Implement the dictionary operations INSERT, DELETE, and SEARCH using singlylinked, circular lists. What are the running times of your procedures?Solution:
+
+* would still take - compared to non-circular, singly linked list.
+
+Search(L, k) would still take* Ø(n), as we traverse at most n.
+TODO: Implement
+
+Insert(L, x) would still take O(1), as we only update head.
+TODO: Implement
+
+Delete(L, x) would still take Ø(n), as we have to find the previous element.
+TODO: Implement
+
+
+10.2-6
+
+The dynamic-set operation UNION takes two disjoint sets S1 and S2 as input, andit returns a set S = S1 U S2 consisting of all the elements of S1 and S2. Thesets S1 and S2 are usually destroyed by the operation. Show how to support UNIONin O(1) time using a suitable list data structure.
+
+Solution:
+
+We can use singly/doubly linked lists for that, in which case we link tail and head of the two lists. To do that in O(1) time, either at least one of the lists needs to be circular so we can quickly access both ends. Or at least one of them must have a separate L1.tail attribute, in addition to L1.head.
+
+
+10.2-7
+
+Give a Ø(n)-time nonrecursive procedure that reverses a singly linked list of nelements. The procedure should use no more than constant storage beyond thatneeded for the list itself.
+
+Solution:
+
+The idea is to link current element.next to the previous element, stored in the previous
+iteration.
+
+ReverseList(L) // Time Ø(n), space O(1)
+ let prevNode = nil
+ let node = L.head
+ while node != nil
+ 	let nextNode = node.next
+ 	node.next = prevNode
+ 	prevNode = node
+ 	node = nextNode
+ L.head = prevNode // THIS IS EASILY FORGOTTEN, and L.head quietly becomes L.tail
+
+
+10.2-8 *
+
+Explain how to implement doubly linked lists using only one pointer value x.np peritem instead of the usual two (next and prev). Assume that all pointer values can beinterpreted as k-bit integers, and define x.np to be x.np = x.next XOR x.prev,the k-bit “exclusive-or” of x.next and x.prev. (The value NIL is represented by 0.)Be sure to describe what information you need to access the head of the list. Showhow to implement the SEARCH, INSERT, and DELETE operations on such a list.Also show how to reverse such a list in O(1) time.
+
+Skipped.

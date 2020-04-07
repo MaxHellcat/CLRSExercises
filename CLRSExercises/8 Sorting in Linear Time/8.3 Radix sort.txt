@@ -1,0 +1,138 @@
+8.3-1
+
+Using Figure 8.3 as a model, illustrate the operation of RADIX-SORT on the following
+list of English words: COW, DOG, SEA, RUG, ROW, MOB, BOX, TAB,
+BAR, EAR, TAR, DIG, BIG, TEA, NOW, FOX.
+
+Solution:
+
+	  *	 *	*
+COW	SEA	TAB	BAR
+DOG	TEA	BAR	BIG
+SEA	MOB	EAR	BOX
+RUG	TAB	TAR	COW
+ROW	DIG	SEA	DIG
+MOB	DOG	TEA	DOG
+BOX	RUG	DIG	EAR
+TAB ->	BIG ->	BIG ->	FOX
+BAR	BAR	MOB	MOB
+EAR	EAR	DOG	NOW
+TAR	TAR	COW	ROW
+DIG	COW	ROW	RUG
+BIG	ROW	NOW	SEA
+TEA	NOW	BOX	TAB
+NOW	BOX	FOX	TAR
+FOX	FOX	RUG	TEA
+
+My extra research of running time here:
+
+Each symbol is in the range 0..25 thus taking 5 bits. Then 3-symbol string takes 5*3 = 15 bit, and
+there’s total 16 strings, so:
+
+b = 15, r = 5, d = b/r = 15/5 = 3
+lgn = lg16 = 4
+
+We have b > lgn, and so to achieve the linear running time we need r=lgn, which
+doesn’t seem to be possible, as 5 is the minimal number of bits that each symbol takes.
+Therefore we have 2^r term growing faster than r in the denominator and we can conclude
+that the running time of radix sort on this input data is not linear, or T(n) = Ω(bn/lgn).
+
+Note that the length of input is fairly small here, and if we increase it to have
+at least 32 strings, then lgn = lg32 = 5 = r we’ll attain a linear running time.
+And the larger the input will be, the smaller constant factors hidden in Ø-notation
+will become (b/lgn term, where lgn -> b).
+
+
+8.3-2
+
+Which of the following sorting algorithms are stable: insertion sort, merge sort,heapsort, and quicksort? Give a simple scheme that makes any sorting algorithmstable. How much additional time and space does your scheme entail?
+
+Solution:
+
+The insertion sort is stable, as elements shifted only when X < A[j].
+The merge sort is stable, as ‘<=‘ relation is used when comparing elements.
+The heap sort is NOT stable, as order can be broken when building a max heap (parent == child and
+parent < other child), also order is reversed when heap sort runs (root swapped with last).
+The classic quicksort (Lomuto/Hoare partitions) is NOT stable.
+
+We can make any sorting algorithm stable by maintaining original indices of all elements
+in a separate array. We would sort that array along with the primary array, and
+use it afterwards to restore the order. We can do that by sorting the subarrays
+of identical elements in now sorted primary array using keys from a separate array.
+Space complexity is O(n). Since we potentially sort n identical elements, time
+is O(n*lgn) if we use comparison sort, or O(n) if we can use counting sort.
+
+
+8.3-3
+
+Use induction to prove that radix sort works. Where does your proof need theassumption that the intermediate sort is stable?
+
+Solution:
+
+Let radix sort run on n d-digit numbers, using counting sort as a stable sort.
+
+Base case:
+After 1st iteration of the radix loop we have n numbers correctly sorted
+by the lowest-order digit by the counting sort.
+
+Inductive step:
+After i-th iteration we have n numbers correctly sorted by the i-order digit. And,
+since underlying counting sort is stable, for all numbers with identical i-order
+digits the order of (i-1)-order digits is preserved.
+
+Therefore radix sort correctly sorts.
+
+We assumed that underlying sort is stable in the inductive step.
+
+
+8.3-4
+
+Show how to sort n integers in the range 0 to n^3 - 1 in O(n) time.
+
+From 5.3 Randomized algorithms:
+Exercise 8.3-4 asks you to solve the very similar problem of sorting numbers in therange 0 to n^3-1 in O(n) time.
+
+Solution:
+
+We have k = n^3 - 1
+
+Using counting sort we have running time O(n+k) = O(n^3), unacceptable.
+
+Now, radix sort’s running time:
+T(n) = Ø((b/r)(n + 2^r)), 
+where each number has d = ceil(b/r) digits.
+
+We need r <= lgn to keep it linear.
+
+To encode a decimal digit in the range 0..9 we need r = lg10. Thus, by viewing
+each input number as a group of d decimal r-bit digits for input of size ≥ 10,
+we can assert that the radix sort will sort it correctly in Ø(n).
+
+For inputs of size < 10 we need to encode each digit with less bits to satisfy
+the condition r <= lgn, which means we can’t use decimal number anymore.
+For example, when n = 8 we need to represent each number as a group of d octal
+r-bit digits, where r = lg8 = 3.
+
+To be completely certain, to keep linear sorting time for any input of size n > 1,
+we need to view each number as a d-group of 1-bit (binary) digits, since r = lg2 = 1.
+Of course, the less is r the larger is d - number of iterations of a radix outer loop.
+
+In practice, I think we don’t want to get into such subtleties and consider any input
+to be of size >= 10.
+
+
+8.3-5 *
+
+In the first card-sorting algorithm in this section, exactly how many sorting passesare needed to sort d-digit decimal numbers in the worst case? How many piles ofcards would an operator need to keep track of in the worst case?
+
+From text:
+Intuitively, you might sort numbers on their most significant digit, sort each ofthe resulting bins recursively, and then combine the decks in order. Unfortunately,since the cards in 9 of the 10 bins must be put aside to sort each of the bins, thisprocedure generates many intermediate piles of cards that you would have to keeptrack of. (See Exercise 8.3-5.)
+
+Solution:
+
+We sort n numbers by the highest-order digit, and sort each number by remaining
+d - 1 digits, resulting in n(d-1) total sorting passes?
+
+Since 9 of 10 bins must be put aside to sort each of the bins, and we sort each bin
+d - 1 times, we’d have 9 * (d-1) * n piles of cards?
+

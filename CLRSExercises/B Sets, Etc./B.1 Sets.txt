@@ -1,0 +1,50 @@
+B.1-1
+
+Done in the Blue Workbook.
+
+
+B.1-2
+
+Note: Alternatively, this can be done in a more traditional manner, by grouping Ai and Ai+1 … An
+
+Employing the divide&conquer approach here, we implicitly split the collection of sets into two halves (separated by ∩), since each half is a set (or collection of sets, which is indeed a set), we apply the generalization of DeMorgan's law to them. We then repeat this until we get to the subproblem of size 1, after which the law will have been applied to the entire collection.
+
+For example:
+Note 1: Haven't found a way to draw a complement upper line, so treat it as a solid line broken by ∪ symbol. 
+Note 2: Some steps omitted for brevity
+
+0: A1 ∩ A2 ∩ A3 ∩ A4 ∩ A5 ∩ A6 ∩ A7 ∩ A8
+1: (A1 ∩ A2 ∩ A3 ∩ A4) ∪ ( A5 ∩ A6 ∩ A7 ∩ A8)
+2: ((A1 ∩ A2) ∪ (A3 ∩ A4)) ∪ ((A5 ∩ A6) ∪ (A7 ∩ A8))
+3: (((A1) ∪ (A2)) ∪ ((A3) ∪ (A4))) ∪ (((A5) ∪ (A6)) ∪ ((A7) ∪ (A8)))
+
+
+B.1-3*
+Failed to figure out.
+
+
+B.1-4
+
+Since set N is countable, its subset N' = {x: x in N and x/2 not in N} is also countable.
+
+
+B.1-5
+
+Base case: 
+S = Ø, empty set of size 0. The size of its power set 2^S is 2^|S| = 2^0 = 1. Indeed, power set of empty set has only empty set as a subset, or 2^S = {Ø}.
+
+Inductive step:
+Let S be a finite set of size n, or S = {a1, a2, ... , an}, and 2^S is its power set. Since size of 2^S is 2^|S|, by adding one element to S we must have its new power set be of size 2^(|S| + 1).
+
+Proof:
+Let S' = S ∪ {b} be new set, then its power set 2^S' must consist of subsets of two kinds: the ones originally from 2^S and those originally from 2^S, but now each combined with newly added element b.
+The size of 2^S is 2^|S| by the induction hypothesis, and size of those originally from 2^S each combined with b, indeed, is also 2^|S|.
+Thus, we have 2^|S| + 2^|S| distinct subsets for 2^S', or
+2^|S'| = 2^|S| + 2^|S| = 2•2^|S| = 2^(|S| + 1)
+
+
+B.1-6
+
+An n-tuple is an ordered sequence of n elements denoted (a1, ..., an) that can be defined as an ordered pair (a1, (a2, ..., an)). Applying this definition recursively we get:	
+(a1, ..., an) = (a1, (a2, (a3, (..., (an-1, an)...))))
+

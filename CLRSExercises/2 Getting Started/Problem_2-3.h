@@ -10,10 +10,11 @@
 #define Problem_2_3_h
 
 #include "Defines.h"
-//#include "cmath"
 
 // a)
 // T(n) = Ø(n) as we iterate n + 1 times with Ø(1) time of each iteration
+
+namespace Pr_2_3 {
 
 int polynomialHornerRule(int x, int n)
 {
@@ -65,13 +66,14 @@ int pow(int val, int power)
 	return finalVal;
 }
 
-void test_problem_2_3()
+void test()
 {
 	const int x = 3, n = 10;
 
 	cout << "Naive: " << polynomialNaive(x, n) << endl;
 
 	cout << "Horne: " << polynomialHornerRule(x, n) << endl;
+}
 }
 
 #endif /* Problem_2_3_h */

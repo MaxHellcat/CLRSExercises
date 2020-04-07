@@ -1,0 +1,94 @@
+C.2-1
+
+R = {H, T}
+G = {HH, HT,  TH, TT}
+
+Let A be event that Rozen gets heads, and B be event that Guilden gets no heads.
+We have Pr(A) = 1/2, Pr(B) = 1/4
+
+Since the events are independent(*), the resulting probability
+Pr(A and B) = Pr{A} • Pr{B} = 1/8
+
+* - Cos nobody told us about exact outcome of either events.
+
+
+C.2-2
+
+According to C13, Pr{A1 U A2} ≤ Pr{A1} + Pr{A2}
+
+Since A1 U A2 is also an event, say A12, then
+Pr{A12 U A3} ≤ Pr{A1} + Pr{A2} + Pr{A3}
+
+Iteratively applying this to the remaining events we prove the Boole's inequality.
+
+
+C.2-3
+
+The size of the sample space S is |S| = 10! / 7! = 10 • 9 • 8 = 720 - the number of all 3-permutations of 10 elements.
+
+The probability of choosing any ordering is 1 / 720, since we're given that cards are well shuffled.
+
+For each 3! permutations we have only one that is in increasing order, and so the total number of increasing permutations = C(10, 3) = 720 / 3! = 120
+
+Thus we have 120 permutations in increasing ordering for a total of 720 permutations, i.e. Pr = 120/720 = 1/6
+
+P.S.: So it appears the total number of cards actually doesn't matter, as for the 20-elements deck:
+Pr = (20! / 17! / 3!) / (20! / 17!) = 1 / 3!
+
+And so the alternative solution of this problem is Pr = 1/(number of cards)! = 1/3! = 1/6, as only one of 3! possible orderings of 3 cards is increasing.
+
+
+C.2-4
+
+A' - is a complement of A
+
+Pr{A | B} + Pr{A' | B} =
+Pr{A ∩ B} / Pr{B} + Pr{A' ∩ B} / Pr{B} = 
+(Pr{A ∩ B} + Pr{A' ∩ B}) / Pr{B}
+
+Due to the commutative law A ∩ B = B ∩ A, the last expression can be written as:
+(Pr{B ∩ A} + Pr{B ∩ A'}) / Pr{B}
+
+Since B = (B ∩ A) U (B ∩ A') we have Pr{B} = Pr(B ∩ A) + Pr(B ∩ A') (for mutually exclusive events, which is given by the task), we have Pr{B} / Pr{B} = 1
+
+
+C.2-5
+
+Prove that for any collection of events A1, A2, …, An,
+Pr{A1 ∩ A2 ∩ … An} =
+Pr{A1}•Pr{A2|A1}•Pr{A3 | A1 ∩ A2} • … • Pr{An | A1 ∩ A2 ∩ … ∩ A(n-1)}
+
+Solution:
+
+As we did before in similar proofs, combine events incrementally, starting with the first pair:
+
+Pr{A1 ∩ A2} = Pr{A2 ∩ A1} = Pr{A2 | A1} • Pr{A1} (from C.14)
+
+Pr{(A1 ∩ A2) ∩ A3} = Pr{A3 ∩ (A1 ∩ A2)} =
+Pr{A3 | A1 ∩ A2} • Pr{A1 ∩ A2}
+
+Pr{(A1 ∩ A2 ∩ A3) ∩ A4} = Pr{A4 ∩ (A1 ∩ A2 ∩ A3)} = 
+Pr{A4 | A1 ∩ A2 ∩ A3} • Pr{A1 ∩ A2 ∩ A3}
+
+We have for the last iteration:
+
+Pr{(A1 ∩ … ∩ A(n-1)) ∩ An} = Pr{An ∩ (A1 ∩ … ∩ A(n-1))} =
+Pr{An | A1 ∩ … ∩ A(n-1)} • Pr{A1 ∩ … ∩ A(n-1)}
+
+Recursively replacing the 2nd operand Pr{A1 ∩ … ∩ A(n-1)} in each iteration with the result of a previous iteration, we come to the expression given in the exercise and thus prove it.
+
+
+C.2-6*
+Skipped
+
+C.2-7*
+Skipped
+
+C.2-8*
+Skipped
+
+C.2-9*
+Skipped (This is an interesting exercise)
+
+C.2-10*
+Skipped (Ditto)
