@@ -69,6 +69,7 @@
 		AE2127CB243CB55500DB03D9 /* C.2 Probability.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "C.2 Probability.txt"; sourceTree = "<group>"; };
 		AE2127CC243CB55500DB03D9 /* C.4 The geometric and binomial distribution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "C.4 The geometric and binomial distribution.txt"; sourceTree = "<group>"; };
 		AE22CA5824378521007E3A20 /* 10.2-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "10.2-4.h"; sourceTree = "<group>"; };
+		AE635562243F4CC200388457 /* 9.2 Selection in expected linear time.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "9.2 Selection in expected linear time.txt"; sourceTree = "<group>"; };
 		AE6CE5451E413700008FE82E /* 2.3-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.3-4.h"; sourceTree = "<group>"; };
 		AE7D2C711E2ECB6C002CC076 /* CLRSExercises */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CLRSExercises; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7D2C741E2ECB6C002CC076 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -180,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				AE2127AD243CB34300DB03D9 /* 9.1 Minimum and maximum.txt */,
+				AE635562243F4CC200388457 /* 9.2 Selection in expected linear time.txt */,
 			);
 			path = "9 Medians and Order Statistics";
 			sourceTree = "<group>";

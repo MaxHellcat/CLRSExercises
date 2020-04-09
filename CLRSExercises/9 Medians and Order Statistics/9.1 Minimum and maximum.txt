@@ -6,7 +6,6 @@ comparisons in the worst case. (Hint: Also find the smallest element.)
 Solution:
 
 A = 3, 5, 2, 4, 1
-
 n-1 + (n-2) = 2n - 3 =? n + ceil(lgn) - 2 = n + 3 - 2
-
 2n - 3 = n + (n - 1) - 2
+?

@@ -1,0 +1,36 @@
+9.2-1
+
+Show that RANDOMIZED-SELECT never makes a recursive call to a 0-length array.
+
+Solution:
+It never makes if passed i in RANDOMIZED-SELECT(A, p, r, i) is in range [1..A.size],
+otherwise it will. Tested with the code in Algo.
+
+
+9.2-2
+
+Argue that the indicator random variable Xk and the value T(max(k-1, n-k))
+are independent.
+
+Solution:
+TBD
+
+
+9.2-3
+
+Write an iterative version of RANDOMIZED-SELECT.
+
+Solution:
+
+Coded in Algo. Find by 9.2-3
+
+
+9.2-4
+Suppose we use RANDOMIZED-SELECT to select the minimum element of the
+array A = (3, 2, 9, 0, 7, 5, 4, 8, 6, 1). Describe a sequence of partitions that results
+in a worst-case performance of RANDOMIZED-SELECT.
+
+Solution:
+
+The RANDOMIZED-SELECT must be unlucky enough to pick pivots in decreasing order, e.g.
+for the array A that would be 9, 8, 7, ..., 0
