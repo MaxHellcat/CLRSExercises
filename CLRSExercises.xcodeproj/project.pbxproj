@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		AE05F8031E366726005B06B8 /* 2.3-2_Sentinel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.3-2_Sentinel.h"; sourceTree = "<group>"; };
 		AE05F8181E374CAB005B06B8 /* 2.3-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.3-2.h"; sourceTree = "<group>"; };
+		AE17326E2445FBAD00BE7231 /* 10.3 Implementing pointers and objects.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "10.3 Implementing pointers and objects.txt"; sourceTree = "<group>"; };
 		AE1896D721B5F0DA00CE8A54 /* CutRod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CutRod.h; sourceTree = "<group>"; };
 		AE212796243CB2C400DB03D9 /* 1 Problems.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1 Problems.txt"; sourceTree = "<group>"; };
 		AE212797243CB2C400DB03D9 /* 1.2 Algorithms as a technology.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1.2 Algorithms as a technology.txt"; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 				AE2127AF243CB34E00DB03D9 /* 10.1 Stacks and queues.txt */,
 				AE2127B0243CB34E00DB03D9 /* 10.2 Linked lists.txt */,
 				AE22CA5824378521007E3A20 /* 10.2-4.h */,
+				AE17326E2445FBAD00BE7231 /* 10.3 Implementing pointers and objects.txt */,
 				AE2127B1243CB34E00DB03D9 /* 10 Problems.txt */,
 			);
 			path = "10 Elementary Data Structures";

@@ -1,0 +1,31 @@
+10.3-1
+
+Draw a picture of the sequence [13, 4, 8, 19, 5, 11] stored as a doubly linked list
+using the multiple-array representation. Do the same for the single-array representation.
+
+Solution:
+
+multiple-array:
+
+Each vertical slice of the arrays represents a single object. Stored pointers correspond to the array indices shown at the top.
+
+Note, here arrays' indices at which list values reside have been chosen randomly.
+
+head = 5
+
+index 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+      --------------------------------------
+next    | 9 | 2 |   | 3 |   | 8 | / | 7 |
+ key    | 8 | 4 |   |13 |   | 5 |11 |19 |
+prev    | 3 | 5 |   | / |   | 9 | 7 | 2 |
+
+single-array:
+
+Each list element is an object that occupies a contiguous subarray of length 3 within the array.
+The three attributes key, next, and prev correspond to the offsets 0, 1, and 2, respectively, within each object.
+
+head = 7
+
+1  2  3   4  5  6   7  8  9   10  11  12   13  14  15   16  17  18   19  20  21
+|--------|---------|---------|------------|------------|------------|------------
+          19 19 10  13 16 /    8   4  16   11   /  19    4  10   7    5  13   4
