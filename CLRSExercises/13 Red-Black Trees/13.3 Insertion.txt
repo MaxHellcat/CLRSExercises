@@ -1,0 +1,11 @@
+13.3-1
+
+In line 16 of RB-INSERT, we set the color of the newly inserted node z to red.
+Observe that if we had chosen to set z’s color to black, then property 4 of a redblack
+tree would not be violated. Why didn’t we choose to set z’s color to black?
+
+Solution:
+
+In this case we'd violate property 5, which says that any simple path from a node downwards
+must contain the same number of black nodes. Moreover, this would be hard to fixup, since
+all other rules, including property 4, would be satisfied.

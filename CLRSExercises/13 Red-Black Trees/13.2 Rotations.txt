@@ -1,0 +1,22 @@
+13.2-1
+
+Write pseudocode for RIGHT-ROTATE.
+
+Solution:
+
+It simply a reflection of LEFT-ROTATE around vertical axis.
+
+RIGHT-ROTATE(T, x)
+
+1 y = x.left // set y
+2 x.left = y.right // turn y’s right subtree into x’s left subtree
+3 if y.right != T.nil
+4    y.right.p =
+5 y.p = x.p // link x’s parent to y
+6 if x.p == T.nil
+7    T.root = y
+8 elseif x == x.p.left
+9    x.p = left.y
+10 else x.p.right = y
+11 y.right = x // put x on y’s right
+12 x.p = y
