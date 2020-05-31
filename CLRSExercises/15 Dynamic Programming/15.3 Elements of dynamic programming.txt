@@ -1,0 +1,28 @@
+15.3-2
+
+Draw the recursion tree for the MERGE-SORT procedure from Section 2.3.1 on an
+array of 16 elements. Explain why memoization fails to speed up a good divide-
+and-conquer algorithm such as MERGE-SORT.
+
+Solution:
+
+The reason is because MERGE-SORT algorithm doesn't have overlapping problems.
+Each cut produces a distinct set of elements, or a brand-new problem.
+
+
+15.3-5
+
+Suppose that in the rod-cutting problem of Section 15.1, we also had limit li on the
+number of pieces of length i that we are allowed to produce, for i = 1, 2, ... , n.
+Show that the optimal-substructure property described in Section 15.1 no longer
+holds.
+
+Solution:
+
+The optimal-substructure property doesn't hold because now optimal solutions on subproblems
+can't be used to construct optimal solution to the problem.
+
+Recall that for the rod-cutting problem in 15.1 for n = 4 we have optimal solution 4 = 2 + 2,
+or two pieces of size 2 costing 5 each. Now imagine that l2 = 1, that is we can have at most 1
+piece of size 2. We see that both sub-problems satisfy this limit, but the combining problem no
+longer does, as it now has 2 pieces of size 2.
