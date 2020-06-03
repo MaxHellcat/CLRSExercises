@@ -53,7 +53,6 @@ Show that the longest simple path from a node x in a red-black tree to a descend
 leaf has length at most twice that of the shortest simple path from node x to a
 descendant leaf.
 
-
 Solution:
 
 By property 4, in a red-black tree at least half the nodes on any simple path from a node x to a leaf, not including the node, must be black.

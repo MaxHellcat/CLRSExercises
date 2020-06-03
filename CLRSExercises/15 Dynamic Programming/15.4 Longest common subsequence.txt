@@ -1,0 +1,27 @@
+15.4-1
+
+Determine an LCS of (1, 0, 0, 1, 0, 1, 0, 1) and (0, 1, 0, 1, 1, 0, 1, 1, 0).
+
+Solution:
+
+LCS1 = (1, 0, 1, 0, 1, 0) - by observation
+LCS2 = (1, 0, 0, 1, 1, 0) - by the code (in Algo) based on the section pseudocode
+
+
+15.4-3
+
+Give a memoized version of LCS-LENGTH that runs in O(mn) time.
+
+Solution:
+
+Done in Algo (grep by 15.4-3)
+
+
+15.4-5
+
+Give an O(n^2)-time algorithm to find the longest monotonically increasing subsequence
+of a sequence of n numbers.
+
+Solution:
+
+Done in Algo (grep by 15.4-5)

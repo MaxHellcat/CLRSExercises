@@ -71,6 +71,7 @@
 		AE2127CB243CB55500DB03D9 /* C.2 Probability.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "C.2 Probability.txt"; sourceTree = "<group>"; };
 		AE2127CC243CB55500DB03D9 /* C.4 The geometric and binomial distribution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "C.4 The geometric and binomial distribution.txt"; sourceTree = "<group>"; };
 		AE22CA5824378521007E3A20 /* 10.2-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "10.2-4.h"; sourceTree = "<group>"; };
+		AE2C842F2486A2CE00C05DA7 /* 15.4 Longest common subsequence.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "15.4 Longest common subsequence.txt"; sourceTree = "<group>"; };
 		AE6184D22483F6FE003F6C5D /* 15.1 Rod cutting.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "15.1 Rod cutting.txt"; sourceTree = "<group>"; };
 		AE6184D32483FB75003F6C5D /* 15.3 Elements of dynamic programming.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "15.3 Elements of dynamic programming.txt"; sourceTree = "<group>"; };
 		AE635562243F4CC200388457 /* 9.2 Selection in expected linear time.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "9.2 Selection in expected linear time.txt"; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 				AE1896D721B5F0DA00CE8A54 /* CutRod.h */,
 				AE6184D22483F6FE003F6C5D /* 15.1 Rod cutting.txt */,
 				AE6184D32483FB75003F6C5D /* 15.3 Elements of dynamic programming.txt */,
+				AE2C842F2486A2CE00C05DA7 /* 15.4 Longest common subsequence.txt */,
 			);
 			path = "15 Dynamic Programming";
 			sourceTree = "<group>";
