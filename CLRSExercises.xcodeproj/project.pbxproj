@@ -88,6 +88,7 @@
 		AE9C18531E419D330098301B /* 2.3-5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.3-5.h"; sourceTree = "<group>"; };
 		AE9C18541E42809C0098301B /* Problem_2-1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-1.h"; sourceTree = "<group>"; };
 		AE9F995B1E571F13002F0E85 /* 4.1-3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "4.1-3.h"; sourceTree = "<group>"; };
+		AEBD42642492BF2800B5618E /* 16.1 An activity-selection problem.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "16.1 An activity-selection problem.txt"; sourceTree = "<group>"; };
 		AEE97B721E45DA2C005FD161 /* Problem_2-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-4.h"; sourceTree = "<group>"; };
 		AEFA9CA41E43BBAA00B9FD7B /* Problem_2-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-2.h"; sourceTree = "<group>"; };
 		AEFA9CA51E445F9F00B9FD7B /* Problem_2-3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-3.h"; sourceTree = "<group>"; };
@@ -305,6 +306,7 @@
 				AE2127B7243CB35A00DB03D9 /* 12 Binary Search Trees */,
 				AE2127BC243CB36500DB03D9 /* 13 Red-Black Trees */,
 				AE1896D821B5F18300CE8A54 /* 15 Dynamic Programming */,
+				AEBD42652492BF3200B5618E /* 16 Greedy Algorithms */,
 				AE2127BE243CB37100DB03D9 /* 22 Elementary Graph Algorithms */,
 				AE2127C1243CB53500DB03D9 /* B Sets, Etc. */,
 				AE2127C7243CB55500DB03D9 /* C Counting and Probability */,
@@ -312,6 +314,14 @@
 				AE7D2C741E2ECB6C002CC076 /* main.cpp */,
 			);
 			path = CLRSExercises;
+			sourceTree = "<group>";
+		};
+		AEBD42652492BF3200B5618E /* 16 Greedy Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				AEBD42642492BF2800B5618E /* 16.1 An activity-selection problem.txt */,
+			);
+			path = "16 Greedy Algorithms";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

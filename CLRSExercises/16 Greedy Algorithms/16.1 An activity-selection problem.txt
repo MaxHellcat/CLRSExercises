@@ -1,0 +1,11 @@
+16.1-1
+Give a dynamic-programming algorithm for the activity-selection problem, based
+on recurrence (16.2). Have your algorithm compute the sizes c[i, j] as defined
+above and also produce the maximum-size subset of mutually compatible activities.
+Assume that the inputs have been sorted as in equation (16.1). Compare the running
+time of your solution to the running time of GREEDY-ACTIVITY-SELECTOR
+
+Solution:
+
+Code done in Algo (grep by 16.1-1) <- Took me 3 days to complete, how is that?
+The running time is O(n^2) (as we use memoization), which is slower than linear greedy.
