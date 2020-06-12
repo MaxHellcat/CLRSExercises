@@ -1,0 +1,11 @@
+16.2-1
+
+Prove that the fractional knapsack problem has the greedy-choice property.
+
+Solution:
+
+Let the greedy choice to be choosing the item with the maximum value per pound.
+We claim that applying it to a sub-problem yields an optimal solution to the problem, since
+we always fill the knapsack to its capacity.
+Indeed, if there exists other item with more value per pound, then we'd choose it
+to be the greedy choice, rendering our claim invalid. Thus our claim is correct.

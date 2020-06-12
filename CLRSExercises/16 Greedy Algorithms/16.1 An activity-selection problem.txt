@@ -1,4 +1,5 @@
 16.1-1
+
 Give a dynamic-programming algorithm for the activity-selection problem, based
 on recurrence (16.2). Have your algorithm compute the sizes c[i, j] as defined
 above and also produce the maximum-size subset of mutually compatible activities.
