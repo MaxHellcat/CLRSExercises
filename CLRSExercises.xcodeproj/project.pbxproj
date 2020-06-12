@@ -90,6 +90,8 @@
 		AE9F995B1E571F13002F0E85 /* 4.1-3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "4.1-3.h"; sourceTree = "<group>"; };
 		AEBCB0AE2493848E002CA46A /* 16.2 Elements of the greedy strategy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "16.2 Elements of the greedy strategy.txt"; sourceTree = "<group>"; };
 		AEBCB0BF2493C79A002CA46A /* 17.1 Aggregate analysis */ = {isa = PBXFileReference; lastKnownFileType = text; path = "17.1 Aggregate analysis"; sourceTree = "<group>"; };
+		AEBCB0C02493EE92002CA46A /* 2.3 Designing algorithms.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "2.3 Designing algorithms.txt"; sourceTree = "<group>"; };
+		AEBCB0C12493F3DA002CA46A /* 2 Problems.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "2 Problems.txt"; sourceTree = "<group>"; };
 		AEBD42642492BF2800B5618E /* 16.1 An activity-selection problem.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "16.1 An activity-selection problem.txt"; sourceTree = "<group>"; };
 		AEE97B721E45DA2C005FD161 /* Problem_2-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-4.h"; sourceTree = "<group>"; };
 		AEFA9CA41E43BBAA00B9FD7B /* Problem_2-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-2.h"; sourceTree = "<group>"; };
@@ -135,10 +137,12 @@
 				AE7D2C7C1E2ECFA0002CC076 /* 2.1-4.h */,
 				AE21279A243CB2FC00DB03D9 /* 2.2 Analyzing algorithms.txt */,
 				AE7D2C7D1E2ED1A2002CC076 /* 2.2-2.h */,
+				AEBCB0C02493EE92002CA46A /* 2.3 Designing algorithms.txt */,
 				AE05F8181E374CAB005B06B8 /* 2.3-2.h */,
 				AE05F8031E366726005B06B8 /* 2.3-2_Sentinel.h */,
 				AE6CE5451E413700008FE82E /* 2.3-4.h */,
 				AE9C18531E419D330098301B /* 2.3-5.h */,
+				AEBCB0C12493F3DA002CA46A /* 2 Problems.txt */,
 				AE9C18541E42809C0098301B /* Problem_2-1.h */,
 				AEFA9CA41E43BBAA00B9FD7B /* Problem_2-2.h */,
 				AEFA9CA51E445F9F00B9FD7B /* Problem_2-3.h */,

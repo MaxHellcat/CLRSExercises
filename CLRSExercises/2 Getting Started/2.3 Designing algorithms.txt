@@ -1,0 +1,153 @@
+2.3-1
+
+Using Figure 2.4 as a model, illustrate the operation of merge sort on the array
+A = (3, 41, 52, 26, 38, 57, 9, 49).
+
+Solution:
+
+In Bluebook.
+
+
+2.3-2
+
+Rewrite the MERGE procedure so that it does not use sentinels, instead stopping
+once either array L or R has had all its elements copied back to A and then copying
+the remainder of the other array back into A.
+
+Solution:
+
+See 2.3-2.h
+
+
+2.3-3
+
+Use mathematical induction to show that when n is an exact power of 2, the solution
+of the recurrence
+
+[See equation in the book]
+
+is T(n) = nlgn.
+
+Solution:
+
+TODO: Rewrite the explanation, it's vague.
+
+Let's draw the recursion tree first:
+                    n
+                    / \
+         n/2              n/2 - level 1
+          / \                / \
+T(n/4)   T(n/4) T(n/4) T(n/4) - level 2
+............................................
+2 2 2 ............................... 2 - level lg(n) - 1
+
+Note that recursion bottoms out when problem size n = 2, this is a lg(n) - 1 level
+
+Level k below the top node has 2^k nodes.
+Each level node contributes a cost of n/2^k to the level running time, so each level
+has total cost 2^k * n/(2^k) = n
+
+Total number of levels is (lg(n) - 1) + 1 = lg(n),
+as we add the root level
+
+Base case: lg(2) = 1 (input of size 2 has 1 level)
+Inductive hypothesis: lg(2^k) = k
+As we assume input to be the power of two, the next input size is 2^(k+1).
+A tree with 2^(k+1) leaves has one more level than a tree with 2^k leaves.
+And so, lg(2^(k+1)) = k + 1, i.e. our claim that lg(n) = number of levels is correct
+
+Finally we have lg(n) levels each having n running time, hence
+T(n) = n * lg(n)
+
+
+2.3-4
+
+We can express insertion sort as a recursive procedure as follows. In order to sort
+A[1..n], we recursively sort A[1..n-1] and then insert A[n] into the sorted array
+A[1..n-1]. Write a recurrence for the running time of this recursive version of
+insertion sort.
+
+Solution:
+
+Coded in 2.3-4.h
+
+Divide step takes Ø(1) (n = n - 1)
+Conquer step takes T(n-1)
+Combine step takes Ø(n), as while loop header runs n times for each call
+
+Input of size n=1 takes Ø(1)
+
+Adding up each step we have our recurrence:
+T(n) =
+ Ø(1), if n = 1,
+ T(n-1) + Ø(n) + Ø(1), if n > 1
+
+
+2.3-5
+
+Referring back to the searching problem (see Exercise 2.1-3), observe that if the
+sequence A is sorted, we can check the midpoint of the sequence against v and
+eliminate half of the sequence from further consideration. The binary search algorithm
+repeats this procedure, halving the size of the remaining portion of the
+sequence each time. Write pseudocode, either iterative or recursive, for binary
+search. Argue that the worst-case running time of binary search is Ø(lgn).
+
+Solution:
+
+Coded in 2.3-5.h
+
+TODO: Vague explanation using math induction.
+
+Since divide^combine steps take D(n) = Ø(1), C(n) = Ø(1), we have worst time recurrence:
+T(n) =
+Ø(1), if n = 1
+T(n/2) + Ø(1), if n > 1
+
+Considering input size n to be 2^k, k >= 0
+
+n -> (n/2 -> n/4 -> n/2^k -> 1)
+
+Level k below n has n/2^k size and in total there are lg(n) + 1 levels
+
+Base case: lg(1) + 1 = 0 + 1 = 1
+Inductive hypothesis:
+lg(2^k) = k + 1, next n = 2^(k+1), so
+lg(2^(k+1)) = (k + 1) + 1
+
+The lg(n) + 1 is Ø(lg(n)) + Ø(1) = Ø(lg(n))
+
+
+2.3-6
+
+Observe that the while loop of lines 5–7 of the INSERTION-SORT procedure in
+Section 2.1 uses a linear search to scan (backward) through the sorted subarray
+A[1..j-1]. Can we use a binary search (see Exercise 2.3-5) instead to improve
+the overall worst-case running time of insertion sort to Ø(nlgn)?
+
+Solution:
+
+Although we could use binary search to find a proper index i for the key, we still
+have to shift all the elements in A[i .. j-1], whose size is still proportional to
+the input size n.
+
+
+2.3-7 *
+
+Describe a Ø(nlgn)-time algorithm that, given a set S of n integers and another
+integer x, determines whether or not there exist two elements in S whose sum is
+exactly x.
+
+Solution:
+
+I've come up with the following:
+
+1. Sort S with merge sort to keep Ø(n*lg(n))
+2. For each element k of sorted S:
+let addend = x - k
+binarySearch(addend)
+
+I.e. for each element of sorted S find its addend so their sum is x, using binary search.
+
+Iterating is Ø(n) with binary search Ø(lg(n)) gives us Ø(n*lg(n)) running time.
+
+Overall, merge sort takes Ø(n*lg(n)) and finding takes Ø(n*lg(n)), so Ø(n*lg(n)) + Ø(n*lg(n)) I believe is Ø(n*lg(n)) (at least the same is assumed in the description of running time for Merge procedure of merge sort)

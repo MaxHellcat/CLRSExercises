@@ -1,0 +1,54 @@
+2-1 Insertion sort on small arrays in merge sort
+
+...
+d. How should we choose k in practice?
+
+Solution:
+
+...
+Math in Bluebook, code in Problem_2-1.h.
+
+d. Experimentally find such a value of k, for which modified merge sort has the smallest
+running time, compared to that of standard merge sort. My experiments in Problem_2-1.h showed
+something around k=20.
+
+
+2-2 Correctness of bubblesort
+
+Solution:
+
+See Problem_2-2.h
+
+
+2-3 Correctness of Horner’s rule
+
+Solution:
+
+See Problem_2-3.h
+
+
+2-4 Inversions
+
+Solution:
+
+a)
+(1, 5), (2, 5), (3, 4), (3, 5) and (4, 5)
+
+b) I think it's a reverse sorted array
+Say we have
+5, 4, 3, 2, 1 (n = 5)
+4 + 3 + 2 + 1 = 10 pairs
+
+24, 15, 3 (n = 3)
+2 + 1 = 3 pairs
+
+Now, from examples to general form:
+S from 1 to n-1 = n(n+1)/2 - n =
+(n(n+1) - 2n) / 2 =
+(n*n + n - 2n) / 2 =
+(n*n - n) / 2 =
+n(n-1) / 2
+
+c) The more inversions - the more iterations of inner loop (loop runs while "(A[i], key) is actually an inversion", see loop header) - the worse overall running time.
+
+d) See Problem_2-4.h.
