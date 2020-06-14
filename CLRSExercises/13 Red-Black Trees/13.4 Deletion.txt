@@ -1,0 +1,9 @@
+13.4-1
+
+Argue that after executing RB-DELETE-FIXUP, the root of the tree must be black.
+
+Solution:
+
+Loop terminates in two cases, either x is root or x has red color. If x is root,
+then it's colored black in line 23. If x not root, then root has the same color it had
+before calling RB-DELETE-FIXUP, which is black.

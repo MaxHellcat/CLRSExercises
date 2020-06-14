@@ -92,6 +92,7 @@
 		AEBCB0BF2493C79A002CA46A /* 17.1 Aggregate analysis */ = {isa = PBXFileReference; lastKnownFileType = text; path = "17.1 Aggregate analysis"; sourceTree = "<group>"; };
 		AEBCB0C02493EE92002CA46A /* 2.3 Designing algorithms.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "2.3 Designing algorithms.txt"; sourceTree = "<group>"; };
 		AEBCB0C12493F3DA002CA46A /* 2 Problems.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "2 Problems.txt"; sourceTree = "<group>"; };
+		AEBCB0C224966506002CA46A /* 13.4 Deletion.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "13.4 Deletion.txt"; sourceTree = "<group>"; };
 		AEBD42642492BF2800B5618E /* 16.1 An activity-selection problem.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "16.1 An activity-selection problem.txt"; sourceTree = "<group>"; };
 		AEE97B721E45DA2C005FD161 /* Problem_2-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-4.h"; sourceTree = "<group>"; };
 		AEFA9CA41E43BBAA00B9FD7B /* Problem_2-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-2.h"; sourceTree = "<group>"; };
@@ -244,6 +245,7 @@
 				AE2127BD243CB36500DB03D9 /* 13.1 Properties of red-black trees.txt */,
 				AE77E59D2474420900C5F218 /* 13.2 Rotations.txt */,
 				AE77E59E2474465900C5F218 /* 13.3 Insertion.txt */,
+				AEBCB0C224966506002CA46A /* 13.4 Deletion.txt */,
 			);
 			path = "13 Red-Black Trees";
 			sourceTree = "<group>";
