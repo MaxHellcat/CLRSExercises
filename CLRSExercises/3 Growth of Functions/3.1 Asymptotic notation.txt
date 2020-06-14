@@ -1,0 +1,133 @@
+3.1-1
+
+Let f(n) and g(n) be asymptotically nonnegative functions. Using the basic definition
+of Ø-notation, prove that max(f(n), g(n)) == Ø(f(n) + g(n)).
+
+Solution:
+
+Done on Bluebook.
+
+TODO: Move proof here.
+
+
+3.1-2
+
+Show that for any real constants a and b, where b > 0,
+(n + a)^b = Ø(n^b).
+
+Solution:
+
+Since any binomial (n + a)^b can be expanded in the form (binomial theorem): n^b + b*n^(b-1)*a... a^b, where n^b is the highest-order term, we have:
+(n + a)^b = Ø((n + a)^b) = Ø(n^b ... a^b) = Ø(n^b),
+
+since low-order terms and constants are insignificant for sufficiently large n.
+
+
+3.1-3
+
+Explain why the statement, “The running time of algorithm A is at least O(n^2)”, is
+meaningless.
+
+Solution:
+
+The big-O notation specifies the upper bound for the running time of an algorithm. The O(n^2) says that running time on any input
+may be less than or equal to c*n^2, but will never take longer than c*n^2, where c is some positive constant.
+
+By saying "the running time is at least O(n^2)" we imply that on some input it may take longer (worst-case), which clearly contradicts the meaning of big-O notation.
+
+
+3.1-4
+
+Is 2^(n+1) = O(2^n)? Is 2^(2n) = O(2^n)?
+
+Solution:
+
+Yes, 2^(n+1) = 2^n * 2 = O(2*2^n) = O(2^n)
+
+No, 2^2n = 2^n*2^n = O(2^2n)
+
+
+3.1-5
+
+Prove Theorem 3.1.
+
+Solution:
+
+From formal definitions of O- and Ω- notations:
+O(g(n)) = { f(n): 0 <= f(n) <= c*g(n), for some positive c, n0 where n >= n0}
+Ω(g(n)) = { f(n): 0 <= c*g(n) <= f(n), for some positive c, n0 where n >= n0}
+
+By combining two definitions, we have:
+0 <= c1*g(n) <= f(n) <= c2*g(n),
+where c1, c2 are different constants to satisfy the inequality.
+
+We can see that new inequality is exactly the one from the formal definition of Ø-notation, which is:
+Ø(g(n)) = { f(n): 0 <= c1*g(n) <= f(n) <= c2*g(n), for some positive c1, c2, n0 where n >= n0}
+
+Thus, the theorem is proved.
+
+
+3.1-6
+
+Prove that the running time of an algorithm is Ø(g(n)) if and only if its worst-case
+running time is O(g(n)) and its best-case running time is BigOmega(g(n)).
+
+Solution:
+
+When we say that the running time of an algorithm is Ω(g(n)), we mean that no matter what particular input of size n is chosen for each value of n, the running time on that input is at least a constant times g(n), for sufficiently large n. Equivalently, we are giving a lower bound on the best-case running time
+of an algorithm.
+
+Similarly, when we say that the running time of an algorithm is O(g(n)), we mean that no matter what particular input of size n is chosen for each value of n, the running time on that input is at most a constant times g(n), for sufficiently large n. Equivalently, we provide an upper bound on the worst-case running time of an algorithm.
+
+Combining these into one statement, we have that for any input of size n, the running time of an algorithm on that input is exactly g(n) taken from some constant times to some constant times. That is, we’re giving tight bounds on the running time of an algorithm. Observing that the above is essentially the definition of Ø-notation, the original claim is proved.
+
+
+3.1-7
+
+Prove that o(g(n)) INTERSECTION w(g(n)) is the empty set.
+
+Solution:
+
+From formal definitions of o- and w- notations:
+o(g(n)) = { f(n): 0 <= f(n) < c*g(n), for any c > 0, n >= n0 }
+w(g(n)) = { f(n): 0 <= c*g(n) < f(n), for any c > 0, n >= n0 }
+
+Combining them we have:
+0 <= c1*g(n) < f(n) < c2*g(n), for any positive c1, c2 and all n > max(n0, n1)
+
+It's easy to see that this inequality cannot hold for ANY c1, c2.
+
+For example, since it's possible that c1 = c2, we have:
+0 <= c*g(n) < f(n) < c*g(n), for all n > max(n0, n1)
+
+Which cannot hold, since no function can at the same time be less than and more than some other function.
+
+Intuitively, since in little notation functions differ by the order of growth, whichever value for c we take, for large n it will always be beaten by the n. In other words, any "sandwiched" function will always jump off the track built by two higher-order functions, for large n.
+
+
+3.1-8
+
+We can extend our notation to the case of two parameters n and m that can go to
+infinity independently at different rates. For a given function g(n,m), we denote
+by O(g(n,m)) the set of functions
+
+O(g(n,m)) = {f(n,m): there exist positive constants c, n0, and m0
+such that 0 <= f(n,m) <= cg(n,m) (Remark * below)
+for all n >= n0 or m >= m0}.
+
+Give corresponding definitions for W(g(n,m)) and Ø(g(n,m)).
+
+Solution:
+
+Ω-notation:
+
+Ω(g(n, m)) = { f(n, m): there exist positive constants c, n0, m0 such that
+0 <= c*g(n, m) <= f(n, m) for all n >= n0 or (sic!) m >= m0 }
+
+Ø-notation:
+
+Ø(g(n, m)) = { f(n, m): there exist positive constants c1, c2, n0 and m0 such that
+0 <= c1*g(n, m) <= f(n, m) <= c2*g(n, m) for all n >= n0 or m >= m0 }
+
+Remark *: If it's a function of two arguments, why do we have "or" in "for all n > n0 or m > m0"?
+Shouldn't both arguments satisfy the conditions?

@@ -93,6 +93,7 @@
 		AEBCB0C02493EE92002CA46A /* 2.3 Designing algorithms.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "2.3 Designing algorithms.txt"; sourceTree = "<group>"; };
 		AEBCB0C12493F3DA002CA46A /* 2 Problems.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "2 Problems.txt"; sourceTree = "<group>"; };
 		AEBCB0C224966506002CA46A /* 13.4 Deletion.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "13.4 Deletion.txt"; sourceTree = "<group>"; };
+		AEBCB0C424967D9F002CA46A /* 3.1 Asymptotic notation.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "3.1 Asymptotic notation.txt"; sourceTree = "<group>"; };
 		AEBD42642492BF2800B5618E /* 16.1 An activity-selection problem.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "16.1 An activity-selection problem.txt"; sourceTree = "<group>"; };
 		AEE97B721E45DA2C005FD161 /* Problem_2-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-4.h"; sourceTree = "<group>"; };
 		AEFA9CA41E43BBAA00B9FD7B /* Problem_2-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-2.h"; sourceTree = "<group>"; };
@@ -304,6 +305,7 @@
 			children = (
 				AE212795243CB2C400DB03D9 /* 1 The Role of Algorithms in Computing */,
 				AE212798243CB2FC00DB03D9 /* 2 Getting Started */,
+				AEBCB0C324967D6C002CA46A /* 3 Growth of Functions */,
 				AE21279B243CB30F00DB03D9 /* 4 Divide-and-Conquer */,
 				AE21279D243CB31700DB03D9 /* 5 Probabilistic Analysis and Randomized Algorithms */,
 				AE2127A1243CB33300DB03D9 /* 7 Quicksort */,
@@ -331,6 +333,14 @@
 				AEBCB0BF2493C79A002CA46A /* 17.1 Aggregate analysis */,
 			);
 			path = "17 Amortized Analysis";
+			sourceTree = "<group>";
+		};
+		AEBCB0C324967D6C002CA46A /* 3 Growth of Functions */ = {
+			isa = PBXGroup;
+			children = (
+				AEBCB0C424967D9F002CA46A /* 3.1 Asymptotic notation.txt */,
+			);
+			path = "3 Growth of Functions";
 			sourceTree = "<group>";
 		};
 		AEBD42652492BF3200B5618E /* 16 Greedy Algorithms */ = {
