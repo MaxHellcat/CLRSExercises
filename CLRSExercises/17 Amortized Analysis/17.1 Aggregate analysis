@@ -19,10 +19,17 @@ to determine the amortized cost per operation.
 
 Solution:
 
-Operation: 1, 2, 3, 4, 5, 6, 7, 8, ...
-Cost:      1, 2, 1, 4, 1, 1, 1, 8, ...
+Operation: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ...
+Cost:      1, 2, 1, 4, 1, 1, 1, 8, 1, 01, 01, 01, 01, 01, 01, 16, ...
 
-Rearranging the terms, we get: 1, 2, 4, 8, 1, 1, 1, 1, ...
+Observing the sequence we get the following formula
 
-T(n) = SUM[i=0...n/2-1](2^i) + n/2 = 2^(n/2) - 1 + n/2 = O(2^(n/2))
-T(1) = O(2^(n/2)/n)
+T(n) =
+= SUM(i=0...lgn)2^i + // Sum of operations with an exact power of 2
++ (n - lgn - 1) // All other '1's
+
+Solving we get:
+T(n) = 2^(lgn+1) - 1 + (n - lgn - 1) = 2n - 1 + n - lgn - 1 = 3n - lgn - 2 = O(n)
+
+From which we get
+T(1) = O(n)/n = O(1) - amortized cost per operation
