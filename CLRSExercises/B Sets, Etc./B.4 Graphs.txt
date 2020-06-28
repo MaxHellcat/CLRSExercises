@@ -1,22 +1,36 @@
 B.4-1
 
-Attendees of a faculty party shake hands to greet each other, and each professorremembers how many times he or she shook hands. At the end of the party, thedepartment head adds up the number of times that each professor shook hands.
-Show that the result is even by proving the handshaking lemma: if G = (V, E) isan undirected graph, then
+Attendees of a faculty party shake hands to greet each other, and each professor
+remembers how many times he or she shook hands. At the end of the party, the
+department head adds up the number of times that each professor shook hands.
+Show that the result is even by proving the handshaking lemma: if G = (V, E) is
+an undirected graph, then
 (v = V)SUM(degree(v)) = 2|E|
 
 Solution:
 
-We have an undirected complete graph, since handshake is a mutual process. The sum of degrees of each vertex is therefore the doubled number of edges, as each edge is counted two times. In other words, the sum of handshakes each professor did is doubled number of all handshakes, since when A shakes hands B, and B shakes hands A, it is in fact the same handshake.
-The result is even because doubled natural |E| number divisible by two.
+Since handshake is a mutual process, let's assume the graph G is undirected.
+Then each vertex has degree(v) = |V| - 1, as each professor greets all others.
+
+We have a summation:
+[v=1..V]SUM(degree(v)) = [v=1..V]SUM(|V| - 1) = |V| * (|V| - 1)
+
+To show that |V| * (|V| - 1) = 2|E|, let's take an undirected graph G with |V| = 4, which
+has |E| = 6 by visual observation.
+
+Solving the expression we have:
+|V| * (|V| - 1) = 4 * 3 = 12 = 2|E|
 
 
 B.4-2
 
-Show that if a directed or undirected graph contains a path between two vertices uand v, then it contains a simple path between u and v. Show that if a directed graphcontains a cycle, then it contains a simple cycle.
+Show that if a directed or undirected graph contains a path between two vertices u
+and v, then it contains a simple path between u and v. Show that if a directed graph
+contains a cycle, then it contains a simple cycle.
 
 Solution:
 
-Looking at the figure B.2a, consider path 2-4-5-4-1. The subpath 4-5-4 is in fact a two-edge cycle, and vertices 4 and 5 be contracted into a single vertex, producing the simple path 2-4-1.
+Looking at the figure B.2a, consider path 2-4-5-4-1. The subpath 4-5-4 is in fact a two-edge cycle, and vertices 4 and 5 can be "contracted" into a single vertex, producing the simple path 2-4-1.
 The same applies to a cycle, which is a path where v0 = vk.
 
 
@@ -26,17 +40,18 @@ Show that any connected, undirected graph G = (V, E) satisfies |E| >= |V| - 1.
 
 Solution:
 
-Base case: 
-To connect two vertices we need just one edge, so 1 >= 2 - 1 - holds
+To connect two vertices we need just one edge, so 1 >= 2 - 1 - holds.
 
-Inductive step:
-Assume that to connect n vertices we need at least n - 1 edges, or (n - 1) >= n - 1. Then to connect one more vertex we need one more edge, or:
-(n - 1) + 1 >= (n + 1) - 1 => (n - 1) >= n - 1 >= n - 1, so proved.
+In general, to connect |V| vertices we need at least |V| - 1 edges plus edges to
+optionally connect vertices between each other.
 
 
 B.4-4
 
-Verify that in an undirected graph, the “is reachable from” relation is an equivalencerelation on the vertices of the graph. Which of the three properties of anequivalence relation hold in general for the “is reachable from” relation on thevertices of a directed graph?
+Verify that in an undirected graph, the “is reachable from” relation is an equivalence
+relation on the vertices of the graph. Which of the three properties of an
+equivalence relation hold in general for the “is reachable from” relation on the
+vertices of a directed graph?
 
 Solution:
 
@@ -46,31 +61,21 @@ R = reflexive, symmetric, and transitive.
 Vertex v is reachable from itself via 0-length path, so reflexive.
 If vertex vi is reachable from vj, then vj reachable from vi, as graph is undirected, so symmetric.
 If vi R vj and vj R vk, then vi R vk (path vi, vj, vk), so transitive.
-Thus we've shown that R is equivalence relation on V of undirected graph G.
-
+Thus we've shown that R is equivalence relation on V of the graph G.
 
 For a directed graph:
-Reflexivity holds in general, as vertex v is always reachable from itself via 0-length path.
-Symmetry doesn't always hold, as the fact that vi is reachable from vj, doesn't mean the opposite for a directed graph.
+Reflexivity holds, as vertex v is always reachable from itself via 0-length path.
+Symmetry doesn't hold, as the fact that vi is reachable from vj, doesn't mean the opposite for a directed graph.
 Transitivity holds, as described for an undirected graph.
 
 
 B.4-5
 
-What is the undirected version of the directed graph in Figure B.2(a)? What is thedirected version of the undirected graph in Figure B.2(b)?
+What is the undirected version of the directed graph in Figure B.2(a)? What is the
+directed version of the undirected graph in Figure B.2(b)?
 
 Solution:
 
 a. Trivially converted using the rule: The undirected version contains the edges of G “with their directions removed” and with self-loops eliminated.
 
-b. We replace each undirected edge (u, v) in G by the two directed edges (u, v) and (v, u) in the directed version.
-
-
-B.4-6 *
-
-Show that we can represent a hypergraph by a bipartite graph if we let incidence inthe hypergraph correspond to adjacency in the bipartite graph. (Hint: Let one setof vertices in the bipartite graph correspond to vertices of the hypergraph, and letthe other set of vertices of the bipartite graph correspond to hyperedges.)
-
-Solution:
-
-Skipped.
-
+b. For the directed version, we replace each undirected edge (u, v) in G by the two directed edges (u, v) and (v, u).
