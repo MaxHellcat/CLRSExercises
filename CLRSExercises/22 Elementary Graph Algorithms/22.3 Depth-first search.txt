@@ -1,0 +1,81 @@
+22.3-1
+
+Make a 3-by-3 chart with row and column labels WHITE, GRAY, and BLACK. In
+each cell (i, j), indicate whether, at any point during a depth-first search of a directed
+graph, there can be an edge from a vertex of color i to a vertex of color j.
+For each possible edge, indicate what edge types it can be. Make a second such
+chart for depth-first search of an undirected graph.
+
+Solution:
+
+Using Figure 22.4 as an example.
+
+Directed:
+
+   W | G | B
+   ---------
+W| X   X   X
+G| T*  B   F, C
+B| X   X   X
+
+T* - tree edge
+
+Undirected:
+
+Same table except there's B (instead of F,C) for GRAY,BLACK edge
+
+
+22.3-2
+
+Show how depth-first search works on the graph of Figure 22.6. Assume that the
+for loop of lines 5–7 of the DFS procedure considers the vertices in alphabetical
+order, and assume that each adjacency list is ordered alphabetically. Show the
+discovery and finishing times for each vertex, and show the classification of each
+edge.
+
+Solution:
+
+Drawn in Bluebook
+
+
+22.3-3
+
+Show the parenthesis structure of the depth-first search of Figure 22.4.
+
+Solution:
+
+Ranges drawn in Bluebook
+
+The parenthesis structure:
+(u (v (y (x x) y) v) u) (w (z z) w)
+
+
+22.3-4
+
+Show that using a single bit to store each vertex color suffices by arguing that
+the DFS procedure would produce the same result if line 3 of DFS-VISIT was
+removed.
+
+Solution:
+
+Using Figure 22.4 as an example.
+
+Just removing line 3 must cause infinite loop (edge x,v - checked in code). One of ways
+to remedy this is to enhance line 5 of DFS-VISIT checking for non-zero u.d.
+
+
+22.3-5
+
+Show that edge (u, v) is
+a. a tree edge or forward edge if and only if u.d < v.d < v.f < u.f,
+b. a back edge if and only if v.d <= u.d < u.f <= v.f, and
+c. a cross edge if and only if v.d < v.f < u.d < u.f.
+
+Solution:
+
+Using Figure 22.4 as an example.
+
+a. Vertex v's range is completely within u's range, so v was discovered and finished
+while exploring u.adj list.
+Whether (u,v) is a tree or forward edge depends on whether v was white or black, which
+in turn depends on the order of u.adj list.
