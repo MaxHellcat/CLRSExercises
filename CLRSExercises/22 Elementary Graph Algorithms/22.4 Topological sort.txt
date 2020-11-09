@@ -1,0 +1,21 @@
+22.4-1
+
+Show the ordering of vertices produced by TOPOLOGICAL-SORT when it is run on
+the dag of Figure 22.8, under the assumption of Exercise 22.3-2.
+
+Solution:
+
+Drawn in Bluebook on 28.07.20
+
+
+22.4-2
+
+Give a linear-time algorithm that takes as input a directed acyclic graph G =
+(V,E) and two vertices s and t, and returns the number of simple paths from s
+to t in G. For example, the directed acyclic graph of Figure 22.8 contains exactly
+four simple paths from vertex p to vertex v: pov, poryv, posryv, and psryv.
+(Your algorithm needs only to count the simple paths, not list them.)
+
+Solution:
+
+Coded in Algo. Grep by 22.4-2.
