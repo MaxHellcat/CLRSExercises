@@ -85,6 +85,7 @@
 		AE7D2C7D1E2ED1A2002CC076 /* 2.2-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.2-2.h"; sourceTree = "<group>"; };
 		AE7D2C7E1E2ED32F002CC076 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		AE877170255966D1004F8E52 /* 22.4 Topological sort.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "22.4 Topological sort.txt"; sourceTree = "<group>"; };
+		AE87718025597930004F8E52 /* 21.1 Disjoint-set operations.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "21.1 Disjoint-set operations.txt"; sourceTree = "<group>"; };
 		AE90360724B77E0C000B590F /* 22.3 Depth-first search.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "22.3 Depth-first search.txt"; sourceTree = "<group>"; };
 		AE99603E1E5CD37700D7BA28 /* 4.1-5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "4.1-5.h"; sourceTree = "<group>"; };
 		AE9C18531E419D330098301B /* 2.3-5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.3-5.h"; sourceTree = "<group>"; };
@@ -324,6 +325,7 @@
 				AEBD42652492BF3200B5618E /* 16 Greedy Algorithms */,
 				AEBCB0BE2493C73C002CA46A /* 17 Amortized Analysis */,
 				AEC48C7F250111BB00B58713 /* 18 B-Trees */,
+				AE87717F25597904004F8E52 /* 21 Data Structures for Disjoint Sets */,
 				AE2127BE243CB37100DB03D9 /* 22 Elementary Graph Algorithms */,
 				AE2127C1243CB53500DB03D9 /* B Sets, Etc. */,
 				AE2127C7243CB55500DB03D9 /* C Counting and Probability */,
@@ -331,6 +333,14 @@
 				AE7D2C741E2ECB6C002CC076 /* main.cpp */,
 			);
 			path = CLRSExercises;
+			sourceTree = "<group>";
+		};
+		AE87717F25597904004F8E52 /* 21 Data Structures for Disjoint Sets */ = {
+			isa = PBXGroup;
+			children = (
+				AE87718025597930004F8E52 /* 21.1 Disjoint-set operations.txt */,
+			);
+			path = "21 Data Structures for Disjoint Sets";
 			sourceTree = "<group>";
 		};
 		AEBCB0BE2493C73C002CA46A /* 17 Amortized Analysis */ = {
