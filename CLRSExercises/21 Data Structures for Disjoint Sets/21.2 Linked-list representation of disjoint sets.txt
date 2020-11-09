@@ -1,0 +1,47 @@
+21.2-1
+
+Write pseudocode for MAKE-SET, FIND-SET, and UNION using the linked-list
+representation and the weighted-union heuristic.
+
+Solution:
+
+Assumptions:
+1) List object maintains tail pointer for quick appending
+2) List object has append(list) that appends another list to it
+
+MAKE-SET(x)
+let l = new List()
+l.insert(x)
+l.count = 1
+
+FIND-SET(x)
+return x.list.head
+
+UNION(x, y)
+let shortList = x.list.count <= y.list.count ? x.list : y.list // weighted-union heuristic
+let longList = x.list.count > y.list.count ? x.list : y.list // weighted-union heuristic
+longList.append(shortList)
+longList.count += shortList.count
+delete shortList
+
+
+21.2-2
+
+Show the data structure that results and the answers returned by the FIND-SET
+operations in the following program. Use the linked-list representation with the
+weighted-union heuristic.
+1 for i = 1 to 16
+2   MAKE-SET(xi)
+3 for i = 1 to 15 by 2
+4   UNION(xi, x(i+1))
+5 for i = 1 to 13 by 4
+6   UNION(xi, x(i+2))
+7 UNION(x1, x5)
+8 UNION(x11, x13)
+9 UNION(x1, x10)
+10 FIND-SET(x2)
+11 FIND-SET(x9)
+
+Solution:
+
+Drawn in Bluebook on 09.11.20
