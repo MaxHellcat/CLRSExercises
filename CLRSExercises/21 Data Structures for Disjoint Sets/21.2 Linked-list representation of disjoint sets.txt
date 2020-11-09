@@ -45,3 +45,16 @@ weighted-union heuristic.
 Solution:
 
 Drawn in Bluebook on 09.11.20
+
+
+21.2-6
+
+Suggest a simple change to the UNION procedure for the linked-list representation
+that removes the need to keep the tail pointer to the last object in each list. Whether
+or not the weighted-union heuristic is used, your change should not change the
+asymptotic running time of the UNION procedure. (Hint: Rather than appending
+one list to another, splice them together.)
+
+Solution:
+
+Just insert list2 right after list1.head, so the head remains the same.
