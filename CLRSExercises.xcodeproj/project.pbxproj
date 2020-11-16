@@ -27,6 +27,7 @@
 		AE05F8181E374CAB005B06B8 /* 2.3-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.3-2.h"; sourceTree = "<group>"; };
 		AE17326E2445FBAD00BE7231 /* 10.3 Implementing pointers and objects.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "10.3 Implementing pointers and objects.txt"; sourceTree = "<group>"; };
 		AE17326F24460E8200BE7231 /* 10.4 Representing rooted trees.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "10.4 Representing rooted trees.txt"; sourceTree = "<group>"; };
+		AE17AF33256285DA00E03A07 /* 23.1 Growing a minimum spanning tree.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "23.1 Growing a minimum spanning tree.txt"; sourceTree = "<group>"; };
 		AE1896D721B5F0DA00CE8A54 /* CutRod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CutRod.h; sourceTree = "<group>"; };
 		AE212796243CB2C400DB03D9 /* 1 Problems.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1 Problems.txt"; sourceTree = "<group>"; };
 		AE212797243CB2C400DB03D9 /* 1.2 Algorithms as a technology.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1.2 Algorithms as a technology.txt"; sourceTree = "<group>"; };
@@ -116,6 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE17AF322562858E00E03A07 /* 23 Minimum Spanning Trees */ = {
+			isa = PBXGroup;
+			children = (
+				AE17AF33256285DA00E03A07 /* 23.1 Growing a minimum spanning tree.txt */,
+			);
+			path = "23 Minimum Spanning Trees";
+			sourceTree = "<group>";
+		};
 		AE1896D821B5F18300CE8A54 /* 15 Dynamic Programming */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +337,7 @@
 				AEC48C7F250111BB00B58713 /* 18 B-Trees */,
 				AE87717F25597904004F8E52 /* 21 Data Structures for Disjoint Sets */,
 				AE2127BE243CB37100DB03D9 /* 22 Elementary Graph Algorithms */,
+				AE17AF322562858E00E03A07 /* 23 Minimum Spanning Trees */,
 				AE2127C1243CB53500DB03D9 /* B Sets, Etc. */,
 				AE2127C7243CB55500DB03D9 /* C Counting and Probability */,
 				AE7D2C7E1E2ED32F002CC076 /* Defines.h */,

@@ -1,0 +1,26 @@
+23.1-1
+
+Let (u,v) be a minimum-weight edge in a connected graph G. Show that (u,v)
+belongs to some minimum spanning tree of G.
+
+Solution:
+
+Let's cut G so that edge (u,v) crosses the cut. Since (u,v) is a minimum-weight
+edge in G, then it's a light edge crossing the cut, hence it belongs
+to some minimum spanning tree of G.
+
+23.1-2
+
+Professor Sabatier conjectures the following converse of Theorem 23.1. Let G =
+(V,E) be a connected, undirected graph with a real-valued weight function w defined
+on E. Let A be a subset of E that is included in some minimum spanning
+tree for G, let (S, V-S) be any cut of G that respects A, and let (u,v) be a safe
+edge for A crossing (S, V-S). Then, (u,v) is a light edge for the cut. Show that
+the professor’s conjecture is incorrect by giving a counterexample.
+
+Solution:
+
+A counterexample is easily seen on Figure 23.2. On initially empty A, let's make
+a cut with the following edges crossing it (c,d), (c,f), and (g,f). As we can see,
+edges (c,d) and (c,f) are safe edges for A, but they're not the minimum-weight edges
+for A.
