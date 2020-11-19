@@ -85,6 +85,7 @@
 		AE7D2C7C1E2ECFA0002CC076 /* 2.1-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.1-4.h"; sourceTree = "<group>"; };
 		AE7D2C7D1E2ED1A2002CC076 /* 2.2-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.2-2.h"; sourceTree = "<group>"; };
 		AE7D2C7E1E2ED32F002CC076 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		AE86B9782566B8270076597E /* 23.2 The algorithms of Kruskal and Prim.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "23.2 The algorithms of Kruskal and Prim.txt"; sourceTree = "<group>"; };
 		AE877170255966D1004F8E52 /* 22.4 Topological sort.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "22.4 Topological sort.txt"; sourceTree = "<group>"; };
 		AE87718025597930004F8E52 /* 21.1 Disjoint-set operations.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "21.1 Disjoint-set operations.txt"; sourceTree = "<group>"; };
 		AE87718225599D9E004F8E52 /* 21.2 Linked-list representation of disjoint sets.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "21.2 Linked-list representation of disjoint sets.txt"; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				AE17AF33256285DA00E03A07 /* 23.1 Growing a minimum spanning tree.txt */,
+				AE86B9782566B8270076597E /* 23.2 The algorithms of Kruskal and Prim.txt */,
 			);
 			path = "23 Minimum Spanning Trees";
 			sourceTree = "<group>";

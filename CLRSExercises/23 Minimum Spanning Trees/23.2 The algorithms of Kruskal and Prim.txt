@@ -1,0 +1,41 @@
+23.2-1
+
+Kruskal’s algorithm can return different spanning trees for the same input graph G,
+depending on how it breaks ties when the edges are sorted into order. Show that
+for each minimum spanning tree T of G, there is a way to sort the edges of G in
+Kruskal’s algorithm so that the algorithm returns T.
+
+Solution:
+
+Let's consider a graph on figure 23.4. We have edges (a,h) and (b,c) both having
+weight 8, so have two MSTs:
+1. ..., (b,c), ...
+2. ..., (a,h), ...
+They differ by including or not edges (b,c) and (a,h), which in turn depends on whether
+(b,c) appears before or after (a,h) in the sorted edges.
+Therefore, to get a specific MST, we just place identical-weight edges in a specific order
+in the list of all edges and use a stable sorting algorithm to sort it.
+
+23.2-2
+
+Suppose that we represent the graph G = (V,E) as an adjacency matrix. Give a
+simple implementation of Prim’s algorithm for this case that runs in O(V^2) time.
+
+Solution:
+
+TBD
+
+23.2-4
+
+Suppose that all edge weights in a graph are integers in the range from 1 to |V|.
+How fast can you make Kruskal’s algorithm run? What if the edge weights are
+integers in the range from 1 to W for some constant W?
+
+Solution:
+
+To answer 1st question, sorting edges would take then O(V) (e.g. counting sort)
+resulting in T = O(V+E), assuming that we use the disjoint-set-forest implementation
+of Section 21.3 with the union-by-rank and path-compression heuristics, since it is
+the asymptotically fastest implementation known.
+To answer 2nd, sorting now takes O(W) = O(1), but we still need to Make-Set(v) |V| times
+and so T = O(V+E) - same as before.
