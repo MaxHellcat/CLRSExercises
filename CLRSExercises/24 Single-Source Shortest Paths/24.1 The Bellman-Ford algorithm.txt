@@ -1,0 +1,28 @@
+24.1-1
+
+Run the Bellman-Ford algorithm on the directed graph of Figure 24.4, using vertex
+z as the source. In each pass, relax edges in the same order as in the figure, and
+show the d and p values after each pass. Now, change the weight of edge (z,x)
+to 4 and run the algorithm again, using s as the source.
+
+Solution:
+
+Drawn in Bluebook.
+
+
+24.1-2
+
+Prove Corollary 24.3.
+
+For reference Corollary 24.3
+Let G = .(V,E) be a weighted, directed graph with source vertex s and weight
+function w: E -> R, and assume that G contains no negative-weight cycles that
+are reachable from s. Then, for each vertex v in V, there is a path from s to v if
+and only if BELLMAN-FORD terminates with v.d < +INF when it is run on G.
+
+Solution:
+
+By Lemma 24.2 when BELLMAN-FORD terminates, we have v.d = sigma(s,v) for all v reachable
+from s. This value v.d < +INF, since we apply the triangle-inequality
+sigma(s,v) <= sigma(s,u) + w(u,v) for each v, where s.d = 0 and all edges have finite weights.
+All unreachable vertices v' have v'.d = +INF, due to INITIALIZE-SINGLE-SOURCE.
