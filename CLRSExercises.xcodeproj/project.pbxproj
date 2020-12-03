@@ -103,6 +103,7 @@
 		AEBCB0C424967D9F002CA46A /* 3.1 Asymptotic notation.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "3.1 Asymptotic notation.txt"; sourceTree = "<group>"; };
 		AEBD42642492BF2800B5618E /* 16.1 An activity-selection problem.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "16.1 An activity-selection problem.txt"; sourceTree = "<group>"; };
 		AEC48C802501121200B58713 /* 18.1 Definition of B-trees */ = {isa = PBXFileReference; lastKnownFileType = text; path = "18.1 Definition of B-trees"; sourceTree = "<group>"; };
+		AEE4A7B72579230C00B211EE /* 24.2 Single-source shortest paths in directed acyclic graphs.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "24.2 Single-source shortest paths in directed acyclic graphs.txt"; sourceTree = "<group>"; };
 		AEE97B721E45DA2C005FD161 /* Problem_2-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-4.h"; sourceTree = "<group>"; };
 		AEFA9CA41E43BBAA00B9FD7B /* Problem_2-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-2.h"; sourceTree = "<group>"; };
 		AEFA9CA51E445F9F00B9FD7B /* Problem_2-3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-3.h"; sourceTree = "<group>"; };
@@ -307,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				AE55A37D25778A0D002922B6 /* 24.1 The Bellman-Ford algorithm.txt */,
+				AEE4A7B72579230C00B211EE /* 24.2 Single-source shortest paths in directed acyclic graphs.txt */,
 			);
 			path = "24 Single-Source Shortest Paths";
 			sourceTree = "<group>";

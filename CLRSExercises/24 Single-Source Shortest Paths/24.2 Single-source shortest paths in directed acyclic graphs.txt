@@ -1,0 +1,23 @@
+24.2-1
+
+Run DAG-SHORTEST-PATHS on the directed graph of Figure 24.5, using vertex r
+as the source.
+
+Solution:
+
+Drawn in Bluebook.
+
+
+24.2-2
+
+Suppose we change line 3 of DAG-SHORTEST-PATHS to read
+
+3   for the first |V| - 1 vertices, taken in topologically sorted order
+
+Show that the procedure would remain correct.
+
+Solution:
+
+When vertices in a directed graph are topologically sorted, if there's an edge (u,v) then
+u appears before v in the ordering. The last vertex therefore has empty adjacency list
+and so RELAX step on line 5 will not be called, proving that procedure would remain correct.
