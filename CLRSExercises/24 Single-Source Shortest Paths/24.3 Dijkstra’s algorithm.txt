@@ -17,3 +17,8 @@ Dijkstra’s algorithm produces incorrect answers. Why doesn’t the proof of Th
 24.6 go through when negative-weight edges are allowed?
 
 Solution:
+
+Drawn in Bluebook (also visualized Bellman-Ford alg. on the same graph to show it works OK).
+To answer the 2nd question, the proof doesn't work because the contradiction
+doesn't work. Namely, we can no longer say that sigma(s,y) <= sigma(s,u), because now
+edges can be negative, which then results in inability to conclude that u.d = sigma(s,u).
