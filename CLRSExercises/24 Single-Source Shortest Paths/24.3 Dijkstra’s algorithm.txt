@@ -1,0 +1,19 @@
+24.3-1
+
+Run Dijkstra’s algorithm on the directed graph of Figure 24.2, first using vertex s
+as the source and then using vertex z as the source. In the style of Figure 24.6,
+show the d and & values and the vertices in set S after each iteration of the while
+loop.
+
+Solution:
+
+Drawn in Bluebook.
+
+
+24.3-2
+
+Give a simple example of a directed graph with negative-weight edges for which
+Dijkstra’s algorithm produces incorrect answers. Why doesn’t the proof of Theorem
+24.6 go through when negative-weight edges are allowed?
+
+Solution:

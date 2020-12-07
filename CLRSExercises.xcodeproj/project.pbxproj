@@ -95,6 +95,7 @@
 		AE9C18531E419D330098301B /* 2.3-5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.3-5.h"; sourceTree = "<group>"; };
 		AE9C18541E42809C0098301B /* Problem_2-1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-1.h"; sourceTree = "<group>"; };
 		AE9F995B1E571F13002F0E85 /* 4.1-3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "4.1-3.h"; sourceTree = "<group>"; };
+		AEA98257257E534400392E89 /* 24.3 Dijkstra’s algorithm.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "24.3 Dijkstra’s algorithm.txt"; sourceTree = "<group>"; };
 		AEBCB0AE2493848E002CA46A /* 16.2 Elements of the greedy strategy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "16.2 Elements of the greedy strategy.txt"; sourceTree = "<group>"; };
 		AEBCB0BF2493C79A002CA46A /* 17.1 Aggregate analysis */ = {isa = PBXFileReference; lastKnownFileType = text; path = "17.1 Aggregate analysis"; sourceTree = "<group>"; };
 		AEBCB0C02493EE92002CA46A /* 2.3 Designing algorithms.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "2.3 Designing algorithms.txt"; sourceTree = "<group>"; };
@@ -309,6 +310,7 @@
 			children = (
 				AE55A37D25778A0D002922B6 /* 24.1 The Bellman-Ford algorithm.txt */,
 				AEE4A7B72579230C00B211EE /* 24.2 Single-source shortest paths in directed acyclic graphs.txt */,
+				AEA98257257E534400392E89 /* 24.3 Dijkstra’s algorithm.txt */,
 			);
 			path = "24 Single-Source Shortest Paths";
 			sourceTree = "<group>";
