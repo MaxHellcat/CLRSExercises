@@ -1,0 +1,22 @@
+24.5-1
+
+Give two shortest-paths trees for the directed graph of Figure 24.2 (on page 648)
+other than the two shown.
+
+Solution:
+
+Drawn in Bluebook.
+
+
+24.5-3
+
+Embellish the proof of Lemma 24.10 to handle cases in which shortest-path
+weights are +INF or -INF.
+
+Solution:
+
+If sigma(s,u) = +INF (u is unreachable from s), then also sigma(s,v) = +INF.
+Since w(u,v) is finite, we have:
++INF = +INF + w(u,v), which satisifies sigma(s,v) <= sigma(s,u) + w(u,v)
+
+Case with -INF is proved similarly.

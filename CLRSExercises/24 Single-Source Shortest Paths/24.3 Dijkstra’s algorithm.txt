@@ -35,9 +35,9 @@ this proposed algorithm correct?
 
 Solution:
 
-Yes. Let v be the last vertex, then u.d = sigma(s,u) already, during relaxation of
+Yes. Let v be the last vertex, then v.d = sigma(s,v) already, during relaxation of
 ingoing edges (if any) in previous iterations of while loop.
 Any adjacent vertex v also already has v.d = sigma(s,v) due to the loop invariant, since
 they are in S = V - 1.
 
-TODO: Check this in code!
+Checked in code (Dijkstra.swift, while Q.count > 1) - the answer is correct.
