@@ -1,0 +1,68 @@
+25.1-1
+
+Run SLOW-ALL-PAIRS-SHORTEST-PATHS on the weighted, directed graph of
+Figure 25.2, showing the matrices that result for each iteration of the loop. Then
+do the same for FASTER-ALL-PAIRS-SHORTEST-PATHS.
+
+Solution:
+
+Drawn in Bluebook.
+
+
+25.1-2
+
+Why do we require that wii = 0 for all 1 <= i <= n?
+
+Solution:
+
+To properly calculate a 1-edge shortest path between two adjacent vertices.
+Say we have a graph G with 3 vertices and edge 1->2 is the shortest.
+The following paths are candidates:
+a) 1..2 = w(1,1) + w(1,2)
+b) 1..2 = w(1,2) + w(2,2)
+c) 1..2 = w(1,3) + w(3,2)
+To find the shortest edge 1->2 we just need to find its weight w in a) and b), but
+we can do that only if we assume that w(1,1) in a or w(2,2) in b equal 0.
+
+
+25.1-3
+
+What does the matrix L0
+<see matrix in pdf>
+used in the shortest-paths algorithms correspond to in regular matrix multiplication?
+
+Solution:
+
+From page 689 we have:
+L1 = L(0)*W = W - so L(0) is an identity matrix.
+
+The identity matrix in regular matrix multiplication is the one having 1s on main
+diagonal and 0s otherwise.
+I.e. we replace 0s (identity for sum) with 1s (identity for multiplication), and we
+replace +INFs (identity for min) with 0s (identity for for sum).
+Verified this manually in Bluebook.
+
+
+25.1-4
+
+Show that matrix multiplication defined by EXTEND-SHORTEST-PATHS is associative.
+
+Solution:
+Skipped.
+
+
+25.1-5
+
+Show how to express the single-source shortest-paths problem as a product of matrices
+and a vector. Describe how evaluating this product corresponds to a Bellman-
+Ford-like algorithm (see Section 24.1).
+
+Solution:
+
+Each row i in final shortest-paths matrix L(m) is a single-source shortest-paths solution
+for source vertex i.
+We verify this by extracting any row from W, viewing it as 1xN matrix and manually
+running SLOW-ALL-PAIRS-SHORTEST-PATHS.
+Moreover, each pass of main loop in line 4 of SLOW-ALL-PAIRS-SHORTEST-PATHS extends
+shortest paths found so far by one more edge. This is exactly what happens on each run
+of main for loop in line 2 of BELLMAN-FORD.
