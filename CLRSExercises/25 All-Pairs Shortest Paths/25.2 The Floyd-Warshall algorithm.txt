@@ -1,0 +1,20 @@
+25.2-1
+
+Run the Floyd-Warshall algorithm on the weighted, directed graph of Figure 25.2.
+Show the matrix D(k) that results for each iteration of the outer loop.
+
+Solution:
+
+Carefully drawn in Bluebook.
+
+
+25.2-6
+
+How can we use the output of the Floyd-Warshall algorithm to detect the presence
+of a negative-weight cycle?
+
+Solution:
+
+At least value in main diagonal is < 0.
+
+TODO: Test this claim.

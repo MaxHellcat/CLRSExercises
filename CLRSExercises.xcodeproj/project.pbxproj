@@ -92,6 +92,7 @@
 		AE87718025597930004F8E52 /* 21.1 Disjoint-set operations.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "21.1 Disjoint-set operations.txt"; sourceTree = "<group>"; };
 		AE87718225599D9E004F8E52 /* 21.2 Linked-list representation of disjoint sets.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "21.2 Linked-list representation of disjoint sets.txt"; sourceTree = "<group>"; };
 		AE90360724B77E0C000B590F /* 22.3 Depth-first search.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "22.3 Depth-first search.txt"; sourceTree = "<group>"; };
+		AE92FA122596467F0008FAC2 /* 25.2 The Floyd-Warshall algorithm.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "25.2 The Floyd-Warshall algorithm.txt"; sourceTree = "<group>"; };
 		AE99603E1E5CD37700D7BA28 /* 4.1-5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "4.1-5.h"; sourceTree = "<group>"; };
 		AE9C18531E419D330098301B /* 2.3-5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.3-5.h"; sourceTree = "<group>"; };
 		AE9C18541E42809C0098301B /* Problem_2-1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-1.h"; sourceTree = "<group>"; };
@@ -322,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				AE5B11C7258B86BD0002BAD3 /* 25.1 Shortest paths and matrix multiplication.txt */,
+				AE92FA122596467F0008FAC2 /* 25.2 The Floyd-Warshall algorithm.txt */,
 			);
 			path = "25 All-Pairs Shortest Paths";
 			sourceTree = "<group>";
