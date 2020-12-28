@@ -87,6 +87,7 @@
 		AE7D2C7C1E2ECFA0002CC076 /* 2.1-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.1-4.h"; sourceTree = "<group>"; };
 		AE7D2C7D1E2ED1A2002CC076 /* 2.2-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2.2-2.h"; sourceTree = "<group>"; };
 		AE7D2C7E1E2ED32F002CC076 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		AE8664C72599FBF70030177A /* 25.3 Johnson’s algorithm for sparse graphs.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "25.3 Johnson’s algorithm for sparse graphs.txt"; sourceTree = "<group>"; };
 		AE86B9782566B8270076597E /* 23.2 The algorithms of Kruskal and Prim.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "23.2 The algorithms of Kruskal and Prim.txt"; sourceTree = "<group>"; };
 		AE877170255966D1004F8E52 /* 22.4 Topological sort.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "22.4 Topological sort.txt"; sourceTree = "<group>"; };
 		AE87718025597930004F8E52 /* 21.1 Disjoint-set operations.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "21.1 Disjoint-set operations.txt"; sourceTree = "<group>"; };
@@ -324,6 +325,7 @@
 			children = (
 				AE5B11C7258B86BD0002BAD3 /* 25.1 Shortest paths and matrix multiplication.txt */,
 				AE92FA122596467F0008FAC2 /* 25.2 The Floyd-Warshall algorithm.txt */,
+				AE8664C72599FBF70030177A /* 25.3 Johnson’s algorithm for sparse graphs.txt */,
 			);
 			path = "25 All-Pairs Shortest Paths";
 			sourceTree = "<group>";

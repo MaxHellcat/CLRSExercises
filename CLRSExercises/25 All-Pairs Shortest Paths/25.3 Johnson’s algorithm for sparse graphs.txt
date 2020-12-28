@@ -1,0 +1,19 @@
+25.3-1
+
+Use Johnson’s algorithm to find the shortest paths between all pairs of vertices in
+the graph of Figure 25.2. Show the values of h and w^ computed by the algorithm.
+
+Solution:
+
+TODO: Draw in Bluebook.
+
+
+25.3-2
+
+What is the purpose of adding the new vertex s to V, yielding V'?
+
+Solution:
+
+To compute h(v) (shortest distance) for each vertex in G, which is used to reweight
+edges for the Dijkstra algorithm, which is used to compute the resulting matrix of
+all-pairs shortest paths.
