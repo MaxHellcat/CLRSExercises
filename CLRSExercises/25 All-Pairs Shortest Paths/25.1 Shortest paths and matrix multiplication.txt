@@ -66,3 +66,17 @@ running SLOW-ALL-PAIRS-SHORTEST-PATHS.
 Moreover, each pass of main loop in line 4 of SLOW-ALL-PAIRS-SHORTEST-PATHS extends
 shortest paths found so far by one more edge. This is exactly what happens on each run
 of main for loop in line 2 of BELLMAN-FORD.
+
+
+25.1-7
+
+We can also compute the vertices on shortest paths as we compute the shortestpath
+weights. Define &.m/
+ij as the predecessor of vertex j on any minimum-weight
+path from i to j that contains at most m edges. Modify the EXTEND-SHORTESTPATHS
+and SLOW-ALL-PAIRS-SHORTEST-PATHS procedures to compute the matrices
+….1/;….2/; : : :;….n"1/ as the matrices L.1/;L.2/; : : :;L.n"1/ are computed.
+
+Solution:
+
+Coded in Algo, grep by SlowAllPairsShortestPaths.
