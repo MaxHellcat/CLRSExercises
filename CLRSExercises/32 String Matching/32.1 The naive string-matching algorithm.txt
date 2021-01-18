@@ -1,0 +1,31 @@
+32.1-1
+
+Show the comparisons the naive string matcher makes for the pattern P = 0001
+in the text T = 000010001010001.
+
+Solution:
+
+Drawn in Bluebook.
+
+
+32.1-2
+
+Suppose that all characters in the pattern P are different. Show how to accelerate
+NAIVE-STRING-MATCHER to run in time O(n) on an n-character text T.
+
+Solution:
+
+NAIVE-STRING-MATCHER(T,P)
+1 n = T.length
+2 m = P.length
+3 for s = 0 to n - m
+4     if P[1..m] == T[s+1..s+m]
+5        print “Pattern occurs with shift” s
+6        s += <number of succesful matches above> // ADDED
+
+That is, we increment s by the number of succesful matches when comparing P with T.
+Why?
+Consider T = abcabcd and P = abcd. For s = 0 we have [abc] = [abc], i.e.
+P[0] = T[0], P[1] = T[1], P[2] = T[2]. Since all the chars in P are different,
+we have that P[0] != T[1] and P[0] != T[2] and so we can increment s by |abc| = 3.
+

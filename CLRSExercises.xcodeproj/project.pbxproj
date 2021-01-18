@@ -99,6 +99,7 @@
 		AE9C18541E42809C0098301B /* Problem_2-1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-1.h"; sourceTree = "<group>"; };
 		AE9F995B1E571F13002F0E85 /* 4.1-3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "4.1-3.h"; sourceTree = "<group>"; };
 		AEA98257257E534400392E89 /* 24.3 Dijkstra’s algorithm.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "24.3 Dijkstra’s algorithm.txt"; sourceTree = "<group>"; };
+		AEB0FAB225B5F93A0025A934 /* 32.1 The naive string-matching algorithm.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "32.1 The naive string-matching algorithm.txt"; sourceTree = "<group>"; };
 		AEB9A5722583A2CA0071DAE2 /* 24.5 Proofs of shortest-paths properties.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "24.5 Proofs of shortest-paths properties.txt"; sourceTree = "<group>"; };
 		AEBCB0AE2493848E002CA46A /* 16.2 Elements of the greedy strategy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "16.2 Elements of the greedy strategy.txt"; sourceTree = "<group>"; };
 		AEBCB0BF2493C79A002CA46A /* 17.1 Aggregate analysis */ = {isa = PBXFileReference; lastKnownFileType = text; path = "17.1 Aggregate analysis"; sourceTree = "<group>"; };
@@ -370,6 +371,7 @@
 				AE17AF322562858E00E03A07 /* 23 Minimum Spanning Trees */,
 				AE55A37C25778980002922B6 /* 24 Single-Source Shortest Paths */,
 				AE5B11C5258B86680002BAD3 /* 25 All-Pairs Shortest Paths */,
+				AEB0FAB125B5F8EE0025A934 /* 32 String Matching */,
 				AE2127C1243CB53500DB03D9 /* B Sets, Etc. */,
 				AE2127C7243CB55500DB03D9 /* C Counting and Probability */,
 				AE7D2C7E1E2ED32F002CC076 /* Defines.h */,
@@ -385,6 +387,14 @@
 				AE87718225599D9E004F8E52 /* 21.2 Linked-list representation of disjoint sets.txt */,
 			);
 			path = "21 Data Structures for Disjoint Sets";
+			sourceTree = "<group>";
+		};
+		AEB0FAB125B5F8EE0025A934 /* 32 String Matching */ = {
+			isa = PBXGroup;
+			children = (
+				AEB0FAB225B5F93A0025A934 /* 32.1 The naive string-matching algorithm.txt */,
+			);
+			path = "32 String Matching";
 			sourceTree = "<group>";
 		};
 		AEBCB0BE2493C73C002CA46A /* 17 Amortized Analysis */ = {
