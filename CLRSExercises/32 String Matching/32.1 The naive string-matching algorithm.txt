@@ -21,11 +21,10 @@ NAIVE-STRING-MATCHER(T,P)
 3 for s = 0 to n - m
 4     if P[1..m] == T[s+1..s+m]
 5        print “Pattern occurs with shift” s
-6        s += <number of succesful matches above> // ADDED
+6     s += <number of succesful matches above> // ADDED
 
 That is, we increment s by the number of succesful matches when comparing P with T.
 Why?
 Consider T = abcabcd and P = abcd. For s = 0 we have [abc] = [abc], i.e.
 P[0] = T[0], P[1] = T[1], P[2] = T[2]. Since all the chars in P are different,
 we have that P[0] != T[1] and P[0] != T[2] and so we can increment s by |abc| = 3.
-
