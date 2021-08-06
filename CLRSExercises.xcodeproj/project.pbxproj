@@ -111,6 +111,7 @@
 		AEC48C802501121200B58713 /* 18.1 Definition of B-trees */ = {isa = PBXFileReference; lastKnownFileType = text; path = "18.1 Definition of B-trees"; sourceTree = "<group>"; };
 		AEE4A7B72579230C00B211EE /* 24.2 Single-source shortest paths in directed acyclic graphs.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "24.2 Single-source shortest paths in directed acyclic graphs.txt"; sourceTree = "<group>"; };
 		AEE97B721E45DA2C005FD161 /* Problem_2-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-4.h"; sourceTree = "<group>"; };
+		AEF016C026BDAF2C00E2BF10 /* 14.1 Dynamic order statistics.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "14.1 Dynamic order statistics.txt"; sourceTree = "<group>"; };
 		AEFA9CA41E43BBAA00B9FD7B /* Problem_2-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-2.h"; sourceTree = "<group>"; };
 		AEFA9CA51E445F9F00B9FD7B /* Problem_2-3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-3.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -362,6 +363,7 @@
 				AE2127B2243CB35500DB03D9 /* 11 Hash Tables */,
 				AE2127B7243CB35A00DB03D9 /* 12 Binary Search Trees */,
 				AE2127BC243CB36500DB03D9 /* 13 Red-Black Trees */,
+				AEF016BF26BDAECA00E2BF10 /* 14 Augmenting Data Structures */,
 				AE1896D821B5F18300CE8A54 /* 15 Dynamic Programming */,
 				AEBD42652492BF3200B5618E /* 16 Greedy Algorithms */,
 				AEBCB0BE2493C73C002CA46A /* 17 Amortized Analysis */,
@@ -428,6 +430,14 @@
 				AEC48C802501121200B58713 /* 18.1 Definition of B-trees */,
 			);
 			path = "18 B-Trees";
+			sourceTree = "<group>";
+		};
+		AEF016BF26BDAECA00E2BF10 /* 14 Augmenting Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				AEF016C026BDAF2C00E2BF10 /* 14.1 Dynamic order statistics.txt */,
+			);
+			path = "14 Augmenting Data Structures";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
