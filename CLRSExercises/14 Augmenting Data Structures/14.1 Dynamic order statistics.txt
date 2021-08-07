@@ -3,7 +3,7 @@ Show how OS-SELECT(T.root, 10) operates on the red-black tree T of Figure
 14.1.
 
 Solution:
-Node with key 19, size 2. Manually ran OS-SELECT on Figure 14.1.
+Node with key 20, size 1. Manually ran OS-SELECT on Figure 14.1.
 
 14.1-2
 Show how OS-RANK(T, x) operates on the red-black tree T of Figure 14.1 and
@@ -34,7 +34,7 @@ by T. Assume that the keys of T are distinct.
 
 Solution:
 The idea is to both search for key and accumulate node's left-child-size+1
-as we go right. This is in fact reversed version of OS-RANK.
+as we go right. This is in fact a reversed version of OS-RANK.
 I added x parameter to maintain current node through recursive calls.
 OS-KEY-RANK(T, key, x)
 if x == nil
@@ -58,4 +58,4 @@ Solution:
 GET-ITH-SUCCESSOR(T, x, i)
     rank = OS-RANK(T, x)
     return OS-SELECT(T.root, i+rank)
-TODO: Check manually for GET-ITH-SUCCESSOR(T, Node(key: 16), 3)
+Checked manually for GET-ITH-SUCCESSOR(T, Node(key: 16), 3) = OS-SELECT(T.root, 7+3) = Node(20).
