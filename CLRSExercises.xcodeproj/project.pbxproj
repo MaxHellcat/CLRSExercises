@@ -112,6 +112,7 @@
 		AEE4A7B72579230C00B211EE /* 24.2 Single-source shortest paths in directed acyclic graphs.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "24.2 Single-source shortest paths in directed acyclic graphs.txt"; sourceTree = "<group>"; };
 		AEE97B721E45DA2C005FD161 /* Problem_2-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-4.h"; sourceTree = "<group>"; };
 		AEF016C026BDAF2C00E2BF10 /* 14.1 Dynamic order statistics.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "14.1 Dynamic order statistics.txt"; sourceTree = "<group>"; };
+		AEF9658926D410B500351C49 /* 32.2 The Rabin-Karp algorithm.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "32.2 The Rabin-Karp algorithm.txt"; sourceTree = "<group>"; };
 		AEFA9CA41E43BBAA00B9FD7B /* Problem_2-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-2.h"; sourceTree = "<group>"; };
 		AEFA9CA51E445F9F00B9FD7B /* Problem_2-3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem_2-3.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -395,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				AEB0FAB225B5F93A0025A934 /* 32.1 The naive string-matching algorithm.txt */,
+				AEF9658926D410B500351C49 /* 32.2 The Rabin-Karp algorithm.txt */,
 			);
 			path = "32 String Matching";
 			sourceTree = "<group>";

@@ -1,0 +1,14 @@
+32.2-1
+
+Working modulo q = 11, how many spurious hits does the Rabin-Karp matcher encounter
+in the text T = 3141592653589793 when looking for the pattern P = 26?
+
+Solution:
+Assuming each character is a decimal digit, as this section states.
+
+p = 26 % 11 = 4
+
+Overall
+3141592653589793 -> T
+938444499231925 -> t0...t(n-m)
+There're 4 hits for t3=15, t4=59, t5=92, and t6=26 respectively, where the first 3 are spurious.
