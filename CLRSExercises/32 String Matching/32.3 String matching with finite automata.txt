@@ -1,8 +1,13 @@
 32.3-1
-
 Construct the string-matching automaton for the pattern P = aabab and illustrate
 its operation on the text string T = aaababaabaababaab.
 
 Solution:
+Done in details in Bluebook.
 
-Drawn in details in Bluebook.
+32.3-2
+Draw a state-transition diagram for a string-matching automaton for the pattern
+ababbabbababbababbabb over the alphabet SIGMA = {a, b}.
+
+Solution:
+Done in details in Bluebook.
