@@ -1,0 +1,5 @@
+32.4-1
+Compute the prefix function p for the pattern ababbabbabbababbabb.
+
+Solution:
+Done in details in Bluebook.

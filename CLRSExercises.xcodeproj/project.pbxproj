@@ -74,6 +74,7 @@
 		AE22CA5824378521007E3A20 /* 10.2-4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "10.2-4.h"; sourceTree = "<group>"; };
 		AE2C842F2486A2CE00C05DA7 /* 15.4 Longest common subsequence.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "15.4 Longest common subsequence.txt"; sourceTree = "<group>"; };
 		AE36BA5B26F9D5CF005FA21E /* 32.3 String matching with finite automata.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "32.3 String matching with finite automata.txt"; sourceTree = "<group>"; };
+		AE514B4426FE4A2E00BE2A7C /* 32.4 The Knuth-Morris-Pratt algorithm.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "32.4 The Knuth-Morris-Pratt algorithm.txt"; sourceTree = "<group>"; };
 		AE55A37D25778A0D002922B6 /* 24.1 The Bellman-Ford algorithm.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "24.1 The Bellman-Ford algorithm.txt"; sourceTree = "<group>"; };
 		AE5B11C7258B86BD0002BAD3 /* 25.1 Shortest paths and matrix multiplication.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "25.1 Shortest paths and matrix multiplication.txt"; sourceTree = "<group>"; };
 		AE6184D22483F6FE003F6C5D /* 15.1 Rod cutting.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "15.1 Rod cutting.txt"; sourceTree = "<group>"; };
@@ -399,6 +400,7 @@
 				AEB0FAB225B5F93A0025A934 /* 32.1 The naive string-matching algorithm.txt */,
 				AEF9658926D410B500351C49 /* 32.2 The Rabin-Karp algorithm.txt */,
 				AE36BA5B26F9D5CF005FA21E /* 32.3 String matching with finite automata.txt */,
+				AE514B4426FE4A2E00BE2A7C /* 32.4 The Knuth-Morris-Pratt algorithm.txt */,
 			);
 			path = "32 String Matching";
 			sourceTree = "<group>";
