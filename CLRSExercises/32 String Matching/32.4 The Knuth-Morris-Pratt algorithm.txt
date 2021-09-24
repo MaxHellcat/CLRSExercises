@@ -1,5 +1,12 @@
 32.4-1
-Compute the prefix function p for the pattern ababbabbabbababbabb.
+Compute the prefix function Pi for the pattern ababbabbabbababbabb.
+
+Solution:
+Done in details in Bluebook.
+
+32.4-2
+Give an upper bound on the size of Pi*[q] as a function of q. Give an example to
+show that your bound is tight.
 
 Solution:
 Done in details in Bluebook.
